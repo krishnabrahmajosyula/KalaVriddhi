@@ -7,6 +7,8 @@ Aryan Chauhan - CS23B003
 
 Akshat Kumar - CS23B009
 
+Anvay Joshi - CS23B060
+
 Raghavendra - CS23B036
 
 Sai Krishna - CS23B057
