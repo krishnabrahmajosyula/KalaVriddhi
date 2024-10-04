@@ -7,7 +7,7 @@ body{
     background-attachment: fixed;
     overflow: hidden;
     backdrop-filter: blur(2px);
-    margin: 20px
+    margin: 20px;
 }
 #header{
     border:2px solid gold;
@@ -16,6 +16,8 @@ body{
     align-items: center;
     justify-content: center;
     margin: 20px;
+    animation: scale 0.5s ease forwards;
+    transform-origin: top;
 }
 #heading{
     color: transparent;
@@ -24,7 +26,7 @@ body{
     background-clip: text;
     font-size: 2em;
     font-weight: bold;
-    font-family: Poppins;
+    font-family: 'poppins';
 }
 #quizContainer{
     border:2px solid gold;
@@ -45,11 +47,13 @@ body{
 #instructionsheading{
     color: hsl(191, 74%, 43%);
     font-size: 2em;
+    animation: slide-up 0.5s ease forwards;
 }
 #rules{
     font-size: 1.5em;
     padding: 5px;
     margin-bottom: 10px;
+    animation: slide-up 0.5s ease forwards;
 }
 .rules1{
     margin-bottom: 20px;
@@ -62,6 +66,7 @@ body{
     border: 1.5px solid lightblue;
     transition: background-color 1s ease;
     border-radius: 5px;
+    animation: slide-up 0.5s ease forwards;
 }
 #instructions button:hover{
     background-color: white;
@@ -84,10 +89,12 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    animation: slide-up 0.5s ease forwards;
 }
 #options{
     color: lightblue;
     font-size: 1.5em;
+    animation: slide-up 0.5s ease forwards;
 }
 .danceForm{
     margin-bottom: 20px;
@@ -99,6 +106,7 @@ body{
     padding: 8px;
     border: 1px solid blue;
     cursor: pointer;
+    animation: slide-up 0.5s ease forwards;
 }
 #nextbtn{
     float: right;
@@ -108,6 +116,7 @@ body{
     padding: 8px;
     border: 1px solid blue;
     cursor: pointer;
+    animation: slide-up 0.5s ease forwards;
 }
 #prevbtn:hover{
     background-color: black;
@@ -128,10 +137,12 @@ input[type="radio"] {
 #timeDisplay{
     color: lightgreen;
     font-size: 1.5em;
+    animation: slide-up 0.5s ease forwards;
 }
 #answeredStatus{
     color: lightblue;
     font-size: 1.5em;
+    animation: slide-up 0.5s ease forwards;
 }
 #info{
     display: flex;
@@ -140,4 +151,139 @@ input[type="radio"] {
 }
 b{
     color: yellow;
+}
+.circular-score-container {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border: 2px solid gold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+svg {
+    transform: rotate(-90deg); /* Rotate to start the circle from the top */
+    width: 100%;
+    height: 100%;
+}
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 10;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke: url(#gradientStroke);
+    stroke-dasharray: 440; /* Circumference of the circle */
+    stroke-dashoffset: 440; /* Start at zero progress */
+    transition: stroke-dashoffset 1s ease-out; /* Smooth animation */
+    margin-bottom: 5px;
+}
+
+.score-text {
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: lightblue;
+}
+#resultsheading{
+    color: lightblue;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0px;
+    animation: slide-up 0.5s ease forwards;
+}
+#scoreDisplay{
+    font-size: 1.5em;
+    color: gold;
+    animation: slide-up 0.5s ease forwards;
+}
+#nextbtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+#restartbtn{
+    font-size: 1.5em;
+    float: left;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: 1px solid gold;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+#leaderboard{
+    font-size: 1.5em;
+    float: right;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: 1px solid gold;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+#restartbtn:hover{
+    background-color: white;
+    color: black;
+}
+#leaderboard:hover{
+    background-color: white;
+    color: black;
+}
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 20%); /* Start below its original position */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translate(0, 0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End in its original position */
+        opacity: 1; /* Fully visible */
+    }
 }
