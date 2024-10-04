@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <p id="heading">KalaVriddhi Heritage Hunt Quiz</p>
+    </header>
+    <div id="quizContainer">
+        <div id="instructions">
+            <p id="instructionsheading">Instructions !</p>
+            <ul id="rules">
+                <li class="rules1">Read each question carefully.</li>
+                <li class="rules1">Choose the best answer from the options provided.</li>
+                <li class="rules1">You have <b>3</b> minutes of time to complete the quiz.</li>
+                <li class="rules1">There are <b>no</b> negative marks each question carries <b>1</b> point.</li>
+                <li class="rules1">Submit your answers once you finish.</li>
+            </ul>
+            <button id="startbtn">Start Quiz</button>
+        </div>
+    </div> 
+    <div id="questionContainer">
+        <div id="info">
+            <p id="timeDisplay">Time Left: 03:00</p>
+            <p id="answeredStatus">Answered: 1/5</p>
+        </div>
+        <p id="question">1.What traditional Indian dance form, known for its intricate footwork and expressive gestures, originated in the temples of Tamil Nadu and is often performed by women? </p>
+        <fieldset id="options">
+            <legend>Choose an option:</legend>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="Bharatanatyam" class="danceForm"> Bharatanatyam
+            </label><br>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="Kathak" class="danceForm"> Kathak
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="Kathakali" class="danceForm"> Kathakali
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="Odissi" class="danceForm"> Odissi
+            </label><br>
+        </fieldset>
+        <br>
+        <button id="prevbtn">Previous</button>
+        <button id="nextbtn">Next</button>
+    </div>  
+    <script src="script.js"></script>
+</body>
+</html>

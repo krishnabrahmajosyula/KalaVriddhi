@@ -1,0 +1,143 @@
+body{
+    background-image: url('home.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+    margin: 20px
+}
+#header{
+    border:2px solid gold;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+#heading{
+    color: transparent;
+    background: linear-gradient(90deg, hsl(33, 91%, 47%),white,green); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Poppins;
+}
+#quizContainer{
+    border:2px solid gold;
+    margin: 20px;
+    flex: 1;
+    border-radius: 10px;
+    display: none;
+}
+#instructions{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    
+}
+#instructionsheading{
+    color: hsl(191, 74%, 43%);
+    font-size: 2em;
+}
+#rules{
+    font-size: 1.5em;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.rules1{
+    margin-bottom: 20px;
+}
+#instructions button{
+    font-size: 2em;
+    cursor: pointer;
+    color: green;
+    background-color: transparent;
+    border: 1.5px solid lightblue;
+    transition: background-color 1s ease;
+    border-radius: 5px;
+}
+#instructions button:hover{
+    background-color: white;
+}
+#questionContainer{
+    border:2px solid gold;
+    margin: 20px;
+    flex: 1;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+}
+#question{
+    color: transparent;
+    font-size: 1.5em;
+    font-weight: 500;
+    background: linear-gradient(90deg, hsl(33, 91%, 47%),white,green); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#options{
+    color: lightblue;
+    font-size: 1.5em;
+}
+.danceForm{
+    margin-bottom: 20px;
+}
+#prevbtn{
+    font-size: 1.5em;
+    border-radius: 5px;
+    color: rgb(255, 102, 0);
+    padding: 8px;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+#nextbtn{
+    float: right;
+    font-size: 1.5em;
+    border-radius: 5px;
+    color: green;
+    padding: 8px;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+#prevbtn:hover{
+    background-color: black;
+}
+#nextbtn:hover{
+    background-color: black;
+}
+.opt{
+    width: 100%; /* Full width of the option */
+    box-sizing: border-box; /* Include padding and border in the width */
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+input[type="radio"] {
+    margin-right: 10px; 
+}
+
+#timeDisplay{
+    color: lightgreen;
+    font-size: 1.5em;
+}
+#answeredStatus{
+    color: lightblue;
+    font-size: 1.5em;
+}
+#info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+b{
+    color: yellow;
+}
