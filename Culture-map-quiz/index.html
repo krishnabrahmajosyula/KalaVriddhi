@@ -10,6 +10,32 @@
     <header id="header">
         <p id="heading">KalaVriddhi Heritage Hunt Quiz</p>
     </header>
+    <div class="circular-score-container">
+        <p id="resultsheading">Results !</p>
+        <div id="circleDisplay">
+            <svg width="150px" height="150px">
+                <defs>
+                    <linearGradient id="gradientStroke" gradientTransform="rotate(90)">
+                        <stop offset="0%" stop-color="hsl(33, 91%, 47%)" />
+                        <stop offset="50%" stop-color="white" />
+                        <stop offset="100%" stop-color="green" />
+                    </linearGradient>
+                </defs>
+                <!-- Background circle -->
+                <circle class="circle-bg" cx="50%" cy="50%" r="70" />
+                
+                <!-- Foreground circle (score) -->
+                <circle class="circle" cx="50%" cy="50%" r="70" />
+            </svg>
+            <!-- Score text inside the circle -->
+            <div class="score-text">0%</div>
+        </div>
+        <p id="scoreDisplay">You scored 5/5</p>
+        <div id="nextbtns">
+            <button id="restartbtn">Restart</button>
+            <button id="leaderboard">Leader Board</button>
+        </div>
+    </div>
     <div id="quizContainer">
         <div id="instructions">
             <p id="instructionsheading">Instructions !</p>
