@@ -8,10 +8,10 @@
 
 header {
     position: fixed;
-    top: 0;
+    top: 20px;
     left: 0;
     width: 100%;
-    padding: 2px 100px;
+    padding: 1px 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,6 +25,7 @@ header {
 }
 
 .navigation a {
+    margin-top: 30px;
     position: relative;
     font-size: 1.1em;
     color: white;
@@ -47,6 +48,36 @@ header {
     margin-left: 40px;
     transition: .5s;
 }
+
+.maintitle {
+    margin-top: 140px;
+    font-size: 13vw;  
+    color: white;   
+    font-weight: bold; 
+    text-align: center; 
+    position: absolute; 
+    top: 0;         
+    left: 50%;        
+    transform: translateX(-50%); 
+    width: 100%; 
+    opacity: 0;
+    animation: floatIn 1s ease-out forwards;
+  }
+
+.maindesc {
+    font-size: 2vw;  
+    color: rgb(255, 230, 3);   
+    font-weight: bold; 
+    text-align: center; 
+    position: absolute; 
+    font-style: italic;        
+    left: 50%;        
+    transform: translateX(-50%); 
+    width: 100%; 
+    opacity: 0;
+    animation: floatIn 1s ease-out forwards;
+}
+  
 body {
     display: flex;
     justify-content: center;
@@ -78,3 +109,65 @@ body {
     background: white;
     color: #162938;
 }
+
+
+@keyframes floatIn {
+    from {
+      transform: translate(-50%, 20px); /* Start slightly below */
+      opacity: 0; /* Start transparent */
+    }
+    to {
+      transform: translate(-50%, 0); /* End at the original position */
+      opacity: 1; /* Fully visible */
+    }
+  }
+
+
+
+  .floating-buttons {
+    position: fixed;
+    align-items: center;
+    top: 35vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 100;
+    animation: floatIn 1s ease-out forwards;
+}
+
+.btn {
+    margin-right: 50px;
+    width: 360px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #efd738;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        width: 50px;
+        height: 50px;
+        font-size: 0.8em;
+    }
+}
+ 
