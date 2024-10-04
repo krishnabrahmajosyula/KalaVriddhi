@@ -1,0 +1,74 @@
+
+document.addEventListener("DOMContentLoaded", function() {
+   
+    const mudras = {
+        pataka: {
+            title: "Pataka",
+            description: "A hand gesture symbolizing a flag or stop. It is used to express firmness, heat, or denial.",
+            image: "images/pataka.jpeg"
+        },
+        tripataka: {
+            title: "Tripataka",
+            description: "A hand gesture symbolizing a crown or a tree. It is often used to depict thunderbolt or arrows.",
+            image: "images/tripataka.jpeg"
+        },
+        ardhapataka: {
+            title: "Ardhapataka",
+            description: "This mudra symbolizes half of a flag. It is used to express the bank of a river or leaves.",
+            image: "images/ardhapataka.jpg"
+        },
+        kartarimukha: {
+            title: "Kartarimukha",
+            description: "A hand gesture symbolizing scissors or separation. It often depicts opposition or sharpness.",
+            image: "images/kartarimukha.jpeg"
+        },
+        arala: {
+            title: "Arala",
+            description: "A hand gesture symbolizing a bent hand or wind. It depicts flowing breeze or gentle actions.",
+            image: "images/arala.jpg"
+        },
+        shukatunda: {
+            title: "Shukatunda",
+            description: "This mudra symbolizes a parrot's beak. It is used to represent a fierce or angry state.",
+            image: "images/shukatunda.jpg"
+        }
+    };
+
+   
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modal-image");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const closeBtn = document.querySelector(".close-btn");
+
+    
+    function openModal(mudra) {
+        
+        if (modal && modalImage && modalTitle && modalDescription) {
+            modalImage.style.backgroundImage = `url(${mudras[mudra].image})`;
+            modalTitle.textContent = mudras[mudra].title;
+            modalDescription.textContent = mudras[mudra].description;
+            modal.style.display = "flex";
+        }
+    }
+
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+    }
+
+    document.querySelectorAll(".mudra").forEach(mudraCard => {
+        mudraCard.addEventListener("click", function() {
+            const mudraId = mudraCard.id;
+            openModal(mudraId);
+        });
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
