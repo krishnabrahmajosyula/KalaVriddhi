@@ -12,12 +12,38 @@
         <h2 class = "kalavriddhi">KalaVriddhi</h2>
             <nav class="navigation">
                 <a href="#">Home</a>
+                <a href="#">About Us</a>
                 <a href="#">SignUp</a>
-                <a href="#">LogIn</a>
                 <button class="btnLogin-popup">Login</button>
             </nav>
     </header>
-
+    <h2 class = "maintitle">KalaVriddhi</h2>
+    <h3 class = "maindesc">Where people meet art and art meets people</h3>
+    <div class="floating-buttons">
+        <button class="btn btn1">Map Of India</button>
+        <button class="btn btn2">Learn Bharatnatyam</button>
+      </div>      
     <script src="script.js"></script>
+    
+    <script>
+        window.onload = function() {
+          // Get the height of the maintitle element
+          const titleElement = document.querySelector('.maintitle');
+          const descElement = document.querySelector('.maindesc');
+      
+          // Set the top position of .maindesc to be below .maintitle
+          const titleHeight = titleElement.offsetHeight;
+          descElement.style.top = (titleElement.offsetTop + titleHeight - 50) + 'px';
+        };
+      
+        // Adjust position on window resize
+        window.onresize = function() {
+          const titleElement = document.querySelector('.maintitle');
+          const descElement = document.querySelector('.maindesc');
+      
+          const titleHeight = titleElement.offsetHeight;
+          descElement.style.top = (titleElement.offsetTop + titleHeight -55) + 'px';
+        };
+      </script>
 </body>
 </html>
