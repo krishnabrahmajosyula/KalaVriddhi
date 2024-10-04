@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".mudra").forEach(mudraCard => {
         mudraCard.addEventListener("click", function() {
             const mudraId = mudraCard.id;
-            openModal(mudraId);
+            // openModal(mudraId);
+            window.location.href=`mudras3D/${mudraId.toLowerCase()}.html`;
         });
     });
 
     window.addEventListener("click", function(event) {
+        // console.log(event.target);
         if (event.target === modal) {
             modal.style.display = "none";
         }
