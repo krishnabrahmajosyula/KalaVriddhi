@@ -6,7 +6,7 @@ body{
     min-height: 100vh;
     background-attachment: fixed;
     overflow: hidden;
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(2px); */
     margin: 20px;
 }
 #header{
@@ -18,6 +18,7 @@ body{
     margin: 20px;
     animation: scale 0.5s ease forwards;
     transform-origin: top;
+    box-shadow: 0px 3px 8px gold;
 }
 #heading{
     color: transparent;
@@ -33,6 +34,7 @@ body{
     margin: 20px;
     flex: 1;
     border-radius: 10px;
+    box-shadow: 0px 3px 8px gold;
     display: none;
 }
 #instructions{
@@ -77,6 +79,22 @@ body{
     flex: 1;
     border-radius: 10px;
     padding: 15px;
+    box-shadow: 0px 3px 8px gold;
+    display: none;
+}
+#q1{
+    display: none;
+}
+#q2{
+    display: none;
+}
+#q3{
+    display: none;
+}
+#q4{
+    display: none;
+}
+#q5{
     display: none;
 }
 #question{
@@ -99,7 +117,7 @@ body{
 .danceForm{
     margin-bottom: 20px;
 }
-#prevbtn{
+.prevbtn{
     font-size: 1.5em;
     border-radius: 5px;
     color: rgb(255, 102, 0);
@@ -108,7 +126,7 @@ body{
     cursor: pointer;
     animation: slide-up 0.5s ease forwards;
 }
-#nextbtn{
+.nextbtn{
     float: right;
     font-size: 1.5em;
     border-radius: 5px;
@@ -118,10 +136,10 @@ body{
     cursor: pointer;
     animation: slide-up 0.5s ease forwards;
 }
-#prevbtn:hover{
+.prevbtn:hover{
     background-color: black;
 }
-#nextbtn:hover{
+.nextbtn:hover{
     background-color: black;
 }
 .opt{
@@ -167,6 +185,7 @@ b{
     padding: 10px;
     border-radius: 10px;
     display: none;
+    box-shadow: 0px 3px 8px gold;
 }
 
 svg {
@@ -199,7 +218,7 @@ svg {
     transform: translate(-50%, -50%);
     font-size: 24px;
     font-weight: bold;
-    color: lightblue;
+    color: gold;
 }
 #resultsheading{
     color: lightblue;
@@ -208,7 +227,7 @@ svg {
     margin-top: 0px;
     animation: slide-up 0.5s ease forwards;
 }
-#scoreDisplay{
+#finalScore{
     font-size: 1.5em;
     color: gold;
     animation: slide-up 0.5s ease forwards;
@@ -240,6 +259,7 @@ svg {
     background-color: black;
     cursor: pointer;
     transition: background-color 1s ease;
+    
 }
 #restartbtn:hover{
     background-color: white;

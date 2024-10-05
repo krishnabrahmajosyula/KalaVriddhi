@@ -16,9 +16,9 @@
             <svg width="150px" height="150px">
                 <defs>
                     <linearGradient id="gradientStroke" gradientTransform="rotate(90)">
-                        <stop offset="0%" stop-color="hsl(33, 91%, 47%)" />
-                        <stop offset="50%" stop-color="white" />
-                        <stop offset="100%" stop-color="green" />
+                        <stop offset="0%" stop-color="hsl(33, 91%, 35%)" />
+                        <stop offset="50%" stop-color="hsl(0, 0%, 80%)" />
+                        <stop offset="100%" stop-color="hsl(120, 100%, 40%)" />
                     </linearGradient>
                 </defs>
                 <!-- Background circle -->
@@ -30,7 +30,7 @@
             <!-- Score text inside the circle -->
             <div class="score-text">0%</div>
         </div>
-        <p id="scoreDisplay">You scored 5/5</p>
+        <p id="finalScore">You scored 5/5</p>
         <div id="nextbtns">
             <button id="restartbtn">Restart</button>
             <button id="leaderboard">Leader Board</button>
@@ -45,6 +45,7 @@
                 <li class="rules1">You have <b>3</b> minutes of time to complete the quiz.</li>
                 <li class="rules1">There are <b>no</b> negative marks each question carries <b>1</b> point.</li>
                 <li class="rules1">Submit your answers once you finish.</li>
+                <li class="rules1"><b>Don't</b> tap reload during the quiz.</li>
             </ul>
             <button id="startbtn">Start Quiz</button>
         </div>
@@ -53,30 +54,142 @@
         <div id="info">
             <p id="timeDisplay">Time Left: 03:00</p>
             <p id="answeredStatus">Answered: 1/5</p>
-        </div>
-        <p id="question">1.What traditional Indian dance form, known for its intricate footwork and expressive gestures, originated in the temples of Tamil Nadu and is often performed by women? </p>
+        </div> 
+        <div id="q1">
+            <p id="question">1.What traditional Indian dance form, known for its intricate footwork and expressive gestures, originated in the temples of Tamil Nadu and is often performed by women? </p>
         <fieldset id="options">
             <legend>Choose an option:</legend>
             
             <label class="opt">
-                <input type="radio" name="danceForm" value="Bharatanatyam" class="danceForm"> Bharatanatyam
+                <input type="radio" name="danceForm" value="opt1" class="danceForm" >
+                <span id="opt1"> Bharatanatyam</span>
             </label><br>
             
             <label class="opt">
-                <input type="radio" name="danceForm" value="Kathak" class="danceForm"> Kathak
+                <input type="radio" name="danceForm" value="opt2" class="danceForm" > <span id="opt2">Kathak</span>
             </label><br>
     
             <label class="opt">
-                <input type="radio" name="danceForm" value="Kathakali" class="danceForm"> Kathakali
+                <input type="radio" name="danceForm" value="opt3" class="danceForm"><span  id="opt3">Kathakali</span> 
             </label><br>
     
             <label class="opt">
-                <input type="radio" name="danceForm" value="Odissi" class="danceForm"> Odissi
+                <input type="radio" name="danceForm" value="opt4" class="danceForm" > <span id="opt4">Odissi</span>
             </label><br>
         </fieldset>
         <br>
-        <button id="prevbtn">Previous</button>
-        <button id="nextbtn">Next</button>
+        <button id="prevbtn1" class="prevbtn">Previous</button>
+        <button id="nextbtn1" class="nextbtn">Next</button>
+        </div>
+
+        <div id="q2">
+            <p id="question">2. What are the key characteristics of the traditional Indian art form known as Madhubani? </p>
+        <fieldset id="options">
+            <legend>Choose an option:</legend>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt1" class="danceForm" >
+                <span id="opt1"> Abstract shapes and monochrome colors</span>
+            </label><br>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt2" class="danceForm" > <span id="opt2">Intricate patterns, vibrant colors, and themes from nature and mythology</span>
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt3" class="danceForm"><span  id="opt3">Use of only natural materials</span> 
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt4" class="danceForm" > <span id="opt4">Focus on three-dimensional sculptures</span>
+            </label><br>
+        </fieldset>
+        <br>
+        <button id="prevbtn2" class="prevbtn">Previous</button>
+        <button id="nextbtn2" class="nextbtn">Next</button>
+        </div>
+
+        <div id="q3">
+            <p id="question">3. Which traditional dance form originates from the state of Andhra Pradesh and is known for its graceful movements and vibrant costumes?</p>
+        <fieldset id="options">
+            <legend>Choose an option:</legend>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt1" class="danceForm" >
+                <span id="opt1"> Bharatanatyam</span>
+            </label><br>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt2" class="danceForm" > <span id="opt2">Kuchipudi</span>
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt3" class="danceForm"><span  id="opt3">Kathak</span> 
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt4" class="danceForm" > <span id="opt4">Garba</span>
+            </label><br>
+        </fieldset>
+        <br>
+        <button id="prevbtn3" class="prevbtn">Previous</button>
+        <button id="nextbtn3" class="nextbtn">Next</button>
+        </div>
+
+        <div id="q4">
+            <p id="question">4. Madhubani painting, characterized by its eye-catching geometrical patterns, comes from which Indian state?</p>
+        <fieldset id="options">
+            <legend>Choose an option:</legend>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt1" class="danceForm" >
+                <span id="opt1"> West Bengal</span>
+            </label><br>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt2" class="danceForm" > <span id="opt2">Bihar</span>
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt3" class="danceForm"><span  id="opt3">Rajasthan</span> 
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt4" class="danceForm" > <span id="opt4">Gujarat</span>
+            </label><br>
+        </fieldset>
+        <br>
+        <button id="prevbtn4" class="prevbtn">Previous</button>
+        <button id="nextbtn4" class="nextbtn">Next</button>
+        </div>
+
+        <div id="q5">
+            <p id="question">5. Pattachitra, an ancient form of scroll painting, is primarily associated with which state?</p>
+        <fieldset id="options">
+            <legend>Choose an option:</legend>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt1" class="danceForm" >
+                <span id="opt1"> Odisha</span>
+            </label><br>
+            
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt2" class="danceForm" > <span id="opt2">Tamil Nadu
+                </span>
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt3" class="danceForm"><span  id="opt3">Kerala</span> 
+            </label><br>
+    
+            <label class="opt">
+                <input type="radio" name="danceForm" value="opt4" class="danceForm" > <span id="opt4">Maharashtra</span>
+            </label><br>
+        </fieldset>
+        <br>
+        <button id="prevbtn5" class="prevbtn">Previous</button>
+        <button id="submit" class="nextbtn">Submit</button>
+        </div>
     </div>  
     <script src="script.js"></script>
 </body>
