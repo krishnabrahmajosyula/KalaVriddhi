@@ -6,10 +6,14 @@ body{
     background-size: cover;
     min-height: 100vh;
     background-attachment: fixed;
-    overflow: hidden;
+    overflow: auto;
     /* backdrop-filter: blur(2px); */
     margin: 20px;
     /* font-family: 'Poppins'; */
+}
+
+body::-webkit-scrollbar{
+    display:none;
 }
 #header{
     border:2px solid gold;
@@ -178,7 +182,7 @@ b{
     color: yellow;
 }
 .circular-score-container {
-    position: fixed;
+    position: absolute;
     width: 350px;
     height: 350px;
     border: 2px solid gold;
