@@ -3,9 +3,10 @@
     padding: 0;
 }
 body{
-    background-color: rgb(73, 9, 9);
+    background-color: rgb(49, 17, 17);
 }
 h1{
+
     text-align: center;
     font-family: cursive;
     color:palegoldenrod;
@@ -26,11 +27,12 @@ h1{
     box-shadow: 1px 5px 8px goldenrod;
 
 }
-
-.mudra-info h2{
+.mudra-info{
+    background-color: rgb(73, 9, 9);
+}
+.mudra-info h2{   
     margin:20px;
 }
-
 .mudra-info h3{
     margin:20px;
 }
@@ -48,6 +50,7 @@ h1{
 }
 
 .mudra-text{
+    background-color: rgb(73, 9, 9);
     display:flex;
     flex-direction: column;
     gap:25px;
