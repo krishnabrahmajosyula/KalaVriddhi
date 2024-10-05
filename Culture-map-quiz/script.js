@@ -45,13 +45,14 @@ function updateAnsweredStatus(){
 }
 
 function startTimer(){
+    clearInterval(timer);
     timer = setInterval(() => {
         timeLeft--; // Decrease the time left by 1 second
         updateTimerDisplay();
-        if(timeLeft==60){
+        if(timeLeft<=60){
             timeDisplay.style.color="yellow";
         }
-        if(timeLeft==20){
+        if(timeLeft<=20){
             timeDisplay.style.color="red";
         }
         if (timeLeft <= 0) {
@@ -71,7 +72,11 @@ function startQuiz(){
     answered=0;
     correctAnswers=0;
     selectedOptions=[null,null,null,null,null];
+    timeLeft=120;
+    // clearInterval(timer);
+    updateTimerDisplay();
     updateAnsweredStatus();
+    
     instructionsBox.style.display="block";
     
     startBtn.addEventListener('click',()=>{
