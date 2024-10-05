@@ -36,6 +36,8 @@ const totalQuestions=5;
 const correctAnswersList = ['opt1', 'opt2', 'opt2', 'opt2', 'opt1'];//correct answers
 let selectedOptions=[null,null,null,null,null];//selected options
 
+answeredStatus.style.fontFamily="poppins";
+answeredStatus.style.fontWeight="600"
 window.onload=()=>{
     startQuiz();
 }
@@ -49,10 +51,10 @@ function startTimer(){
     timer = setInterval(() => {
         timeLeft--; // Decrease the time left by 1 second
         updateTimerDisplay();
-        if(timeLeft<=60){
+        if(timeLeft==60){
             timeDisplay.style.color="yellow";
         }
-        if(timeLeft<=20){
+        if(timeLeft==20){
             timeDisplay.style.color="red";
         }
         if (timeLeft <= 0) {
@@ -73,6 +75,7 @@ function startQuiz(){
     correctAnswers=0;
     selectedOptions=[null,null,null,null,null];
     timeLeft=120;
+    timeDisplay.style.color="green";
     // clearInterval(timer);
     updateTimerDisplay();
     updateAnsweredStatus();

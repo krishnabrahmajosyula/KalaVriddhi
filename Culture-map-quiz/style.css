@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700&display=swap');
 body{
     background-image: url('home.png');
     background-repeat: no-repeat;
@@ -8,6 +9,7 @@ body{
     overflow: hidden;
     /* backdrop-filter: blur(2px); */
     margin: 20px;
+    /* font-family: 'Poppins'; */
 }
 #header{
     border:2px solid gold;
@@ -19,6 +21,7 @@ body{
     animation: scale 0.5s ease forwards;
     transform-origin: top;
     box-shadow: 0px 3px 8px gold;
+    font-family: 'Poppins';
 }
 #heading{
     color: transparent;
@@ -49,7 +52,9 @@ body{
 #instructionsheading{
     color: hsl(191, 74%, 43%);
     font-size: 2em;
+    font-weight: 600;
     animation: slide-up 0.5s ease forwards;
+    font-family: 'poppins';
 }
 #rules{
     font-size: 1.5em;
@@ -154,7 +159,9 @@ input[type="radio"] {
 
 #timeDisplay{
     color: lightgreen;
-    font-size: 1.5em;
+    margin-top: 27px;
+    font-size: 1.8em;
+    font-family: monospace;
     animation: slide-up 0.5s ease forwards;
 }
 #answeredStatus{
