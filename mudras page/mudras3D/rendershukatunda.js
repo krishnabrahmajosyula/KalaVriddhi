@@ -20,4 +20,11 @@ renderEngine.runRenderLoop(()=>{
 
 window.addEventListener("resize", function(){
     renderEngine.resize();
-})
+});
+
+let done=document.querySelector(".done-button");
+done.addEventListener("click",()=>{
+    const Id="shukatunda";
+    localStorage.setItem(Id,"done");
+    alert(`${Id} is marked as done`);
+});

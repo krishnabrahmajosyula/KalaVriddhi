@@ -24,6 +24,7 @@ body {
     background-color:#0F0303;
     border-radius: 15px;
     box-shadow: 0 0px 16px rgb(193, 135, 1);
+    position: relative;
 }
 
 .title {
@@ -201,4 +202,23 @@ p {
     .title {
         font-size: 2rem;
     }
+}
+.progress{
+    position: absolute;
+    right:15px;
+    /* border:2px solid white; */
+    width: 350px;
+    height: 50px;
+    border-radius: 0.9rem;
+    box-shadow: 5px 5px 4px goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar{
+    height:20px;
+    background-color: gold;
+    width:0%;
+    transition: width 0.3s;
 }
