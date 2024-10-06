@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../mid sem"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "webdevelopmentproject"
+	}
+}
