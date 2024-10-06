@@ -22,9 +22,9 @@ window.addEventListener("resize", function(){
     renderEngine.resize();
 });
 
-let done=document.querySelector(".done-button");
+let done=document.getElementById("done-button");
 done.addEventListener("click",()=>{
     const Id="tripataka";
     localStorage.setItem(Id,"done");
-    alert(`${Id} is marked as done`);
+    alert(`${Id.toLocaleUpperCase()} is marked done`);
 });
