@@ -3,9 +3,9 @@ An e-commerce platform that connects the HandiCrafts and Cottage workers to cust
 
 # Team:-
 
-Aryan Chauhan - CS23B003
+Aryan Chauhan - CS23B009
 
-Akshat Kumar - CS23B009
+Akshat Kumar - CS23B003
 
 Anvay Joshi - CS23B060
 
