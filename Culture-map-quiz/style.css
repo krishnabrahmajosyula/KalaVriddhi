@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700&display=swap');
+body{
+    background-image: url('home.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+    overflow: auto;
+    /* backdrop-filter: blur(2px); */
+    margin: 20px;
+    /* font-family: 'Poppins'; */
+}
+
+body::-webkit-scrollbar{
+    display:none;
+}
+#header{
+    border:2px solid gold;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    animation: scale 0.5s ease forwards;
+    transform-origin: top;
+    box-shadow: 0px 3px 8px gold;
+    font-family: 'Poppins';
+}
+#heading{
+    color: transparent;
+    background: linear-gradient(90deg, hsl(33, 91%, 47%),white,green); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'poppins';
+}
+#quizContainer{
+    border:2px solid gold;
+    margin: 20px;
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px gold;
+    display: none;
+}
+#instructions{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    
+}
+#instructionsheading{
+    color: hsl(191, 74%, 43%);
+    font-size: 2em;
+    font-weight: 600;
+    animation: slide-up 0.5s ease forwards;
+    font-family: 'poppins';
+}
+#rules{
+    font-size: 1.5em;
+    padding: 5px;
+    margin-bottom: 10px;
+    animation: slide-up 0.5s ease forwards;
+}
+.rules1{
+    margin-bottom: 20px;
+}
+#instructions button{
+    font-size: 2em;
+    cursor: pointer;
+    color: green;
+    background-color: transparent;
+    border: 1.5px solid lightblue;
+    transition: background-color 1s ease;
+    border-radius: 5px;
+    animation: slide-up 0.5s ease forwards;
+}
+#instructions button:hover{
+    background-color: white;
+}
+#questionContainer{
+    border:2px solid gold;
+    margin: 20px;
+    flex: 1;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 3px 8px gold;
+    display: none;
+}
+#q1{
+    display: none;
+}
+#q2{
+    display: none;
+}
+#q3{
+    display: none;
+}
+#q4{
+    display: none;
+}
+#q5{
+    display: none;
+}
+#question{
+    color: transparent;
+    font-size: 1.5em;
+    font-weight: 500;
+    background: linear-gradient(90deg, hsl(33, 91%, 47%),white,green); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: slide-up 0.5s ease forwards;
+}
+#options{
+    color: lightblue;
+    font-size: 1.5em;
+    animation: slide-up 0.5s ease forwards;
+}
+.danceForm{
+    margin-bottom: 20px;
+}
+.prevbtn{
+    font-size: 1.5em;
+    border-radius: 5px;
+    color: rgb(255, 102, 0);
+    padding: 8px;
+    border: 1px solid blue;
+    cursor: pointer;
+    animation: slide-up 0.5s ease forwards;
+}
+.nextbtn{
+    float: right;
+    font-size: 1.5em;
+    border-radius: 5px;
+    color: green;
+    padding: 8px;
+    border: 1px solid blue;
+    cursor: pointer;
+    animation: slide-up 0.5s ease forwards;
+}
+.prevbtn:hover{
+    background-color: black;
+}
+.nextbtn:hover{
+    background-color: black;
+}
+.opt{
+    width: 100%; /* Full width of the option */
+    box-sizing: border-box; /* Include padding and border in the width */
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+input[type="radio"] {
+    margin-right: 10px; 
+}
+
+#timeDisplay{
+    color: lightgreen;
+    margin-top: 27px;
+    font-size: 1.8em;
+    font-family: monospace;
+    animation: slide-up 0.5s ease forwards;
+}
+#answeredStatus{
+    color: lightblue;
+    font-size: 1.5em;
+    animation: slide-up 0.5s ease forwards;
+}
+#info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+b{
+    color: yellow;
+}
+.circular-score-container {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 2px solid gold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0px 3px 8px gold;
+}
+
+svg {
+    transform: rotate(-90deg); /* Rotate to start the circle from the top */
+    width: 100%;
+    height: 100%;
+}
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 10;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke: url(#gradientStroke);
+    stroke-dasharray: 440; /* Circumference of the circle */
+    stroke-dashoffset: 440; /* Start at zero progress */
+    transition: stroke-dashoffset 1s ease-out; /* Smooth animation */
+    margin-bottom: 5px;
+}
+
+.score-text {
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: gold;
+}
+#resultsheading{
+    color: lightblue;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0px;
+    animation: slide-up 0.5s ease forwards;
+}
+#finalScore{
+    font-size: 1.5em;
+    color: gold;
+    animation: slide-up 0.5s ease forwards;
+}
+#nextbtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+#restartbtn{
+    font-size: 1.5em;
+    float: left;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: 1px solid gold;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+#leaderboard{
+    font-size: 1.5em;
+    float: right;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: 1px solid gold;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: background-color 1s ease;
+    
+}
+#restartbtn:hover{
+    background-color: white;
+    color: black;
+}
+#leaderboard:hover{
+    background-color: white;
+    color: black;
+}
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 20%); /* Start below its original position */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translate(0, 0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End in its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
