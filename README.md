@@ -1,4 +1,4 @@
-# DesiBazaar
+# KalaVriddhi
 A website to learn about the culture and rich heritage of india through 3d visuals, itneractive learning experience and gamified quizzes and modules, with a bharanatyam dance simulator.
 
 # Team:-
