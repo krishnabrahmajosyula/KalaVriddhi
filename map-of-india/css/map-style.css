@@ -22,7 +22,7 @@ body {
 /* for the map title */
 #mapTitle {
   font-size: 60px;
-  color: white;
+  color: gold;
   text-align: center;
   font-weight: bold;
   margin: 20px 0; 
@@ -34,7 +34,7 @@ body {
   margin-top: 30px;
   margin-right: 20px;
   margin-left: 20px;
-  color: yellow;
+  color:yellowgreen ;
   text-align: center;
   font-weight: bold;
   font-family: "Poppins", sans-serif;

@@ -21,12 +21,19 @@ body {
 
 h1 {
     font-size: 2.5em;
-    color: white; 
+    color: gold;
     margin-bottom: 10px; 
+}
+h2{
+     
+        font-size: 1.5em; 
+        color: rgba(212, 125, 2, 0.9);
+        line-height: 1.5; 
+    
 }
 
 p {
     font-size: 1.2em; 
-    color: grey; 
+    color:yellowgreen;
     line-height: 1.5; 
 }

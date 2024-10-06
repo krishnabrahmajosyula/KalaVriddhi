@@ -5,12 +5,14 @@
   <title>State Information</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
   <link href="css/state-info.css" rel="stylesheet" type="text/css"/>
-  <script src="js/map-config.js"></script>
+  <script src="js/map-config.js" defer></script>
 </head>
 <body>
     <div id="state-info">
         <h1 id="state-title"></h1>
-        <p id="state-description"></p>
+        <div id="art-forms-container">
+            <!-- Art forms will be dynamically inserted here -->
+        </div>
     </div>
     <script>
       // Function to get query parameters
@@ -28,11 +30,41 @@
         .then(stateInfo => {
           const info = stateInfo[state];
           if (info) {
-            document.getElementById("state-title").innerText = info.title;
-            document.getElementById("state-description").innerText = info.description;
+            // Set the title to display the state's name
+            document.getElementById("state-title").innerText = `Art Forms of ${info.title}`; 
+
+            const artContainer = document.getElementById("art-forms-container");
+
+            // Check if there are art forms
+            if (info.artForms && info.artForms.length > 0) {
+              info.artForms.forEach(art => {
+                const artCard = document.createElement("div");
+                artCard.classList.add("art-card");
+
+                // Create an h2 element for the art form name
+                const artName = document.createElement("h2");
+                artName.innerText = art.name; // Set the art form name
+                artCard.appendChild(artName);
+
+                // Create a p element for the art form description
+                const artDescription = document.createElement("p");
+                artDescription.innerText = art.description; // Set the art form description
+                artCard.appendChild(artDescription);
+
+                // Append the art card to the art forms container
+                artContainer.appendChild(artCard);
+              });
+            } else {
+              const message = document.createElement("p");
+              message.innerText = "No art forms available for this state.";
+              artContainer.appendChild(message);
+            }
           } else {
             document.getElementById("state-title").innerText = "State Not Found";
-            document.getElementById("state-description").innerText = "No information available.";
+            const artContainer = document.getElementById("art-forms-container");
+            const message = document.createElement("p");
+            message.innerText = "No information available.";
+            artContainer.appendChild(message);
           }
         })
         .catch(error => {
