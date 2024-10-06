@@ -6,6 +6,8 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center;
+    background-position: center;
+    background-attachment: fixed;
      
 }
 
