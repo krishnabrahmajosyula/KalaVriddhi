@@ -10,10 +10,10 @@ const mudras = {
         description: "A hand gesture symbolizing a crown or a tree. It is often used to depict thunderbolt or arrows.",
         image: "images/tripataka.jpeg"
     },
-    ardhapataka: {
-        title: "Ardhapataka",
-        description: "This mudra symbolizes half of a flag. It is used to express the bank of a river or leaves.",
-        image: "images/ardhapataka.jpg"
+    simhamukha: {
+        title: "Simhamukha",
+        description: "This mudra symbolizes  representing division, balance, or unity in duality.",
+        image: "images/simhamukha.jpeg"
     },
     kartarimukha: {
         title: "Kartarimukha",
