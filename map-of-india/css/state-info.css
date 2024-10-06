@@ -17,18 +17,24 @@ body {
     padding: 20px;
     max-width: 600px; 
     text-align: center; 
+    animation: slideInDown 1s ease-out forwards;
 }
 
 h1 {
     font-size: 2.5em;
     color: gold;
     margin-bottom: 10px; 
+    animation: slideInLeft 1s ease-out 0.5s forwards; /* Delayed slide-in from left */
+    opacity: 0; 
+    
 }
 h2{
      
         font-size: 1.5em; 
         color: rgba(212, 125, 2, 0.9);
         line-height: 1.5; 
+        animation: slideInRight 1s ease-out 0.7s forwards; /* Delayed slide-in from right */
+        opacity: 0;
     
 }
 
@@ -36,4 +42,51 @@ p {
     font-size: 1.2em; 
     color:yellowgreen;
     line-height: 1.5; 
+    animation: slideInUp 1s ease-out 0.9s forwards; /* Delayed slide-in from bottom */
+    opacity: 0;
+    
 }
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
