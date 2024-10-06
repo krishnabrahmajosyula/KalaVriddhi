@@ -39,7 +39,7 @@ var tryjsconfig = {
     "tryjs5": {
       "hover": "Tripura",
       "url": "state-info.html?state=Tripura",
-      "target": "modal",
+      "target": "new_window",
       "upColor": "#FFFFF3",
       "overColor": "#ECFFB3",
       "downColor": "#cae9af",
@@ -332,7 +332,10 @@ var tryjsconfig = {
       "overColor": "#ECFFB3",
       "downColor": "#cae9af",
       "active": true
+      
     }, 
+    
+    
   
   "general":{
     "borderColor": "#9CA8B6",
