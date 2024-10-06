@@ -12,27 +12,30 @@
         <p id="mainHeading">Welcome back to KalaVriddhi</p>
     </header>
     <div id="loginBox">
-        <p id="heading">Login</p>
-        <!-- Username with user icon -->
-        <div class="input-container">
-            <i class="fas fa-user"></i>
-            <input id="username" placeholder="Username" autocomplete="off">
-        </div>
-        <br>
+        <form method="post" class="login-form" id="loginForm">
+            <p id="heading">Login</p>
+            <!-- Username with user icon -->
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input id="username" type="text" placeholder="Username" autocomplete="off" required>
+            </div>
+            <br>
 
-        <!-- Password with eye toggle icon -->
-        <div class="input-container">
-            <input id="password" type="password" placeholder="Password" autocomplete="off">
-            <i class="fas fa-eye" id="togglePassword"></i>
-        </div>
-        
-        <label id="remember">
-            <input type="checkbox" id="remember">
-            Remember me
-        </label>
-        <br>
-        <button id="login">Login</button>
-        <p>Don't have an account? <a href="../homepage/signin/signin.html" style="color: gold;" target="_self">Sign in</a></p>
+            <!-- Password with eye toggle icon -->
+            <div class="input-container">
+                <input id="password" type="password" placeholder="Password" autocomplete="off" required>
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </div>
+            <br>
+            <label id="remember">
+                <input type="checkbox" id="remember">
+                Remember me
+            </label>
+            <br>
+            <br>
+            <button id="login">Login</button>
+            <p>Don't have an account? <a href="../homepage/signin/signin.html" style="color: gold;" target="_self">Sign in</a></p>
+        </form>
     </div>
     <script src="script.js"></script>
 </body>

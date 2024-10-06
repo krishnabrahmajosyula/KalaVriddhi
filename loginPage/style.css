@@ -28,6 +28,8 @@ body::-webkit-scrollbar{
     transform: translate(-50%, -50%);
     padding: 10px 10px;
     border-radius: 15px;
+    animation: wave 0.5s ease forwards;
+    transform-origin: center;
 }
 #mainHeading{
     font-size: 2.5em;
@@ -38,7 +40,7 @@ body::-webkit-scrollbar{
     background-clip: text;
     -webkit-background-clip: text; /* For Safari */
     color: transparent;
-    animation: gradientAnimation 3s ease-in-out infinite;
+    animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
 }
 #heading{
     font-size: 2em;
@@ -49,7 +51,7 @@ body::-webkit-scrollbar{
     background-clip: text;
     -webkit-background-clip: text; /* For Safari */
     color: transparent;
-    animation: gradientAnimation 3s ease-in-out infinite;
+    animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
 }
 @keyframes gradientAnimation {
     0% {
@@ -73,6 +75,8 @@ body::-webkit-scrollbar{
     align-items: center;
     border: 1px solid ;
     transition: background-color 0.5s ease,color 0.5s ease;
+    animation: slide-up 0.5s ease forwards;
+    cursor: pointer;
 }
 #login:hover{
     color: black;
@@ -87,6 +91,7 @@ body::-webkit-scrollbar{
     padding: 10px;
     margin-bottom: 10px;
     outline: none; /* Remove outline when input is focused */
+    animation: slide-up 0.5s ease forwards;
 }
 #password + i {
     right: 10px;
@@ -109,6 +114,7 @@ body::-webkit-scrollbar{
 #remember{
     font-size: 20px;
     color: lightblue;
+    animation: slide-up 0.5s ease forwards;
 }
 .input-container {
     position: relative; /* Allows positioning of the icon inside */
@@ -121,4 +127,47 @@ body::-webkit-scrollbar{
     transform: translateY(-50%); /* Center the icon vertically */
     color: gold; /* Adjust icon color */
     cursor: pointer; /* Change cursor to pointer */
+}
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 20%); /* Start below its original position */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translate(0, 0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes wave {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translate(-50%, -60%) scale(0.5); /* Scale down */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+        transform: translate(-50%, -50%) scale(1.05); /* Scale up a bit */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Set to final position */
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End in its original position */
+        opacity: 1; /* Fully visible */
+    }
 }
