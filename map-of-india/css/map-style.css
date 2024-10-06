@@ -1,0 +1,119 @@
+﻿
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+#mapwrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 0;
+  background-color: black;
+  min-width: 220px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+/* for the map title */
+#mapTitle {
+  font-size: 60px;
+  color: gold;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0; 
+  font-family: "Poppins", sans-serif;
+}
+/* for map description */
+.mapdesc{
+  font-size: 20px;
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
+  color:yellowgreen ;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+#mapwrapper {
+  margin-top: 50px; 
+}
+
+#visnames {
+  font-size: 16px;
+}
+#mapbase svg {
+  max-height: 100%;
+  width: 100%;
+  margin: 0;
+  -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, 0.2) ); 
+    filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, 0.2) );
+}
+#tryjstip {
+  font: 14px/16px Trebuchet MS, Helvetica, Arial, sans-serif;
+  display: none;
+  max-width: 40%;
+  padding: 5px;
+  border: 1px solid #404040;
+  color: #404040;
+  z-index: 1000;
+  float: left;
+  position: absolute;
+  background: rgba(265, 265, 265, 0.9);
+  word-break: keep-all;
+  box-shadow:1px 2px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:1px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow:1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#tryjstip p {
+  margin: 0!important;
+  color: #404040!important;
+}
+#tryjstip img {
+  float: left;
+  padding: 3px;
+  max-width: 100%;
+}
+@media screen and (max-width: 320px){
+  #mapbase svg {
+    height:270px;
+  }
+}
+@media screen and (max-width: 400px) and (min-width: 321px) {
+  #mapbase svg {
+    height:320px;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 401px) {
+  #mapbase svg {
+    height:400px;
+  }
+}
+@media screen and (max-width: 568px) and (min-width: 481px) {
+  #mapbase svg {
+    height:480px;
+  }
+}
+@media screen and (max-width: 685px) and (min-width: 569px) {
+  #mapbase svg {
+    height:550px;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 686px) {
+  #mapbase svg {
+    height:560px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #mapbase svg {
+    height:590px;
+  }
+}
+/* THIS IS TO HIDE AN AREA IF NEEDED
+#tryjs2, #tryjsvn2 {
+  display: none;
+}*/

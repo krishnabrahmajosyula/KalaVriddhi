@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     /* background: linear-gradient(135deg, #ffb3ba, #ffdfba); */
     background-color: rgb(0, 0, 0);
     display: flex;
@@ -25,14 +26,17 @@ body {
     box-shadow: 0 0px 16px rgb(193, 135, 1);
     position: relative;
 }
-
+.container .title{
+    font-size: 8rem;
+}
 .title {
-    font-size: 3rem;
+    font-size: 4rem;
     /* color: #333; */
     color: gold;
     margin-bottom: 20px;
     font-weight: bold;
     animation: slideInFromTop 1s ease-in-out;
+
 }
 .res{
     animation: slideInFromTop 1s ease-in-out;
@@ -57,9 +61,12 @@ body {
 
 .mudra h2{
     color:goldenrod;
+    font-size: 30px;
 }
 .mudra p{
     color:yellowgreen;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .mudra:hover {

@@ -1,0 +1,779 @@
+{
+  "Andhra Pradesh": {
+    "title": "Andhra Pradesh",
+    "artForms": [
+      {
+        "name": "Kuchipudi",
+        "description": "A classical dance form known for its graceful movements and expressive storytelling."
+      },
+      {
+        "name": "Gurrapu Kallu",
+        "description": "A traditional folk dance performed during festivals, characterized by rhythmic footwork."
+      },
+      {
+        "name": "Pavurudu",
+        "description": "A folk theatre form that combines dance, music, and dialogue to depict social themes."
+      },
+      {
+        "name": "Nandi Thandavam",
+        "description": "A dance performed to honor the deity Nandi, the bull mount of Lord Shiva."
+      },
+      {
+        "name": "Tholu Bommalata",
+        "description": "A shadow puppet theatre art that narrates mythological stories through intricate puppets."
+      }
+    ]
+  },
+  "Arunachal Pradesh": {
+    "title": "Arunachal Pradesh",
+    "artForms": [
+      {
+        "name": "Sowa Monpa Dham",
+        "description": "A traditional dance performed by the Monpa community, showcasing their cultural heritage."
+      },
+      {
+        "name": "Ponung Dance",
+        "description": "A folk dance performed during harvest festivals with energetic movements and vibrant costumes."
+      },
+      {
+        "name": "Chuti",
+        "description": "A mask dance that depicts various deities and spirits, performed during religious ceremonies."
+      },
+      {
+        "name": "Gomed Dance",
+        "description": "A dance of the Apatani tribe, characterized by swift movements and intricate footwork."
+      },
+      {
+        "name": "Nyibu Dance",
+        "description": "A ceremonial dance performed by the Nyishi tribe during community gatherings."
+      }
+    ]
+  },
+  "Assam": {
+    "title": "Assam",
+    "artForms": [
+      {
+        "name": "Bihu",
+        "description": "The most popular folk dance of Assam, performed during the Bihu festival to celebrate the Assamese New Year."
+      },
+      {
+        "name": "Sattriya",
+        "description": "A classical dance form originating from the Vaishnavite monasteries, known for its graceful movements."
+      },
+      {
+        "name": "Bagurumba",
+        "description": "A traditional dance of the Bodo community, featuring colorful attire and rhythmic steps."
+      },
+      {
+        "name": "Jhumur",
+        "description": "A folk dance performed by tea garden workers, characterized by lively movements and upbeat music."
+      },
+      {
+        "name": "Deodhani",
+        "description": "A ritual dance performed during religious ceremonies to invoke divine blessings."
+      }
+    ]
+  },
+  "Bihar": {
+    "title": "Bihar",
+    "artForms": [
+      {
+        "name": "Bidesia",
+        "description": "A folk theatre form that portrays the lives of migrant workers and social issues."
+      },
+      {
+        "name": "Jhijhiya",
+        "description": "A traditional dance performed by women during festivals, involving swinging pots on their heads."
+      },
+      {
+        "name": "Chhau Dance",
+        "description": "A masked dance that combines martial arts, acrobatics, and storytelling."
+      },
+      {
+        "name": "Bhojpuri Folk Music",
+        "description": "A vibrant genre of music that reflects the cultural heritage of Bihar."
+      },
+      {
+        "name": "Manjhi",
+        "description": "A dance performed during the Manjhi festival, celebrating local traditions and folklore."
+      }
+    ]
+  },
+  "Chhattisgarh": {
+    "title": "Chhattisgarh",
+    "artForms": [
+      {
+        "name": "Panthi Dance",
+        "description": "A folk dance performed by the Satnami community, characterized by rhythmic steps and drumming."
+      },
+      {
+        "name": "Raut Nacha",
+        "description": "A dance form performed by the Yadava community, symbolizing cattle herding and agricultural life."
+      },
+      {
+        "name": "Saila",
+        "description": "A dance performed by the Saila tribe, involving graceful movements and traditional music."
+      },
+      {
+        "name": "Karma Dance",
+        "description": "A dance performed during the Karma festival, celebrating the harvest and agricultural prosperity."
+      },
+      {
+        "name": "Gendi Dance",
+        "description": "A folk dance performed by the Gond tribe, featuring intricate footwork and vibrant attire."
+      }
+    ]
+  },
+  "Goa": {
+    "title": "Goa",
+    "artForms": [
+      {
+        "name": "Dhalo",
+        "description": "A traditional dance performed during harvest festivals, featuring energetic movements and drumming."
+      },
+      {
+        "name": "Fugdi",
+        "description": "A folk dance performed by women, involving circular movements and rhythmic clapping."
+      },
+      {
+        "name": "Khella",
+        "description": "A dance performed during the harvest season, showcasing communal participation and joy."
+      },
+      {
+        "name": "Tiatr",
+        "description": "A popular form of musical theatre in Goa, known for its humorous dialogues and social themes."
+      },
+      {
+        "name": "Deknni",
+        "description": "A lively dance form that blends Indian and Western styles, popular in Goan nightlife."
+      }
+    ]
+  },
+  "Gujarat": {
+    "title": "Gujarat",
+    "artForms": [
+      {
+        "name": "Garba",
+        "description": "A traditional dance performed during Navratri, involving circular movements and clapping."
+      },
+      {
+        "name": "Dandiya Raas",
+        "description": "A dance form using sticks, performed in pairs during festive occasions."
+      },
+      {
+        "name": "Bhavai",
+        "description": "A folk theatre form that combines dance, music, and satire to comment on social issues."
+      },
+      {
+        "name": "Tippani",
+        "description": "A traditional dance performed by fishermen, reflecting their daily life and work."
+      },
+      {
+        "name": "Kutch Embroidery",
+        "description": "An intricate embroidery art form known for its vibrant colors and geometric patterns."
+      }
+    ]
+  },
+  "Haryana": {
+    "title": "Haryana",
+    "artForms": [
+      {
+        "name": "Ghoomar",
+        "description": "A traditional folk dance performed by women, characterized by graceful twirls and vibrant attire."
+      },
+      {
+        "name": "Dhamal",
+        "description": "A vigorous folk dance performed during festivals, involving energetic movements and singing."
+      },
+      {
+        "name": "Phag Dance",
+        "description": "A spring festival dance celebrating the harvest season with colorful costumes."
+      },
+      {
+        "name": "Saang",
+        "description": "A folk theatre form that narrates local legends and stories through dialogue and music."
+      },
+      {
+        "name": "Khoria",
+        "description": "A traditional dance performed by the Jat community, involving coordinated group movements."
+      }
+    ]
+  },
+  "Himachal Pradesh": {
+    "title": "Himachal Pradesh",
+    "artForms": [
+      {
+        "name": "Nati",
+        "description": "A traditional dance form involving group choreography and folk music, popular in the hills."
+      },
+      {
+        "name": "Lahul Dance",
+        "description": "A vibrant dance performed by the people of Lahul, featuring colorful costumes and rhythmic steps."
+      },
+      {
+        "name": "Chamba Rumal",
+        "description": "A traditional embroidery art that involves intricate patterns on handkerchiefs."
+      },
+      {
+        "name": "Ghaomo",
+        "description": "A folk dance performed during weddings and festivals, known for its lively tempo."
+      },
+      {
+        "name": "Lullian",
+        "description": "A traditional dance that mimics the movements of animals, performed during harvest celebrations."
+      }
+    ]
+  },
+  "Jharkhand": {
+    "title": "Jharkhand",
+    "artForms": [
+      {
+        "name": "Chhau Dance",
+        "description": "A masked dance form that combines martial arts and storytelling, depicting mythological tales."
+      },
+      {
+        "name": "Domkach",
+        "description": "A folk dance performed during weddings, characterized by synchronized group movements."
+      },
+      {
+        "name": "Jhumar",
+        "description": "A traditional dance involving graceful steps and rhythmic clapping, popular among tribal communities."
+      },
+      {
+        "name": "Tusu",
+        "description": "A folk song and dance performed during the harvest season, celebrating agricultural bounty."
+      },
+      {
+        "name": "Paika Dance",
+        "description": "A dance performed by warriors, showcasing their valor and martial skills."
+      }
+    ]
+  },
+  "Karnataka": {
+    "title": "Karnataka",
+    "artForms": [
+      {
+        "name": "Yakshagana",
+        "description": "A classical dance-drama combining music, dance, and dialogue to depict epics."
+      },
+      {
+        "name": "Kummi",
+        "description": "A traditional dance performed by women, involving rhythmic clapping and synchronized steps."
+      },
+      {
+        "name": "Dollu Kunitha",
+        "description": "A vigorous drum dance performed by men, accompanied by traditional music."
+      },
+      {
+        "name": "Veeragase",
+        "description": "A folk dance that portrays heroic tales and myths through dynamic movements."
+      },
+      {
+        "name": "Bharatanatyam",
+        "description": "A classical dance form known for its intricate footwork and expressive gestures."
+      }
+    ]
+  },
+  "Kerala": {
+    "title": "Kerala",
+    "artForms": [
+      {
+        "name": "Kathakali",
+        "description": "A classical dance-drama known for its elaborate costumes and detailed gestures."
+      },
+      {
+        "name": "Theyyaattam",
+        "description": "A ritualistic dance form that narrates myths and folklore through expressive movements."
+      },
+      {
+        "name": "Mohiniyattam",
+        "description": "A graceful classical dance known for its flowing movements and feminine grace."
+      },
+      {
+        "name": "Kalaripayattu",
+        "description": "An ancient martial art form that combines combat techniques with dance-like movements."
+      },
+      {
+        "name": "Chakyar Koothu",
+        "description": "A traditional performance art that involves storytelling through mime and dialogue."
+      }
+    ]
+  },
+  "Madhya Pradesh": {
+    "title": "Madhya Pradesh",
+    "artForms": [
+      {
+        "name": "Gond Dance",
+        "description": "A vibrant dance performed by the Gond tribe, featuring intricate footwork and colorful attire."
+      },
+      {
+        "name": "Khyal",
+        "description": "A classical form of Hindustani music, known for its improvisational style."
+      },
+      {
+        "name": "Raslila",
+        "description": "A traditional dance-drama depicting the life and love of Lord Krishna."
+      },
+      {
+        "name": "Bhavai",
+        "description": "A folk theatre form that combines dance, music, and satire to comment on social issues."
+      },
+      {
+        "name": "Kalbeliya Dance",
+        "description": "A mesmerizing dance performed by the Kalbeliya community, known for its twirling movements."
+      }
+    ]
+  },
+  "Maharashtra": {
+    "title": "Maharashtra",
+    "artForms": [
+      {
+        "name": "Lavani",
+        "description": "A traditional dance known for its powerful rhythm and expressive storytelling."
+      },
+      {
+        "name": "Tamasha",
+        "description": "A folk theatre form that combines music, dance, and drama to entertain audiences."
+      },
+      {
+        "name": "Dhangari Gaja",
+        "description": "A dance performed by shepherds, celebrating their livelihood and traditions."
+      },
+      {
+        "name": "Kolhapuri Lambadi",
+        "description": "A dance performed by the Lambadi community, featuring colorful costumes and dynamic movements."
+      },
+      {
+        "name": "Powada",
+        "description": "A traditional form of storytelling through song, narrating heroic tales and historical events."
+      }
+    ]
+  },
+  "Manipur": {
+    "title": "Manipur",
+    "artForms": [
+      {
+        "name": "Manipuri Dance",
+        "description": "A classical dance form known for its graceful movements and devotional themes."
+      },
+      {
+        "name": "Thang Ta",
+        "description": "A martial art form that combines swordsmanship with dance-like movements."
+      },
+      {
+        "name": "Pung Cholom",
+        "description": "A traditional drum dance performed to showcase rhythm and coordination."
+      },
+      {
+        "name": "Raas Leela",
+        "description": "A dance drama that narrates the divine love story of Lord Krishna and Radha."
+      },
+      {
+        "name": "Sagol Kangjei",
+        "description": "An ancient form of polo, blending sportsmanship with cultural rituals."
+      }
+    ]
+  },
+  "Meghalaya": {
+    "title": "Meghalaya",
+    "artForms": [
+      {
+        "name": "Shad Suk Mynsiem",
+        "description": "A traditional dance performed during harvest festivals, featuring coordinated group movements."
+      },
+      {
+        "name": "Wangala",
+        "description": "A harvest dance performed by the Garo tribe, symbolizing prosperity and community spirit."
+      },
+      {
+        "name": "Bamboo Dance",
+        "description": "A folk dance that incorporates bamboo instruments and rhythmic movements."
+      },
+      {
+        "name": "Kadhi Khuwa",
+        "description": "A dance performed by women, involving rhythmic clapping and graceful steps."
+      },
+      {
+        "name": "Laiphad Dance",
+        "description": "A traditional dance performed during festivals, showcasing the cultural heritage of the Khasi tribe."
+      }
+    ]
+  },
+  "Mizoram": {
+    "title": "Mizoram",
+    "artForms": [
+      {
+        "name": "Cheraw Dance",
+        "description": "Also known as the bamboo dance, featuring dancers moving between clashing bamboo poles."
+      },
+      {
+        "name": "Khuallam",
+        "description": "A folk dance performed during celebrations, involving coordinated group movements and singing."
+      },
+      {
+        "name": "Seraileite Dance",
+        "description": "A traditional dance that narrates historical and cultural stories through expressive gestures."
+      },
+      {
+        "name": "Kawlram Dance",
+        "description": "A dance performed during festivals, showcasing the cultural diversity of the Mizoram people."
+      },
+      {
+        "name": "Lumilang Dance",
+        "description": "A traditional dance involving synchronized steps and vibrant costumes, performed during community gatherings."
+      }
+    ]
+  },
+  "Nagaland": {
+    "title": "Nagaland",
+    "artForms": [
+      {
+        "name": "Naga Folk Dance",
+        "description": "A collective term for various tribal dances performed during festivals and ceremonies."
+      },
+      {
+        "name": "Cheraw Dance",
+        "description": "A traditional bamboo dance performed by the Mizo tribe, involving swift footwork and coordination."
+      },
+      {
+        "name": "Tshang Kham",
+        "description": "A martial dance that combines combat techniques with rhythmic movements."
+      },
+      {
+        "name": "Moirang Sai",
+        "description": "A dance-drama that depicts historical and mythological stories of the Naga tribes."
+      },
+      {
+        "name": "Tangkhul Dance",
+        "description": "A dance performed by the Tangkhul tribe, showcasing their rich cultural heritage."
+      }
+    ]
+  },
+  "Odisha": {
+    "title": "Odisha",
+    "artForms": [
+      {
+        "name": "Odissi",
+        "description": "A classical dance form known for its fluid movements and expressive gestures."
+      },
+      {
+        "name": "Gotipua",
+        "description": "A traditional dance performed by young boys dressed as women, serving as a precursor to Odissi."
+      },
+      {
+        "name": "Chhau Dance",
+        "description": "A masked dance that combines martial arts, acrobatics, and storytelling."
+      },
+      {
+        "name": "Ghumura Dance",
+        "description": "A folk dance performed with drum-like instruments, showcasing strength and agility."
+      },
+      {
+        "name": "Keli Dance",
+        "description": "A devotional dance performed during religious ceremonies, celebrating local deities."
+      }
+    ]
+  },
+  "Punjab": {
+    "title": "Punjab",
+    "artForms": [
+      {
+        "name": "Bhangra",
+        "description": "A lively folk dance celebrating the harvest, characterized by energetic movements and vibrant costumes."
+      },
+      {
+        "name": "Giddha",
+        "description": "A traditional dance performed by women, involving rhythmic clapping and expressive gestures."
+      },
+      {
+        "name": "Jhumar",
+        "description": "A graceful dance performed by both men and women, featuring swirling movements and coordinated steps."
+      },
+      {
+        "name": "Sammi",
+        "description": "A folk dance celebrating the bond between brothers and sisters, performed during festivals."
+      },
+      {
+        "name": "Luddi",
+        "description": "A dance performed by men, involving coordinated movements and playful interactions."
+      }
+    ]
+  },
+  "Rajasthan": {
+    "title": "Rajasthan",
+    "artForms": [
+      {
+        "name": "Ghoomar",
+        "description": "A traditional folk dance performed by women, characterized by graceful circular movements and vibrant attire."
+      },
+      {
+        "name": "Kalbeliya Dance",
+        "description": "A mesmerizing dance performed by the Kalbeliya community, known for its twirling movements and snake-like grace."
+      },
+      {
+        "name": "Chari Dance",
+        "description": "A dance performed using decorated carts (chari), showcasing vibrant colors and lively rhythms."
+      },
+      {
+        "name": "Kachhi Ghodi Dance",
+        "description": "A dance that mimics horse movements, performed by male dancers wearing elaborate costumes."
+      },
+      {
+        "name": "Bhavai",
+        "description": "A folk theatre form that combines dance, music, and satire to comment on social issues."
+      }
+    ]
+  },
+  "Sikkim": {
+    "title": "Sikkim",
+    "artForms": [
+      {
+        "name": "Mask Dance",
+        "description": "A traditional dance involving colorful masks that represent various deities and spirits."
+      },
+      {
+        "name": "Lhumka Dance",
+        "description": "A folk dance performed by women, featuring synchronized movements and rhythmic clapping."
+      },
+      {
+        "name": "Sakela Dance",
+        "description": "A dance performed during the Sakela festival, celebrating agricultural prosperity and community spirit."
+      },
+      {
+        "name": "Gurung Dance",
+        "description": "A dance performed by the Gurung community, showcasing their cultural heritage and traditions."
+      },
+      {
+        "name": "Nombu Dance",
+        "description": "A traditional dance performed by monks in monasteries, involving graceful movements and chants."
+      }
+    ]
+  },
+  "Tamil Nadu": {
+    "title": "Tamil Nadu",
+    "artForms": [
+      {
+        "name": "Bharatanatyam",
+        "description": "A classical dance form known for its intricate footwork, expressive gestures, and storytelling."
+      },
+      {
+        "name": "Kuchipudi",
+        "description": "A classical dance form originating from Andhra Pradesh but widely performed in Tamil Nadu, known for its graceful movements."
+      },
+      {
+        "name": "Karagattam",
+        "description": "A traditional dance performed on a pot (karagam), showcasing balance and rhythmic movements."
+      },
+      {
+        "name": "Mayilattam",
+        "description": "A dance performed by artists wearing peacock costumes, representing the grace of the peacock."
+      },
+      {
+        "name": "Poikkal Kuthirai Attam",
+        "description": "A traditional horse dance performed with painted wooden horses, featuring coordinated steps and lively rhythms."
+      }
+    ]
+  },
+  "Telangana": {
+    "title": "Telangana",
+    "artForms": [
+      {
+        "name": "Perini Shivatandavam",
+        "description": "A vigorous dance form that depicts the tales of Lord Shiva, known for its powerful movements."
+      },
+      {
+        "name": "Bonalu",
+        "description": "A festival dance performed to honor the goddess Mahakali, featuring colorful costumes and rhythmic drumming."
+      },
+      {
+        "name": "Lavani",
+        "description": "A traditional dance known for its powerful rhythm and expressive storytelling."
+      },
+      {
+        "name": "Devara Nalugu",
+        "description": "A dance performed by children during the Dasara festival, featuring playful movements and costumes."
+      },
+      {
+        "name": "Gadhikatti",
+        "description": "A folk dance performed by women, involving synchronized steps and rhythmic clapping."
+      }
+    ]
+  },
+  "Tripura": {
+    "title": "Tripura",
+    "artForms": [
+      {
+        "name": "Hojagiri",
+        "description": "A dance performed by women, showcasing their agility and coordination with swinging baskets."
+      },
+      {
+        "name": "Garia Dance",
+        "description": "A folk dance performed during the Garia Puja, featuring vibrant costumes and rhythmic movements."
+      },
+      {
+        "name": "Rongmei Dance",
+        "description": "A traditional dance of the Rongmei community, involving graceful steps and storytelling."
+      },
+      {
+        "name": "Kirtok",
+        "description": "A folk theatre form that combines dance, music, and drama to narrate social themes."
+      },
+      {
+        "name": "Mamita Dance",
+        "description": "A dance performed by women during festivals, featuring synchronized movements and colorful attire."
+      }
+    ]
+  },
+  "Uttar Pradesh": {
+    "title": "Uttar Pradesh",
+    "artForms": [
+      {
+        "name": "Kathak",
+        "description": "A classical dance form known for its intricate footwork, expressive gestures, and storytelling."
+      },
+      {
+        "name": "Nautanki",
+        "description": "A popular folk theatre form that combines dance, music, and drama to entertain audiences."
+      },
+      {
+        "name": "Bhavai",
+        "description": "A folk dance performed by women, involving rhythmic clapping and synchronized steps."
+      },
+      {
+        "name": "Bajirao Mastani Dance",
+        "description": "A dance form inspired by historical figures, showcasing elaborate costumes and dramatic movements."
+      },
+      {
+        "name": "Thumri",
+        "description": "A semi-classical music genre that combines lyrical poetry with expressive dance movements."
+      }
+    ]
+  },
+  "Uttarakhand": {
+    "title": "Uttarakhand",
+    "artForms": [
+      {
+        "name": "Chholiya Dance",
+        "description": "A vibrant dance performed by shepherds, depicting rural life and festive occasions."
+      },
+      {
+        "name": "Golu Dance",
+        "description": "Traditional dance involving rhythmic movements and colorful costumes."
+      },
+      {
+        "name": "Khari Boli",
+        "description": "A folk music genre known for its lively beats and cultural significance."
+      },
+      {
+        "name": "Basohli Painting",
+        "description": "A style of Pahari painting known for its bold lines and vivid colors."
+      },
+      {
+        "name": "Nihali Music",
+        "description": "Folk music that reflects the indigenous culture and traditions of Uttarakhand."
+      }
+    ]
+  },
+  "West Bengal": {
+    "title": "West Bengal",
+    "artForms": [
+      {
+        "name": "Rabindra Nritya",
+        "description": "A classical dance form inspired by Rabindranath Tagore's literary works."
+      },
+      {
+        "name": "Pattachitra",
+        "description": "A traditional scroll painting known for its intricate details and mythological themes."
+      },
+      {
+        "name": "Baul Music",
+        "description": "A unique form of folk music characterized by soulful lyrics and melodic rhythms."
+      },
+      {
+        "name": "Terracotta Crafts",
+        "description": "Artisan work using terracotta to create decorative items, idols, and pottery."
+      },
+      {
+        "name": "Alpona",
+        "description": "Traditional floor art using rice paste, often created during festivals and celebrations."
+      }
+    ]
+  },
+  "Jammu and Kashmir": {
+    "title": "Jammu and Kashmir",
+    "artForms": [
+      {
+        "name": "Kashmiri Wazwan",
+        "description": "A multi-course meal central to Kashmiri Muslim culture, known for its rich flavors and elaborate preparation."
+      },
+      {
+        "name": "Rouf Dance",
+        "description": "A traditional dance performed during Eid celebrations, showcasing graceful movements and vibrant attire."
+      },
+      {
+        "name": "Kashmiri Papier-Mâché",
+        "description": "Intricate art using paper pulp to create decorative items like lamps, boxes, and ornaments."
+      },
+      {
+        "name": "Saffron Weaving",
+        "description": "Artisan weaving using saffron-colored threads to create exquisite textiles and garments."
+      },
+      {
+        "name": "Sheen Foteh",
+        "description": "A classical music form blending traditional Kashmiri melodies with contemporary influences."
+      }
+    ]
+  },
+  "Ladakh": {
+    "title": "Ladakh",
+    "artForms": [
+        {
+            "name": "Thangka Painting",
+            "description": "Traditional Tibetan Buddhist paintings on cloth, depicting deities and mandalas, used for meditation and decoration."
+        },
+        {
+            "name": "Ladakhi Music",
+            "description": "A blend of traditional instruments and folk songs, reflecting the region's culture and everyday life."
+        },
+        {
+            "name": "Wood Carving",
+            "description": "Intricate designs carved into wood, often found on furniture and traditional Ladakhi houses, showcasing local craftsmanship."
+        },
+        {
+            "name": "Pashmina Weaving",
+            "description": "The art of weaving luxurious Pashmina shawls from the fine wool of Changthangi goats, known for their softness and warmth."
+        },
+        {
+            "name": "Traditional Ladakhi Cuisine",
+            "description": "Dishes like Momos (dumplings) and Thukpa (noodle soup), reflecting the region's unique blend of Tibetan and Indian flavors."
+        }
+    ]
+},
+"Andaman and Nicobar Islands": {
+    "title": "Andaman and Nicobar Islands",
+    "artForms": [
+        {
+            "name": "Tribal Art",
+            "description": "Artworks created by indigenous tribes, including traditional motifs and techniques unique to their cultures."
+        },
+        {
+            "name": "Shell Craft",
+            "description": "Crafting decorative items and jewelry from the abundant shells found in the region's beaches."
+        },
+        {
+            "name": "Folk Dance",
+            "description": "Traditional dances performed during festivals, showcasing vibrant costumes and energetic movements, reflecting the local culture."
+        },
+        {
+            "name": "Coconut Weaving",
+            "description": "Creating various items like mats and hats using coconut leaves, a skill passed down through generations."
+        },
+        {
+            "name": "Seafood Cuisine",
+            "description": "A rich culinary tradition featuring fresh seafood prepared with local spices, reflecting the islands' maritime culture."
+        }
+    ]
+}
+
+
+}

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,17 +8,28 @@
 
 header {
     position: fixed;
-    top: 20px;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 1px 80px;
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 99;
 }
 
-.kalavriddhi{
+.title-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -10vh; 
+    width: 100%;
+}
+
+.kalavriddhi {
     font-size: 2em;
     color: white;
     user-select: none;
@@ -49,35 +60,28 @@ header {
     transition: .5s;
 }
 
-.maintitle {
-    margin-top: 140px;
-    font-size: 13vw;  
-    color: white;   
-    font-weight: bold; 
-    text-align: center; 
-    position: absolute; 
-    top: 0;         
-    left: 50%;        
-    transform: translateX(-50%); 
-    width: 100%; 
-    opacity: 0;
-    animation: floatIn 1s ease-out forwards;
-  }
-
-.maindesc {
-    font-size: 2vw;  
-    color: rgb(255, 230, 3);   
-    font-weight: bold; 
-    text-align: center; 
-    position: absolute; 
-    font-style: italic;        
-    left: 50%;        
-    transform: translateX(-50%); 
-    width: 100%; 
+.title-container .maintitle {
+    font-size: 13vw; 
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 0; 
     opacity: 0;
     animation: floatIn 1s ease-out forwards;
 }
-  
+
+.title-container .maindesc {
+    margin-top: 0.5rem;
+    font-size: 2vw; 
+    color: rgb(255, 230, 3);
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    opacity: 0;
+    animation: floatIn 1s ease-out forwards;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -87,6 +91,7 @@ body {
     background-size: cover;
     background-position: center;
 }
+
 .navigation a::after {
     content: '';
     position: absolute;
@@ -98,60 +103,87 @@ body {
     transform-origin: right;
     border-radius: 5px;
     transform: scaleX(0);
-    transition: transform .3s; 
+    transition: transform .3s;
 }
 
-.navigation a:hover::after{
+.navigation a:hover::after {
     transform-origin: left;
     transform: scaleX(1);
 }
+
 .navigation .btnLogin-popup:hover {
     background: white;
-    color: #162938;
+    color: black;
 }
-
 
 @keyframes floatIn {
     from {
-      transform: translate(-50%, 20px); /* Start slightly below */
-      opacity: 0; /* Start transparent */
+        transform: translateY(20px); 
+        opacity: 0; 
     }
     to {
-      transform: translate(-50%, 0); /* End at the original position */
-      opacity: 1; /* Fully visible */
+        transform: translateY(0); 
+        opacity: 1; 
     }
-  }
+}
 
-
-
-  .floating-buttons {
+.floating-buttons {
     position: fixed;
-    align-items: center;
-    top: 35vw;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 70vh; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 2vw;
     z-index: 100;
-    animation: floatIn 1s ease-out forwards;
 }
 
 .btn {
-    margin-right: 50px;
-    width: 360px;
+    width: 250px;
     height: 40px;
-    border-radius: 10px;
-    background-color: white;
-    border: none;
-    color: black;
-    font-size: 1.2em;
-    font-weight: bold;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.request-feature-container {
+    position: fixed;
+    bottom: 20px;  
+    right: 20px;   
+    z-index: 100;   
+}
+
+.request-feature {
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin-left: 40px;
+    transition: .5s; 
+}
+
+.request-feature:hover {
+    background: white; 
+    transform: scale(1.1);
+    color: black;
 }
 
 .btn:hover {
-    background-color: #efd738;
+    background-color: white;
+    color: black;
     transform: scale(1.1);
 }
 
@@ -161,13 +193,18 @@ body {
         height: 60px;
         font-size: 1em;
     }
+
+    .title-container .maintitle {
+        font-size: 6rem;
+    }
+
+    .title-container .maindesc {
+        font-size: 1.5rem;
+    }
+
 }
 
-@media (max-width: 480px) {
-    .btn {
-        width: 50px;
-        height: 50px;
-        font-size: 0.8em;
-    }
-}
- 
+
+
+
+
