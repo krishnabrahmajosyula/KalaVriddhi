@@ -64,7 +64,7 @@ body::-webkit-scrollbar{
         background-position: 0% 50%;
     }
 }
-#login{
+#login {
     font-size: 1.5em;
     font-family: 'poppins';
     border-radius: 30px;
@@ -73,14 +73,17 @@ body::-webkit-scrollbar{
     background-color: black;
     width: 100px;
     align-items: center;
-    border: 1px solid ;
-    transition: background-color 0.5s ease,color 0.5s ease;
-    animation: slide-up 0.5s ease forwards;
+    border: 1px solid;
+    transform-origin: center;
+    transition: transform 0.5s ease, color 0.5s ease, background-color 0.5s ease; /* Specify properties */
     cursor: pointer;
+    display: inline-block;
 }
-#login:hover{
+
+#login:hover {
     color: black;
     background-color: white;
+    transform: scale(1.1); /* Scale to 1.2 on hover */
 }
 #username, #password {
     font-size: 20px;
