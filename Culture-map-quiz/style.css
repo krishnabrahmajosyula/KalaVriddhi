@@ -36,6 +36,17 @@ body::-webkit-scrollbar{
     font-weight: bold;
     font-family: 'poppins';
 }
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 #quizContainer{
     border:2px solid gold;
     margin: 20px;
@@ -156,6 +167,10 @@ body::-webkit-scrollbar{
     box-sizing: border-box; /* Include padding and border in the width */
     margin-bottom: 10px;
     cursor: pointer;
+    transition: font-size 0.35s ease;
+}
+.opt:hover{
+    font-size: 1.2em;
 }
 input[type="radio"] {
     margin-right: 10px; 
