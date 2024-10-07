@@ -66,3 +66,17 @@ body{
 .flipped{
     transform: rotateY(180deg);
 }
+
+.buttons{
+    /* border: 2px solid white; */
+    display: flex;
+}
+
+.buttons button{
+    background-color: #ecbd00;
+    color: #eee;
+    padding: 2vh;
+    margin: 4vh;
+    border-radius: 10%;
+    font-size: 4vh;
+}

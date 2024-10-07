@@ -2,6 +2,10 @@
 *{
     margin:0;
     padding:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a{
+    color:gold;
 }
 body{
     background-image: url("background.png");
@@ -11,14 +15,20 @@ body{
 header{
     text-align: center;
     color:whitesmoke;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins',sans-serif;  
 }
 h2{
+    margin-top: 20px;
     text-align: center;
 }
 .signinform-box{
     display: flex;
     justify-content: center;
+}
+#signinForm{
+    padding: 30px;
+    border-radius:0.5rem;
+    box-shadow: -1px 5px 10px goldenrod;
 }
 .signin-form{
     margin-top: 20px;
@@ -31,16 +41,42 @@ h2{
     height:40px;
     width: 350px;
     border-radius: 0.9rem;
-    border:none;
+    color: white;
+    font-weight: 500;
+    font-size: large;
+    outline: none;
+    background:none;
+    border: none;
+    border-bottom: 2px solid gold;
 }
 .user-input:focus{
-    border: 4px solid gold;
+    border: none;
 }
 .register-btn{
     background-color: white;
     color: black;
+    width:350px;
+    height: 3em;
+    margin-bottom: 10px;
+    border-radius: 0.9rem;
+    background-color: black;
+    border: 2px solid white;
+    color:white;
 }
 .register-btn:hover{
+    color:black;
     background-color: goldenrod;
-    transition: background-color ;
+    transition: background-color 1s ease;
+}
+
+.art-select{
+    background-color: black;
+    color: white;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:30px;
 }
