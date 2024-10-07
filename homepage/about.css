@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    background: black;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
@@ -56,7 +56,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     padding: 60px 40px;
-    background-color: #fff;
+    background-color: black;
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -69,12 +69,13 @@ header {
 
 .about-content h1 {
     font-size: 2.5em;
-    color: #6a11cb;
+    color: gold;
     margin-bottom: 20px;
     animation: popIn 1s ease-out;
 }
 
 .about-content p {
+    color: white;
     line-height: 1.6;
     margin-bottom: 20px;
     font-size: 1.1em;
@@ -185,7 +186,7 @@ footer {
 }
 
 .team-section {
-    background-color: #f0f0f0;
+    background-color: grey;
     padding: 60px 40px;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
@@ -193,7 +194,7 @@ footer {
 
 .team-section h2 {
     font-size: 2.5em;
-    color: #6a11cb;
+    color: black;
     margin-bottom: 40px;
     position: relative;
 }
@@ -202,7 +203,7 @@ footer {
     content: '';
     width: 100px;
     height: 4px;
-    background-color: #2575fc;
+    background-color: black;
     display: block;
     margin: 10px auto 0;
     border-radius: 2px;
@@ -232,13 +233,13 @@ footer {
 
 .member-icon {
     font-size: 4em;
-    color: #2575fc;
+    color: black;
     margin-bottom: 15px;
     transition: color 0.3s ease;
 }
 
 .team-member:hover .member-icon {
-    color: #6a11cb;
+    color: orange;
 }
 
 .team-member h3 {
