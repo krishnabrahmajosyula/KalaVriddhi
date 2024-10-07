@@ -12,7 +12,7 @@ body{
 body::-webkit-scrollbar{
     display:none;
 }
-#mainHeading{
+#mainHeading,#heading{
     font-size: 2.5em;
     font-weight: 510;
     font-family: 'poppins';
@@ -22,6 +22,9 @@ body::-webkit-scrollbar{
     -webkit-background-clip: text; /* For Safari */
     color: transparent;
     animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
+}
+#heading{
+    margin-top: 5px;
 }
 @keyframes gradientAnimation {
     0% {
@@ -52,7 +55,7 @@ body::-webkit-scrollbar{
     border-radius: 15px;
     animation: wave 0.5s ease forwards;
     transform-origin: center;
-    color: aqua;
+    color: hsl(175, 96%, 56%);
 }
 
 #title,#description,#cat,#ratingSelect,#submit{
@@ -72,6 +75,7 @@ body::-webkit-scrollbar{
     transform: translateX(-100%); /* Start off-screen to the left */
     animation: slide-in-left 0.5s ease forwards;
     margin-bottom: 20px;
+    font-family: 'poppins';
 }
 #submit{
     font-size: 1.5em;
@@ -95,7 +99,7 @@ body::-webkit-scrollbar{
     transform: scale(1.2);
 }
 #ratingPick{
-    font-size: 1.1em;
+    font-size: 1em;
 }
 @keyframes slide-up {
     0% {

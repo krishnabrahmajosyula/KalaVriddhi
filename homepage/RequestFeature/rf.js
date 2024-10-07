@@ -1,5 +1,7 @@
 const submitbtn=document.getElementById('submit');
+const rqform=document.getElementById('rqForm');
 
-submitbtn.addEventListener('click',()=>{
-    window.location.href="../index.html";
+rqform.addEventListener('submit',(event)=>{
+    event.preventDefault();
+     window.location.href="../index.html"
 })
