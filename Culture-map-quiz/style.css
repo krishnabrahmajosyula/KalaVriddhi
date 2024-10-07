@@ -86,12 +86,12 @@ body::-webkit-scrollbar{
     color: green;
     background-color: transparent;
     border: 1.5px solid lightblue;
-    transition: background-color 1s ease;
+    transition: background-color 1s ease,transform 0.5s ease;
     border-radius: 5px;
-    animation: slide-up 0.5s ease forwards;
 }
 #instructions button:hover{
     background-color: white;
+    transform: scale(1.1);
 }
 #questionContainer{
     border:2px solid gold;
