@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: ghostwhite;
+    /* color: ghostwhite; */
 }
 
 body {
@@ -212,7 +212,6 @@ p {
 .progress{
     position: absolute;
     right:15px;
-    /* border:2px solid white; */
     width:30vw;
     max-width: 400px;
     height: 50px;
@@ -223,6 +222,10 @@ p {
     align-items: center;
 }
 
+#done-cnt{
+    color:aqua;
+    font-weight: bold;
+}
 .progress-bar{
     height:20px;
     background-color: gold;
@@ -230,4 +233,17 @@ p {
     transition: width 0.3s;
     margin: 20px;
     left:0;
+}
+
+.reset-progress{
+    background-color:#0F0303;
+    color: white;
+    height:auto;
+    width:auto;
+    border:none;
+    padding: 5px;
+    margin: 10px;
+}
+.reset-progress:hover{
+    border: 2px solid gold;
 }
