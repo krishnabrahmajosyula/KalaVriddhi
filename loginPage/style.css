@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700&display=swap');
+body{
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+body::-webkit-scrollbar{
+    display:none;
+}
+#loginBox{
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 8px gold;
+    width: 380px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;    /* Allow absolute positioning */
+    top: 50%;              /* Move down to the middle of the page */
+    left: 50%;             /* Move right to the middle of the page */
+    transform: translate(-50%, -50%);
+    padding: 10px 10px;
+    border-radius: 15px;
+    animation: wave 0.5s ease forwards;
+    transform-origin: center;
+}
+#mainHeading{
+    font-size: 2.5em;
+    font-weight: 510;
+    font-family: 'poppins';
+    background: linear-gradient(90deg, orange, white,lightblue, green);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent;
+    animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
+}
+#heading{
+    font-size: 2em;
+    font-weight: 510;
+    font-family: 'poppins';
+    background: linear-gradient(90deg, orange, white,lightblue, green);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent;
+    animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#login {
+    font-size: 1.5em;
+    font-family: 'poppins';
+    border-radius: 30px;
+    font-weight: 510;
+    color: white;
+    background-color: black;
+    width: 100px;
+    align-items: center;
+    border: 1px solid;
+    transform-origin: center;
+    transition: transform 0.5s ease, color 0.5s ease, background-color 0.5s ease; /* Specify properties */
+    cursor: pointer;
+    display: inline-block;
+}
+
+#login:hover {
+    color: black;
+    background-color: white;
+    transform: scale(1.1); /* Scale to 1.2 on hover */
+}
+#username, #password {
+    font-size: 20px;
+    color: gold; /* Set entered text color to gold */
+    background: none;
+    border: none; /* Remove default border */
+    border-bottom: 2px solid gold; /* Line below the input */
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none; /* Remove outline when input is focused */
+    animation: slide-up 0.5s ease forwards;
+}
+#password + i {
+    right: 10px;
+    left: auto;
+    cursor: pointer;
+}
+#username::placeholder,
+#password::placeholder {
+    color: gold; /* Set the placeholder text color */
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    font-family: 'Poppins', sans-serif;
+    opacity: 1;
+}
+#username:focus, #password:focus {
+    border-bottom-color: lightblue; /* Optional: Change color when focused */
+    color: aqua;
+}
+#remember{
+    font-size: 20px;
+    color: lightblue;
+    animation: slide-up 0.5s ease forwards;
+}
+.input-container {
+    position: relative; /* Allows positioning of the icon inside */
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px; /* Adjust to fit your design */
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+    color: gold; /* Adjust icon color */
+    cursor: pointer; /* Change cursor to pointer */
+}
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 20%); /* Start below its original position */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translate(0, 0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes wave {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translate(-50%, -60%) scale(0.5); /* Scale down */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+        transform: translate(-50%, -50%) scale(1.05); /* Scale up a bit */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Set to final position */
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End in its original position */
+        opacity: 1; /* Fully visible */
+    }
+}

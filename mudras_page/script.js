@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const bar=document.getElementById("progress-bar");
         const progressPercent=(doneCnt/totalCnt)*100;
         bar.style.width=progressPercent+"%";
-        document.getElementById("done-cnt").innerText=`done:${doneCnt}/${totalCnt}`;
+        document.getElementById("done-cnt").innerText=`Done:${doneCnt}/${totalCnt}`;
     }   
 
     showProgress();
@@ -94,5 +94,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // window.addEventListener("beforeunload",function(){
     //     this.localStorage.clear();
     // });
+    document.querySelector(".reset-progress").addEventListener("click",()=>{
+        console.log("cleared local storage");
+        localStorage.clear();
+        showProgress();
+    });
 
 });

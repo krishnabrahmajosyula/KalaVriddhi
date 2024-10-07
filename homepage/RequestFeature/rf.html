@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Feature</title>
+    <link rel="stylesheet" href="rf.css">
+</head>
+<body>
+    <header id="header">
+        <p id="mainHeading">KalaVriddhi</p>
+    </header>
+    <div id="featureBox">
+        <p id="heading">Request a Feature</p>
+        <form method="post" class="rq-form" id="rqForm">
+            <label id="title">Feature Title: &nbsp;
+                <input id="titlebox" type="text" name="title" placeholder="xyz" required>
+            </label>
+            <br>
+            <br>
+            <label id="description">Description: &nbsp;
+                <textarea id="descriptionbox" name="description" placeholder="Add your description. You can list the reasons of requesting the feature" required></textarea>
+            </label>
+            <br>
+            <br>
+            <label id="cat">Category: &nbsp;
+                <input id="category" name="category" type="text" placeholder="(eg: UI improvements)" required>
+            </label>
+            <br>
+            <br>
+            <label for="ratingSelect" id="ratingSelect">Rate our current website: &nbsp;
+                <select class="user-input" name="ratingSelect" id="ratingPick" required>
+                    <option value="choose">Choose rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>  
+            </label><br>
+            <button id="submit" >Submit</button>
+        </form>
+    </div>
+    <script src="rf.js"></script>
+</body>
+</html>

@@ -51,6 +51,7 @@ h1{
     height: 650px;
     border-radius: 0.9rem;
     box-shadow: 1px 5px 8px goldenrod;
+    padding: 10px;
 }
 
 .mudra-info::-webkit-scrollbar{
