@@ -11,34 +11,34 @@
         <p id="mainHeading">KalaVriddhi - Request A Feature</p>
     </header>
     <div id="featureBox">
-    <form method="post" class="rq-form" id="rqForm"></form>
-        <label id="title">Feature Title: &nbsp;
-            <input id="titlebox" type="text" placeholder="xyz">
-        </label>
-        <br>
-        <br>
-        <label id="description">Description: &nbsp;
-            <textarea id="descriptionbox" placeholder="Add your description. You can list the reasons of requesting the feature" required></textarea>
-        </label>
-        <br>
-        <br>
-        <label id="cat">Category: &nbsp;
-            <input id="category" type="text" placeholder="(eg: UI improvements)" >
-        </label>
-        <br>
-        <br>
-        <label for="ratingSelect">Rate our current website: &nbsp;
-            <select class="user-input" name="ratingSelect" id="ratingSelect">
-                <option value="choose">Choose rating</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>  
-        </label><br>
-        <button id="submit">Submit</button>
-    </form>
+        <form method="post" class="rq-form" id="rqForm">
+            <label id="title">Feature Title: &nbsp;
+                <input id="titlebox" type="text" placeholder="xyz" required>
+            </label>
+            <br>
+            <br>
+            <label id="description">Description: &nbsp;
+                <textarea id="descriptionbox" placeholder="Add your description. You can list the reasons of requesting the feature" required></textarea>
+            </label>
+            <br>
+            <br>
+            <label id="cat">Category: &nbsp;
+                <input id="category" type="text" placeholder="(eg: UI improvements)" required>
+            </label>
+            <br>
+            <br>
+            <label for="ratingSelect" id="ratingSelect">Rate our current website: &nbsp;
+                <select class="user-input" name="ratingSelect" id="ratingPick" required>
+                    <option value="choose">Choose rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>  
+            </label><br>
+            <button id="submit" >Submit</button>
+        </form>
     </div>
     <script src="rf.js"></script>
 </body>

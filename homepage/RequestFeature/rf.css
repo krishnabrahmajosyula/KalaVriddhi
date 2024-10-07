@@ -42,7 +42,7 @@ body::-webkit-scrollbar{
     align-items: center;
     border: 2px solid gold;
     box-shadow: 0px 3px 8px gold;
-    width: 380px;
+    width: 450px;
     background: rgba(0, 0, 0, 0.5);
     position: absolute;    /* Allow absolute positioning */
     top: 50%;              /* Move down to the middle of the page */
@@ -53,4 +53,90 @@ body::-webkit-scrollbar{
     animation: wave 0.5s ease forwards;
     transform-origin: center;
     color: aqua;
+}
+
+#title,#description,#cat,#ratingSelect,#submit{
+    font-size: 1.3em;
+    font-family: 'poppins';
+}
+#description{
+    text-align: center;
+}
+#descriptionbox,#titlebox,#category,#ratingPick{
+    border: 2px solid gold;
+    border-radius: 5px;
+   
+}
+#title,#description,#cat,#ratingSelect{
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slide-in-left 0.5s ease forwards;
+    margin-bottom: 20px;
+}
+#submit{
+    font-size: 1.5em;
+    font-family: 'poppins';
+    border-radius: 30px;
+    font-weight: 510;
+    color: white;
+    background-color: black;
+    width: 100px;
+    align-items: center;
+    border: 1px solid;
+    transform-origin: center;
+    transition: transform 0.5s ease, color 0.5s ease, background-color 0.5s ease; /* Specify properties */
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+#submit:hover{
+    color: black;
+    background-color: white;
+    transform: scale(1.2);
+}
+#ratingPick{
+    font-size: 1.1em;
+}
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 20%); /* Start below its original position */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translate(0, 0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes wave {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translate(-50%, -60%) scale(0.5); /* Scale down */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+        transform: translate(-50%, -50%) scale(1.05); /* Scale up a bit */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Set to final position */
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End in its original position */
+        opacity: 1; /* Fully visible */
+    }
 }
