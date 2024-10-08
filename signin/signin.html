@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -29,11 +30,16 @@
                     </div>
                     <div class="password">
                         <label for="password">Set password</label><br>
-                        <input class="user-input" type="text" id="password" name="password" placeholder="Set password" required>
+                        <div class="password-input" style="display: flex;">
+                        <input class="user-input" type="password" id="enter-password" name="password" placeholder="Set password" required>
+                        <div class="eye-icon" onclick="toggleVisibility(this)" style="right:0;"><i class="fa-solid fa-eye"></i></div>
                     </div>
                     <div class="reenter-password">
                         <label for="reverify-password">Re-Enter password</label><br>
-                        <input class="user-input" type="text" id="reverify-password" name="reverify-password" placeholder="Re-Enter the password" required>
+                        <div class="password-input" style="display: flex;">
+                            <input class="user-input" type="password" id="reverify-password" name="reverify-password" placeholder="Re-Enter the password" required>
+                            <div class="eye-icon" onclick="toggleVisibility(this)" style="right:0;"><i class="fa-solid fa-eye"></i></div>
+                        </div>
                     </div>
                     <div class="art-select">
                         <label for="art-select">Select the art form you are interested in</label><br>
@@ -58,7 +64,7 @@
                     <div class="haveanacc">
                         <p>Already have an accout?  <a href="../../loginPage/index.html">Login here</a></p>
                     </div>
-                    <div class="haveanacc">
+                    <div>
                         <button type="submit" class="register-btn">Sign In</button>
                     </div>
                 </form>
@@ -71,5 +77,6 @@
         <br>
         E-mail:kalavriddhi@ug2-6.com -->
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

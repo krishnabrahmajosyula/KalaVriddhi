@@ -56,6 +56,7 @@ body::-webkit-scrollbar{
     animation: wave 0.5s ease forwards;
     transform-origin: center;
     color: hsl(175, 96%, 56%);
+    font-family: 'poppins';
 }
 
 #title,#description,#cat,#ratingSelect,#submit{
@@ -68,7 +69,8 @@ body::-webkit-scrollbar{
 #descriptionbox,#titlebox,#category,#ratingPick{
     border: 2px solid gold;
     border-radius: 5px;
-   
+    font-family: 'poppins';
+    font-weight: 510;
 }
 #title,#description,#cat,#ratingSelect{
     opacity: 0; /* Start invisible */
@@ -92,6 +94,10 @@ body::-webkit-scrollbar{
     cursor: pointer;
     display: inline-block;
     margin-top: 20px;
+}
+.ratingopt{
+    font-family: 'Poppins';
+    font-weight: 510;
 }
 #submit:hover{
     color: black;

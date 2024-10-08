@@ -2,7 +2,7 @@
 *{
     margin:0;
     padding:0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 a{
     color:gold;
@@ -35,38 +35,47 @@ h2{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    font-weight: bold;
 }
 .user-input{
+    font-family: 'Poppins', sans-serif;
     margin-top: 10px;
     height:40px;
     width: 350px;
     border-radius: 0.9rem;
     color: white;
-    font-weight: 500;
-    font-size: large;
+    font-weight: bold;
+    font-size: medium;
     outline: none;
     background:none;
     border: none;
     border-bottom: 2px solid gold;
+    margin-bottom: 20px;
 }
 .user-input:focus{
-    border: none;
+    /* border: none; */
+    outline: none;
+    border-bottom: goldenrod;
 }
 .register-btn{
-    background-color: white;
-    color: black;
-    width:350px;
-    height: 3em;
-    margin-bottom: 10px;
-    border-radius: 0.9rem;
-    background-color: black;
+    width: 380px;
+    height: 40px;
+    background: transparent;
     border: 2px solid white;
-    color:white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    transition: .5s;
+    margin-top: 20px;
+
 }
 .register-btn:hover{
-    color:black;
-    background-color: goldenrod;
-    transition: background-color 1s ease;
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
 }
 
 .art-select{
@@ -79,4 +88,18 @@ footer{
     align-items: center;
     text-align: center;
     margin:30px;
+}
+.eye-icon{
+    right:0;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+#isartisit{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#contribute{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
