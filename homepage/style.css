@@ -136,11 +136,14 @@ body {
     justify-content: center;
     gap: 2vw;
     z-index: 100;
+    /* border:2px solid white; */
+    width:auto;
 }
 
 .btn {
     width: 250px;
     height: 40px;
+    min-width: 200px;
     background: transparent;
     border: 2px solid white;
     outline: none;
