@@ -83,3 +83,8 @@ allgridelements.forEach((flipcard)=>{
         }
     })
 })
+
+const reset=document.querySelector('#reset');
+reset.addEventListener("click",()=>{
+    window.location.reload();
+})
