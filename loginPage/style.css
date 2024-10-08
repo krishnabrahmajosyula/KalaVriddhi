@@ -30,6 +30,7 @@ body::-webkit-scrollbar{
     border-radius: 15px;
     animation: wave 0.5s ease forwards;
     transform-origin: center;
+    font-family: 'poppins';
 }
 #mainHeading{
     font-size: 2.5em;
@@ -106,7 +107,6 @@ body::-webkit-scrollbar{
     color: gold; /* Set the placeholder text color */
     font-size: 20px;
     font-weight: 500;
-    font-style: italic;
     font-family: 'Poppins', sans-serif;
     opacity: 1;
 }
