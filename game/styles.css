@@ -57,14 +57,14 @@ body{
 .flip-card-front {
     background-color: #eee;
     color: black;
-    font-size:3vh;
+    font-size:2vh;
 }
 
 .flip-card-back {
     background-color: #ecbd00;
     color: white;
     transform: rotateY(180deg);
-    font-size:3vh;
+    font-size:2vh;
 }
 
 .flipped{
