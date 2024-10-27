@@ -87,6 +87,9 @@ body::-webkit-scrollbar{
 #question {
     padding: 10px;     /* Add padding for extra spacing */
     display: inline-block; /* Optional: keeps label inline */
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slide-in-left 0.5s ease forwards;
 }
 
 #questionbox {
@@ -95,10 +98,17 @@ body::-webkit-scrollbar{
     padding: 8px;  /* Optional: add padding for better spacing */
     font-size: 1em;  /* Adjust font size as needed */
     box-sizing: border-box; /* Ensures padding is included in the total width and height */
+    border: 2px solid gold;
+    border-radius: 5px;
+    font-family: 'poppins';
+    font-weight: 510;
 }
 #title {
     padding: 10px;     /* Add padding for extra spacing */
     display: inline-block; /* Optional: keeps label inline */
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slide-in-left 0.5s ease forwards;
 }
 
 #titlebox {
@@ -107,6 +117,10 @@ body::-webkit-scrollbar{
     padding: 8px;  /* Optional: add padding for better spacing */
     font-size: 1em;  /* Adjust font size as needed */
     box-sizing: border-box; /* Ensures padding is included in the total width and height */
+    border: 2px solid gold;
+    border-radius: 5px;
+    font-family: 'poppins';
+    font-weight: 510;
 }
 #submit{
     font-size: 1.5em;
@@ -128,4 +142,47 @@ body::-webkit-scrollbar{
     color: black;
     background-color: white;
     transform: scale(1.2);
+}
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 20%); /* Start below its original position */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translate(0, 0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes wave {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translate(-50%, -60%) scale(0.5); /* Scale down */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+        transform: translate(-50%, -50%) scale(1.05); /* Scale up a bit */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Set to final position */
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End in its original position */
+        opacity: 1; /* Fully visible */
+    }
 }
