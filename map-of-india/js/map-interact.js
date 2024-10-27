@@ -8,6 +8,8 @@ jQuery(function() {
     })
 });
 
+
+
 function tryaddEvent(id, relationId) {
     var _obj = jQuery("#" + id);
     var arr = id.split("");

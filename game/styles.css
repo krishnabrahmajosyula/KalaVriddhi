@@ -1,8 +1,5 @@
 body{
     background-color: black;
-    color: aliceblue;
-    font-size:15vh;
-    font-weight: 700;
     font-family: 'Poppins',sans-serif;
     display: flex;
     flex-flow: column;
@@ -14,8 +11,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 700;
+    font-size:15vh;
     margin: 2vh;
     padding: 2vh;
+    
+    color: aliceblue;
 }
  
 .container{
@@ -50,17 +51,20 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 2%;
+    
 }
 
 .flip-card-front {
     background-color: #eee;
     color: black;
+    font-size:3vh;
 }
 
 .flip-card-back {
     background-color: #ecbd00;
     color: white;
     transform: rotateY(180deg);
+    font-size:3vh;
 }
 
 .flipped{
@@ -80,3 +84,32 @@ body{
     border-radius: 10%;
     font-size: 4vh;
 }
+#home{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+  #homebtn{
+  
+    width: 150px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin-right: 0;
+    transition: .5s;
+    position:fixed;
+    top:40px;
+    right:20px;
+  }
+  #homebtn:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+  
+  }
