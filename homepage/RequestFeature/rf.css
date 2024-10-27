@@ -23,6 +23,32 @@ body::-webkit-scrollbar{
     color: transparent;
     animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
 }
+#home{
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+#homebtn{
+    width: 250px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin-right: 0;
+    transition: .5s;
+}
+#homebtn:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+
+}
 #heading{
     margin-top: 5px;
 }
@@ -48,7 +74,7 @@ body::-webkit-scrollbar{
     width: 450px;
     background: rgba(0, 0, 0, 0.5);
     position: absolute;    /* Allow absolute positioning */
-    top: 50%;              /* Move down to the middle of the page */
+    top: 55%;              /* Move down to the middle of the page */
     left: 50%;             /* Move right to the middle of the page */
     transform: translate(-50%, -50%);
     padding: 30px 20px;
