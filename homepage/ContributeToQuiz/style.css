@@ -23,6 +23,17 @@ body::-webkit-scrollbar{
     color: transparent;
     animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
 }
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 #home{
     margin-top: 15px;
     display: flex;
@@ -47,23 +58,12 @@ body::-webkit-scrollbar{
     background-color: white;
     color: black;
     transform: scale(1.1);
-
 }
 #heading{
-    margin-top: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-#featureBox{
+#ContributeBox{
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
@@ -84,26 +84,43 @@ body::-webkit-scrollbar{
     color: hsl(175, 96%, 56%);
     font-family: 'poppins';
 }
+#question {
+    padding: 10px;     /* Add padding for extra spacing */
+    display: inline-block; /* Optional: keeps label inline */
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slide-in-left 0.5s ease forwards;
+}
 
-#title,#description,#cat,#ratingSelect,#submit{
-    font-size: 1.3em;
-    font-family: 'poppins';
-}
-#description{
-    text-align: center;
-}
-#descriptionbox,#titlebox,#category,#ratingPick{
+#questionbox {
+    width: 300px;  /* Set desired width */
+    height: 40px;  /* Set desired height */
+    padding: 8px;  /* Optional: add padding for better spacing */
+    font-size: 1em;  /* Adjust font size as needed */
+    box-sizing: border-box; /* Ensures padding is included in the total width and height */
     border: 2px solid gold;
     border-radius: 5px;
     font-family: 'poppins';
     font-weight: 510;
 }
-#title,#description,#cat,#ratingSelect{
+#title {
+    padding: 10px;     /* Add padding for extra spacing */
+    display: inline-block; /* Optional: keeps label inline */
     opacity: 0; /* Start invisible */
     transform: translateX(-100%); /* Start off-screen to the left */
     animation: slide-in-left 0.5s ease forwards;
-    margin-bottom: 20px;
+}
+
+#titlebox {
+    width: 300px;  /* Set desired width */
+    height: 40px;  /* Set desired height */
+    padding: 8px;  /* Optional: add padding for better spacing */
+    font-size: 1em;  /* Adjust font size as needed */
+    box-sizing: border-box; /* Ensures padding is included in the total width and height */
+    border: 2px solid gold;
+    border-radius: 5px;
     font-family: 'poppins';
+    font-weight: 510;
 }
 #submit{
     font-size: 1.5em;
@@ -121,17 +138,10 @@ body::-webkit-scrollbar{
     display: inline-block;
     margin-top: 20px;
 }
-.ratingopt{
-    font-family: 'Poppins';
-    font-weight: 510;
-}
 #submit:hover{
     color: black;
     background-color: white;
     transform: scale(1.2);
-}
-#ratingPick{
-    font-size: 1em;
 }
 @keyframes slide-up {
     0% {

@@ -24,6 +24,9 @@ const scoreMessage = document.getElementById('finalScore');  // Select "You scor
 const nextButtons = document.getElementById('nextbtns'); 
 const restartbtn=document.getElementById('restartbtn');
 const leaderboard=document.getElementById('leaderboard');
+const tickingsound=new Audio('clocktick.mp3');
+const last5=new Audio('last5.mp3');
+const timeup=new Audio('timeup.mp3');
 
 let timer=null;
 let timeLeft=120;
@@ -56,9 +59,19 @@ function startTimer(){
         }
         if(timeLeft==20){
             timeDisplay.style.color="red";
+            tickingsound.loop=true;
+            tickingsound.play();
+        }
+        if(timeLeft==5){
+            tickingsound.pause();
+            last5.loop=true;
+            last5.play();
         }
         if (timeLeft <= 0) {
             clearInterval(timer); // Stop the timer
+            last5.pause();
+            timeup.loop=true;
+            timeup.play();
             displayResults(); // Auto-submit the quiz
         }
     }, 1000); // Update every second
@@ -234,6 +247,9 @@ function displayQ5(){
 }
 
 function displayResults(){
+    setTimeout(() => {
+        timeup.pause();
+    }, 3000);
     questionsBox.style.display="none";
     // Reset correctAnswers count before checking
     correctAnswers = 0;

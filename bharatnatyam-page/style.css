@@ -105,4 +105,32 @@ footer{
     display: inline-block; 
     vertical-align: middle; 
 }
+#home{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+  #homebtn{
+  
+    width: 150px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin-right: 0;
+    transition: .5s;
+    position:fixed;
+    top:40px;
+  }
+  #homebtn:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+  
+  }
 

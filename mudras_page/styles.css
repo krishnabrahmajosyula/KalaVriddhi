@@ -107,6 +107,26 @@ body {
 .shukatunda-img {
     background-image: url('images/shukatunda.jpg');
 }
+.suchi-img {
+    background-image: url('images/suchi.png');
+}
+.ardhachandra-img {
+    background-image: url('images/ardhachandra.png');
+}
+.chandrakala-img {
+    background-image: url('images/chandrakala.png');
+}
+.mrigashirsha-img {
+    background-image: url('images/mrigashirsha.png');
+}
+.katakamukha-img {
+    background-image: url('images/katakamukha.png');
+}
+.sarpashirsha-img {
+    background-image: url('images/sarpashirsha.png');
+}
+
+
 
 h2 {
     font-size: 1.5rem;
