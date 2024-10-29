@@ -8,7 +8,7 @@ const modelScene=function (){
     modelCamere.attachControl(canvasScreen,true);
 
     const light=new BABYLON.HemisphericLight("light",new BABYLON.Vector3(1,1,0),scene);
-    BABYLON.SceneLoader.Append("./models/","simhamukha.obj",scene);
+    BABYLON.SceneLoader.Append("./models/","simhamukha_coloured.glb",scene);
     return scene;
 };
 

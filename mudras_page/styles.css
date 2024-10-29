@@ -214,12 +214,13 @@ p {
     right:15px;
     width:30vw;
     max-width: 400px;
-    height: 50px;
+    height: 125px;
     border-radius: 0.9rem;
     box-shadow: 5px 5px 4px goldenrod;
-    display: flex;
+    overflow: hidden;
+    /* display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; */
 }
 
 #done-cnt{
@@ -233,6 +234,8 @@ p {
     transition: width 0.3s;
     margin: 20px;
     left:0;
+    max-width: 100%;
+    margin-right:10px;
 }
 
 .reset-progress{
@@ -241,8 +244,6 @@ p {
     height:auto;
     width:auto;
     border:none;
-    padding: 5px;
-    margin: 10px;
 }
 .reset-progress:hover{
     border: 2px solid gold;
