@@ -8,17 +8,20 @@ function shuffle(array){
 }
 let flippedCards=[];
 const keyValuePairs=[
-    {key:'Punjab',value:'Bhangra'},
-    {key:'Kerala',value:'Kathakali'},
-    {key:'Gujarat',value:'Garba'},
-    {key:'TamilNadu',value:'Bharatnatyam'},
-    {key:'UttarPradesh',value:'Kathak'},
-    {key:'Maharashtra',value:'Lavani'},
-    {key:'AndhraPradesh',value:'Kuchipudi'},
-    {key:'Assam',value:'Bihu'},
+    {key:'Punjab',value:'Bhangra',img:'./images/bhangra.jpg'},
+    {key:'Kerala',value:'Kathakali',img:'./images/ka.jpg'},
+    {key:'Gujarat',value:'Garba',img:'./images/ga.jpg'},
+    {key:'TamilNadu',value:'Bharatnatyam',img:'./images/bharat.jpg'},
+    {key:'UttarPradesh',value:'Kathak',img:'./images/kathak.jpg'},
+    {key:'Maharashtra',value:'Lavani',img:'./images/la.jpg'},
+    {key:'AndhraPradesh',value:'Kuchipudi',img:'./images/ku.jpg'},
+    {key:'Assam',value:'Bihu',img:'./images/bi.jpg'},
 ]
 
-let allCards = keyValuePairs.flatMap(pair => [pair.key, pair.value]);
+let allCards = keyValuePairs.flatMap(pair => [
+    { type: 'image', content: pair.value, img: pair.img },
+    { type: 'text', content: pair.value }
+]);
 shuffle(allCards);
 
 for(let i=0;i<allCards.length;i++){
@@ -38,7 +41,25 @@ for(let i=0;i<allCards.length;i++){
 
     const flipCardBack=document.createElement('div');
     flipCardBack.classList.add('flip-card-back');
-    flipCardBack.textContent=allCards[i];
+    
+    if (allCards[i].type === 'image') {
+        // Display image on the back side of the card
+        const imgElement = document.createElement('img');
+        imgElement.src = allCards[i].img;
+        imgElement.alt = allCards[i].content;
+        imgElement.style.width = '100%';
+        imgElement.style.height = '100%';
+        imgElement.style.borderRadius = '2%';
+        flipCardBack.appendChild(imgElement);
+    } else {
+        // Display text on the back side of the card
+        flipCardBack.textContent = allCards[i].content;
+        flipCardBack.style.display = 'flex';
+        flipCardBack.style.alignItems = 'center';
+        flipCardBack.style.justifyContent = 'center';
+    }
+
+    //flipCardBack.appendChild(imgElement);
 
     flipCardInner.appendChild(flipCardFront);
     flipCardInner.appendChild(flipCardBack);
@@ -47,7 +68,7 @@ for(let i=0;i<allCards.length;i++){
 
     container.appendChild(gridelements);
 
-    flipCardInner.setAttribute('data-value', allCards[i]);
+    flipCardInner.setAttribute('data-value', allCards[i].content);
 }
 
 const allgridelements=document.querySelectorAll('.flip-card-inner');
@@ -59,13 +80,10 @@ allgridelements.forEach((flipcard)=>{
         flippedCards.push(flipcard);
 
         if(flippedCards.length === 2){
-            const card1 = flippedCards[0].getAttribute('data-value');
-            const card2 = flippedCards[1].getAttribute('data-value');
+            const card1Value = flippedCards[0].getAttribute('data-value');
+            const card2Value = flippedCards[1].getAttribute('data-value');
             
-            const isMatch = keyValuePairs.some(pair =>
-                (pair.key === card1 && pair.value === card2) ||
-                (pair.key === card2 && pair.value === card1)
-            );
+            const isMatch = card1Value === card2Value;
 
             allgridelements.forEach((card) => card.style.pointerEvents = 'none');
 
