@@ -13,7 +13,7 @@
     <div id="ContributeBox">
         <p id="heading">KalaVriddhi</p>
         <p id="heading">Contribute a question</p>
-        <form method="post" class="rq-form" id="rqForm">
+        <form action="/contribute" method="post" class="rq-form" id="rqForm">
             <label id="title">Name of art : &nbsp;
                 <input id="titlebox" type="text" name="title" placeholder="Kalamkari" required>
             </label>
@@ -24,22 +24,22 @@
             </label>
             <br>
             <label id="question">Option 1 : &nbsp;
-                <input id="questionbox" type="text" name="question" placeholder="Enter Option 1" required>
+                <input id="option1" type="text" name="question" placeholder="Enter Option 1" required>
             </label>
             <label id="question">Option 2 : &nbsp;
-                <input id="questionbox" type="text" name="question" placeholder="Enter Option 2" required>
+                <input id="option2" type="text" name="question" placeholder="Enter Option 2" required>
             </label>
             <label id="question">Option 3 : &nbsp;
-                <input id="questionbox" type="text" name="question" placeholder="Enter Option 3" required>
+                <input id="option3" type="text" name="question" placeholder="Enter Option 3" required>
             </label>
             <label id="question">Option 4 : &nbsp;
-                <input id="questionbox" type="text" name="question" placeholder="Enter Option 4" required>
+                <input id="option4" type="text" name="question" placeholder="Enter Option 4" required>
             </label>
             <br>
             <br>
-            <button id="submit" >Submit</button>
+            <button id="submit" type="submit">Submit</button>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

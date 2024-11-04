@@ -103,6 +103,17 @@ body::-webkit-scrollbar{
     font-family: 'poppins';
     font-weight: 510;
 }
+#questionbox,#option1,#option2,#option3,#option4{
+    width: 300px;  /* Set desired width */
+    height: 40px;  /* Set desired height */
+    padding: 8px;  /* Optional: add padding for better spacing */
+    font-size: 1em;  /* Adjust font size as needed */
+    box-sizing: border-box; /* Ensures padding is included in the total width and height */
+    border: 2px solid gold;
+    border-radius: 5px;
+    font-family: 'poppins';
+    font-weight: 510;
+}
 #title {
     padding: 10px;     /* Add padding for extra spacing */
     display: inline-block; /* Optional: keeps label inline */
