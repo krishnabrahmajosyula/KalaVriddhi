@@ -10,17 +10,24 @@
 
 <body>
     <header id="home">
-        <button id="homebtn" onclick="window.location.href='../homepage/index.html'">Home</button>
+        <button id="homebtn" onclick="window.location.href='../homepage/index.html'">
+          <img src="./home_logo.png" alt="Home" id="logo" />
+        </button>
     </header>
-    <div class="header"></div>
-    <div class="title">
-        The game of FLIP!
+    
+    <!-- Wrapper for the main centered content -->
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="title">
+            The game of FLIP!
+        </div>
+        <div class="container"></div>
+        <div class="buttons">
+            <button id="reset">Reset</button>
+        </div>
+        <div class="footer"></div>
     </div>
-    <div class="container"></div>
-    <div class="buttons">
-        <button id="reset">Reset</button>
-    </div>
-    <div class="footer"></div>
+
     <script src="./script.js"></script>
 </body>
 </html>
