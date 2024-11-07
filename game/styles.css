@@ -10,80 +10,28 @@ body{
 .title{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     font-weight: 700;
     font-size:15vh;
     margin: 2vh;
     padding: 2vh;
+    height: 50vh;
     
     color: aliceblue;
 }
- 
-.container{
-    display: flex;
-    /* border: 2px solid white; */
-    height: 75vh;
-    width: 75vh;
-    flex-wrap: wrap;
-}
 
-.grid_items{
-    border: 1px solid #eee;
-    flex: 0 0 auto;
-    perspective: 1000px;
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    font-size: 15%;
-}
-
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2%;
-    
-}
-
-.flip-card-front {
-    background-color: #eee;
-    color: black;
-    font-size:2vh;
-}
-
-.flip-card-back {
-    background-color: #ecbd00;
-    color: white;
-    transform: rotateY(180deg);
-    font-size:2vh;
-}
-
-.flipped{
-    transform: rotateY(180deg);
-}
-
-.buttons{
-    /* border: 2px solid white; */
-    display: flex;
-}
 
 .buttons button{
     background-color: #ecbd00;
     color: #eee;
-    padding: 2vh;
-    margin: 4vh;
-    border-radius: 10%;
-    font-size: 4vh;
+    width: 25vw;
+    padding: 3vh;
+    margin: 2vh;
+    border-radius: 10px;
+    font-size: 4.5vh;
+    border: none;
 }
+
 #home{
     display: flex;
     justify-content: flex-end;

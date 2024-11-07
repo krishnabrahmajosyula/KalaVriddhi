@@ -8,14 +8,14 @@ function shuffle(array){
 }
 let flippedCards=[];
 const keyValuePairs=[
-    {key:'Punjab',value:'Bhangra',img:'./images/bhangra.jpg'},
-    {key:'Kerala',value:'Kathakali',img:'./images/ka.jpg'},
-    {key:'Gujarat',value:'Garba',img:'./images/ga.jpg'},
-    {key:'TamilNadu',value:'Bharatnatyam',img:'./images/bharat.jpg'},
-    {key:'UttarPradesh',value:'Kathak',img:'./images/kathak.jpg'},
-    {key:'Maharashtra',value:'Lavani',img:'./images/la.jpg'},
-    {key:'AndhraPradesh',value:'Kuchipudi',img:'./images/ku.jpg'},
-    {key:'Assam',value:'Bihu',img:'./images/bi.jpg'},
+    {key:'Punjab',value:'Bhangra',img:'.././images/bhangra.jpg'},
+    {key:'Kerala',value:'Kathakali',img:'.././images/ka.jpg'},
+    {key:'Gujarat',value:'Garba',img:'.././images/ga.jpg'},
+    {key:'TamilNadu',value:'Bharatnatyam',img:'.././images/bharat.jpg'},
+    {key:'UttarPradesh',value:'Kathak',img:'.././images/kathak.jpg'},
+    {key:'Maharashtra',value:'Lavani',img:'.././images/la.jpg'},
+    {key:'AndhraPradesh',value:'Kuchipudi',img:'.././images/ku.jpg'},
+    {key:'Assam',value:'Bihu',img:'.././images/bi.jpg'},
 ]
 
 let allCards = keyValuePairs.flatMap(pair => [
@@ -43,7 +43,6 @@ for(let i=0;i<allCards.length;i++){
     flipCardBack.classList.add('flip-card-back');
     
     if (allCards[i].type === 'image') {
-        // Display image on the back side of the card
         const imgElement = document.createElement('img');
         imgElement.src = allCards[i].img;
         imgElement.alt = allCards[i].content;
@@ -52,14 +51,11 @@ for(let i=0;i<allCards.length;i++){
         imgElement.style.borderRadius = '2%';
         flipCardBack.appendChild(imgElement);
     } else {
-        // Display text on the back side of the card
         flipCardBack.textContent = allCards[i].content;
         flipCardBack.style.display = 'flex';
         flipCardBack.style.alignItems = 'center';
         flipCardBack.style.justifyContent = 'center';
     }
-
-    //flipCardBack.appendChild(imgElement);
 
     flipCardInner.appendChild(flipCardFront);
     flipCardInner.appendChild(flipCardBack);
