@@ -6,6 +6,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import authentication from "./routes/signupRoutes.mjs";
 import contributeQuestions from "./routes/questionContributionRoutes.mjs";
+import loginRoutes from "./routes/loginRoutes.mjs";
 
 const application=express();
 
@@ -19,7 +20,7 @@ application.use(cors());
 //these are the routes that are handled in the corresponding files
 application.use("/auth",authentication);
 application.use("/questions",contributeQuestions);
-
+application.use("/auth", loginRoutes);
 
 //this statement is used for connecting mongoDB with the corresponding port
 mongoose.connect("mongodb://localhost:27017/KalaVriddhi",{
