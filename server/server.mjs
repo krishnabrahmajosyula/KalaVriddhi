@@ -6,6 +6,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import authentication from "./routes/signupRoutes.mjs";
 import contributeQuestions from "./routes/questionContributionRoutes.mjs";
+import addModelRouter from "./routes/modeladdingroute.mjs";
 
 const application=express();
 
@@ -19,6 +20,7 @@ application.use(cors());
 //these are the routes that are handled in the corresponding files
 application.use("/auth",authentication);
 application.use("/questions",contributeQuestions);
+application.use("/addModel",addModelRouter);
 
 
 //this statement is used for connecting mongoDB with the corresponding port
