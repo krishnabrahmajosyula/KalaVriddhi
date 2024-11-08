@@ -1,123 +1,63 @@
-body {
+body{
     background-color: black;
-    font-family: 'Poppins', sans-serif;
-}
-
-.wrapper {
+    font-family: 'Poppins',sans-serif;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Centers wrapper content vertically */
 }
 
-.title {
+.title{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     font-weight: 700;
-    font-size: 15vh;
+    font-size:15vh;
     margin: 2vh;
     padding: 2vh;
+    height: 50vh;
+    
     color: aliceblue;
 }
 
-.container {
-    display: flex;
-    height: 75vh;
-    width: 75vh;
-    flex-wrap: wrap;
-}
 
-.grid_items {
-    border: 1px solid #eee;
-    flex: 0 0 auto;
-    perspective: 1000px;
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    font-size: 15%;
-}
-
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2%;
-}
-
-.flip-card-front {
-    background-color: #eee;
-    color: black;
-    font-size: 2vh;
-}
-
-.flip-card-back {
-    background-color: #ecbd00;
-    color: white;
-    transform: rotateY(180deg);
-    font-size: 2vh;
-}
-
-.flipped {
-    transform: rotateY(180deg);
-}
-
-.buttons {
-    display: flex;
-}
-
-.buttons button {
+.buttons button{
     background-color: #ecbd00;
     color: #eee;
-    padding: 2vh;
-    margin: 4vh;
-    border-radius: 10%;
-    font-size: 4vh;
+    width: 25vw;
+    padding: 3vh;
+    margin: 2vh;
+    border-radius: 10px;
+    font-size: 4.5vh;
+    border: none;
 }
 
-#home {
+#home{
     display: flex;
-    justify-content: flex-start;
-    padding-left: 20px;
-}
-
-#homebtn {
-    width: 80px;
-    height: 80px;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+  #homebtn{
+  
+    width: 150px;
+    height: 40px;
     background: transparent;
+    border: 2px solid white;
     outline: none;
-    border: 3px solid white;
-    border-radius: 50%;
+    border-radius: 6px;
     cursor: pointer;
-    position: fixed;
-    top: 40px;
-    padding: 0;
-    transition: 0.3s;
-    box-shadow: 0px 4px 8px white;
-}
-
-#logo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-sizing: border-box;
-}
-
-#homebtn:hover {
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin-right: 0;
+    transition: .5s;
+    position:fixed;
+    top:40px;
+    right:20px;
+  }
+  #homebtn:hover{
     background-color: white;
     color: black;
     transform: scale(1.1);
-    border-color: white;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-}
+  
+  }
