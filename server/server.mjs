@@ -6,11 +6,8 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import authentication from "./routes/signupRoutes.mjs";
 import contributeQuestions from "./routes/questionContributionRoutes.mjs";
-<<<<<<< HEAD
 import addModelRouter from "./routes/modeladdingroute.mjs";
-=======
 import loginRoutes from "./routes/loginRoutes.mjs";
->>>>>>> 5847ba6d9fa7b71b93a5f947f55ea2b96301a3c2
 
 const application=express();
 
