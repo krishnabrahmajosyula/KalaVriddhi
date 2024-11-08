@@ -10,6 +10,7 @@ const userSignupSchema=new mongoose.Schema({
     artForm:{type:String},
     isArtist:{type:Boolean},
     contribute:{type:Boolean},
+    isAdmin:{type:Boolean} ,
 });
 
 const User=mongoose.model("signin",userSignupSchema);
