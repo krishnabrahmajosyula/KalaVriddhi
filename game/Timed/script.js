@@ -67,9 +67,27 @@ for(let i=0;i<allCards.length;i++){
     flipCardInner.setAttribute('data-value', allCards[i].content);
 }
 
+let timerInterval;
+let timeElapsed = 0;
+
+function startTimer() {
+    const timerElement = document.querySelector('#timer');
+    timerElement.textContent = `Time: ${timeElapsed} sec`;
+    timerInterval = setInterval(() => {
+        timeElapsed++;
+        timerElement.textContent = `Time: ${timeElapsed} sec`;
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
 const allgridelements=document.querySelectorAll('.flip-card-inner');
 allgridelements.forEach((flipcard)=>{
     flipcard.addEventListener("click",()=>{
+
+        if (!timerInterval && flippedCards.length === 0) startTimer();
 
         if (flipcard.classList.contains('disabled') || flipcard.classList.contains('flipped')) return;
         flipcard.classList.add('flipped');
@@ -93,12 +111,17 @@ allgridelements.forEach((flipcard)=>{
                 }
                 flippedCards = [];
                 allgridelements.forEach((card) => card.style.pointerEvents = 'auto');
+
+                if (document.querySelectorAll('.disabled').length === allgridelements.length) {
+                    stopTimer();
+                }
             }, 600);
         }
     })
 })
 
-const reset=document.querySelector('#reset');
-reset.addEventListener("click",()=>{
+const reset = document.querySelector('#reset');
+reset.addEventListener("click", () => {
+    clearInterval(timerInterval);
     window.location.reload();
-})
+});

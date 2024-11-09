@@ -18,6 +18,14 @@ body{
     
     color: aliceblue;
 }
+
+#timer {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+}
  
 .container{
     display: flex;
