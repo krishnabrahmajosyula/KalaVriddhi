@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Mudras to DataBase</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+</head>
+<body>
+    <h2>Add a Model To the DataBase</h2>
+    <div class="container">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="modelName">
+                <p>Enter the name of the model</p>
+                <input type="text" class="inputAreas" id="modelName" placeholder="Enter model name" required/>
+            </label>
+            <label for="description">
+                <p>Enter some description about the Mudra</p>
+                <textarea class="inputAreas" id="description" placeholder="Give some description about the model"></textarea>
+            </label>
+            <input class="inputAreas" type="file" id="modelFile" accept=".glb" required/>
+            <button id="submit-btn" class="inputAreas" type="submit">Upload Model</button>
+        </form>
+        <!-- <canvas id="modelPreview"></canvas> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
