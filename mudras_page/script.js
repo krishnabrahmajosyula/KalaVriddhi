@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
             description: "This mudra symbolizes a parrot's beak. It is used to represent a fierce or angry state.",
             image: "images/shukatunda.jpg"
         },
-        ardhachandra:{},mrigashirsha:{},katakamukha:{},sarpashirsha:{},
+        ardhachandra:{},mrigashirsha:{},katakamukha:{},sarpashirsha:{},suchi:{},chandrakala:{},
     };
 
    

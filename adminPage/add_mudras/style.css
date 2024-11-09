@@ -7,26 +7,33 @@ body{
     font-family: "poppins";
     font-weight: bolder;
 }
+h2{
+    color: gold;
+    font-size: 40px;
+}
 .container{
     display: flex;
     flex-direction:column ;
     align-items: center;
     justify-content: center;
     gap:1.5rem;
+    color: aqua;
 }
 .inputAreas{
-    width: 580px;
+    width: 80%;
     height:50px;
     border-radius: 0.9rem;
     font-weight: bolder;
     font-size: larger;
-    font-style: "Poppins";
+    font-style: "Poppins";    
+    color: white;
+    cursor: pointer;
 }
 #uploadForm{
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:start;
     width:40%;
     height: 40%;
     box-shadow: -1px 5px 10px goldenrod;
@@ -34,11 +41,21 @@ body{
     gap:0.5rem;
     overflow: hidden;
     border-radius: 0.9rem;
+    backdrop-filter: blur(10px);
 }
 #submit-btn{
     font-family: "Poppins";
     font-weight: bolder;
     font-size: large;
+    color: white;
+    cursor: pointer;
+}
+#submit-btn:hover{
+    /* background-color: white; */
+    /* color: black; */
+    transform: scale(1.1);
+    transition-duration: 0.5ss;
+    
 }
 /* #modelPreview{
     text-align: left;
@@ -52,3 +69,55 @@ body{
     gap:0.5rem;
     overflow: hidden;
 } */
+.input-titles{
+     text-align: left;
+}
+p{
+    /* color: gold; */
+    font-size: 20px;
+}
+#modelFile{
+    cursor: pointer;
+}
+
+#listofModels{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* border: 2px solid wheat; */
+    /* text-align: center; */
+}
+.mudra-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding:14px;
+    margin: 10px;
+    border-radius: 0.9rem;
+    width: 15%;
+    border: 2px solid gold;
+}
+
+.mudra-element h3{
+    margin: 0px;
+}
+
+.delete-btn{
+    background-color: aqua;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 0.9rem;
+    margin-left: 10px;
+}
+
+.delete-btn:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5ms;
+}

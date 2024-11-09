@@ -214,6 +214,7 @@ p {
 }
 
 
+
 @media (max-width: 768px) {
     .mudras {
         grid-template-columns: repeat(2, 1fr);
@@ -257,7 +258,9 @@ p {
     max-width: 100%;
     margin-right:10px;
 }
-
+header{
+    z-index: 100;
+}
 .reset-progress{
     background-color:#0F0303;
     color: white;
@@ -268,3 +271,39 @@ p {
 .reset-progress:hover{
     border: 2px solid gold;
 }
+
+#home {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  #homebtn {
+    width: 80px; /* Adjust based on logo size */
+    height: 80px; /* Adjust based on logo size */
+    background: transparent;
+    outline: none;
+    border: 3px solid white; /* White border */
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    padding: 0;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px white; /* Light shadow effect */
+  }
+  
+  #logo {
+    width: 100%; /* Make logo fit inside button */
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  
+  #homebtn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1); /* Slightly enlarges button on hover */
+    border-color: white; /* Keeps the border white on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+  }

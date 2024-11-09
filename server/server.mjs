@@ -8,6 +8,7 @@ import authentication from "./routes/signupRoutes.mjs";
 import contributeQuestions from "./routes/questionContributionRoutes.mjs";
 import addModelRouter from "./routes/modeladdingroute.mjs";
 import loginRoutes from "./routes/loginRoutes.mjs";
+import listRetrieveRouter from "./routes/showmudras.mjs";
 
 const application=express();
 
@@ -24,9 +25,10 @@ application.use("/questions",contributeQuestions);
 application.use("/addModel",addModelRouter);
 
 application.use("/auth", loginRoutes);
+application.use("/getmudras",listRetrieveRouter);
 
 //this statement is used for connecting mongoDB with the corresponding port
-mongoose.connect("mongodb://localhost:27017/KalaVriddhi",{
+mongoose.connect("mongodb+srv://KalaVriddhi:kalavriddhi_ug6@kalavriddhi.fg8vb.mongodb.net/",{
     useNewUrlParser:true,
     useUnifiedTopology:true,  
 }).then(()=>{
