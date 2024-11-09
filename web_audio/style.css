@@ -10,12 +10,17 @@ body {
     padding: 0;
 }
 
-
 .container {
     max-width: 600px;
     margin: 50px auto;
     text-align: center;
-    font-family: Arial, sans-serif;
+}
+
+#header {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 50px; 
+    color: white; 
+    margin: 0;
 }
 
 .file-input, .btn {
@@ -32,6 +37,12 @@ body {
     border-radius: 5px;
 }
 
+#waveform{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
 .btn:hover {
     background-color: #0056b3;
 }
@@ -43,3 +54,5 @@ body {
 #frequencyDisplay, #alertDisplay {
     font-size: 18px;
 }
+
+

@@ -95,10 +95,14 @@ p {
 #home {
     display: flex;
     justify-content: flex-start;
-    padding-left: 20px;
-  }
-  
-  #homebtn {
+    position: fixed; /* Ensures the header stays fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width to position the button properly */
+    padding: 20px;
+}
+
+#homebtn {
     width: 80px; /* Adjust based on logo size */
     height: 80px; /* Adjust based on logo size */
     background: transparent;
@@ -106,26 +110,23 @@ p {
     border: 3px solid white; /* White border */
     border-radius: 50%; /* Circular shape */
     cursor: pointer;
-    position: fixed;
-    top: 40px;
     padding: 0;
     transition: 0.3s;
-    /* box-shadow: 0px 4px 8px white; */
-    z-index : 1000; /* Light shadow effect */
-  }
-  
-  #logo {
-    width: 100%; /* Make logo fit inside button */
+    z-index: 1000; /* Keeps the button on top */
+}
+
+#homebtn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    border: 3px solid gold; /* Changes border color on hover */
+}
+
+#logo {
+    width: 100%; /* Make logo fit inside the button */
     height: 100%;
     border-radius: 50%;
     box-sizing: border-box;
-  }
-  
-  #homebtn:hover {
-    background-color: white;
-    color: black;
-    transform: scale(1.1); /* Slightly enlarges button on hover */
-    border-color: white; /* Keeps the border white on hover */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
-  }
+}
+
 

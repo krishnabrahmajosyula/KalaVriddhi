@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Frequency Analyzer</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequency Analyzer</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for custom styling -->
+    <title>Dance Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link to the correct CSS file -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Audio Frequency Analyzer</h1>
+        <h1 id="header">Dance Simulator</h1>
+        <!-- File input and play/pause button -->
         <input type="file" id="audioFile" accept="audio/*" class="file-input">
-        <button id="startButton" class="btn">Start Analyzing</button>
+        <button id="startButton">Start Analyzing</button>
+        <button id="resetButton">Reset</button>
+
+
+        <!-- Frequency and alert display -->
         <div id="results" class="results">
             <p id="frequencyDisplay">Frequency: 0 Hz</p>
             <p id="alertDisplay" style="color: red;"></p>
         </div>
     </div>
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+    <!-- Waveform display -->
+    <div id="waveform"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+
