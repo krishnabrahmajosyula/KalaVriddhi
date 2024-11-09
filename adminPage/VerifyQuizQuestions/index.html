@@ -11,7 +11,7 @@
     <div>
         <header id="home">
             <button id="homebtn" onclick="window.location.href='../index.html'">
-            <img src="./home_logo.png" alt="Home" id="logo" />
+            <img src=".././home_icon.jpg" alt="Home" id="logo" />
             </button>
         </header>
         
@@ -44,7 +44,8 @@
                     <p id="option4">
                         <span class="opt">Option 4:</span> 
                         <strong class="option-text">Cricket</strong>
-                    </p>    
+                    </p>
+                       
                 </div>
             </div>
             <div id="edit">
@@ -71,6 +72,9 @@
                     <label id="Eoption4Label">Option 4 : &nbsp;
                         <input id="Eoption4" type="text" name="question" placeholder="Enter Option 4" required>
                     </label>
+                    <label id="AnswerLabel">Answer : &nbsp;
+                        <input id="Answer" type="text" name="question" placeholder="Enter correct option" required>
+                    </label>
                     <br>
                     <br>
                     <button id="confirm" type="submit">Confirm</button>
@@ -81,11 +85,7 @@
                 <input type="checkbox" id="approve">
                 Approve the question
             </label>
-            <br>
-            <label id="feedbackBox">
-                Feedback  
-            </label>
-            <textarea id="feedback" name="feedback" placeholder="Enter the feedback" maxlength="400px" required></textarea>    
+            <br>    
             
             <button id="submit">
                 Submit

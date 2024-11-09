@@ -9,7 +9,7 @@
 <body>
     <header id="home">
         <button id="homebtn" onclick="window.location.href='../index.html'">
-            <img src="./home_logo.png" alt="Home" id="logo" />
+            <img src="./home_icon.jpg" alt="Home" id="logo" />
         </button>
     </header>
     <header id="header">
@@ -17,6 +17,8 @@
     </header>
     <div id="featureBox">
         <p id="heading">Request a Feature</p>
+        <div id="errorMessage" style="color: red; display: none;">Invalid Input</div>
+        <div id="successMessage" style="color: green; display: none;">Feature Requested Successfully</div>
         <form method="post" class="rq-form" id="rqForm">
             <label id="title">Feature Title: &nbsp;
                 <input id="titlebox" type="text" name="title" placeholder="xyz" required>
@@ -24,7 +26,7 @@
             <br>
             <br>
             <label id="description">Description: &nbsp;
-                <textarea id="descriptionbox" name="description" placeholder="Add your description. You can list the reasons of requesting the feature" required></textarea>
+                <textarea id="descriptionbox" name="description" placeholder="Add your description. You can list the reasons for requesting the feature" required></textarea>
             </label>
             <br>
             <br>
@@ -43,7 +45,7 @@
                     <option value="5" class="ratingopt">5</option>
                 </select>  
             </label><br>
-            <button id="submit" >Submit</button>
+            <button id="submit" type="submit">Submit</button>
         </form>
     </div>
     <script src="rf.js"></script>

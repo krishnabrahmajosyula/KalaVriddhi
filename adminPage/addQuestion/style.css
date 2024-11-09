@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700&display=swap');
+body{
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    background-repeat: repeat;
+    padding-bottom: 20px;
+    margin: 20px;
+}
+#heading{
+    font-size: 2.5em;
+    font-weight: 510;
+    font-family: 'poppins';
+    background: linear-gradient(90deg, orange, white,lightblue, green);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent;
+    animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
+    min-width:  100%;             /* Occupy the full width of container */
+    text-align: center;       /* Center the text within heading */
+    margin: 0;
+    padding: 10px 0;
+
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#home{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;;
+}
+#homebtn {
+    width: 80px; /* Adjust based on logo size */
+    height: 80px; /* Adjust based on logo size */
+    background: transparent;
+    outline: none;
+    border: 3px solid white; /* White border */
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    padding: 0;
+    transition: 0.3s;
+    /* box-shadow: 0px 4px 8px white; */
+    z-index : 1000; /* Light shadow effect */
+  }
+  #logo {
+    width: 100%; /* Make logo fit inside button */
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  
+  #homebtn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1); /* Slightly enlarges button on hover */
+    border-color: white; /* Keeps the border white on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+  }
+#heading{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#VerifyQuestionBox{
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 8px gold;
+    width: 1200px;
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;    /* Allow absolute positioning */
+    top: 80%;              /* Move down to the middle of the page */
+    left: 50%;             /* Move right to the middle of the page */
+    transform: translate(-50%, -50%);
+    padding: 30px 20px;
+    border-radius: 15px;
+    animation: wave 0.5s ease forwards;
+    transform-origin: center;
+    color: hsl(175, 96%, 56%);
+    font-family: 'poppins';
+    margin-top: 20px;
+}
+#view,#edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    border: 2px solid gold
+}
+#box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:20px;
+    gap: 20px;
+}
+#VerifyQuestionBox p {
+    max-width: 400px;    /* Restrict width of each option */
+    text-align: center;  /* Center-align the text inside each option */
+    margin: 5px 0;       /* Add some margin between options */
+    padding: 5px;        /* Add padding for spacing */
+}
+#question {
+    padding: 10px;     /* Add padding for extra spacing */
+    display: inline-block; /* Optional: keeps label inline */
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slide-in-left 0.5s ease forwards;
+    font-size: 1.5em;
+}
+#option1,#option2,#option3,#option4{
+    width: 300px;  /* Set desired width */
+    height: auto;  /* Set desired height */
+    padding: 8px;  /* Optional: add padding for better spacing */
+    font-size: 1.3em;  /* Adjust font size as needed */
+    box-sizing: border-box; /* Ensures padding is included in the total width and height */
+    border: 2px solid gold;
+    border-radius: 5px;
+    font-family: 'poppins';
+    font-weight: 510;
+    align-items: center;
+    margin:0 auto;
+    animation: slide-in-left 0.5s ease forwards;
+}
+.options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers options horizontally */
+    gap: 10px; /* Optional: adds space between each option */
+    width: 100%; /* Takes the full width of #VerifyQuestionBox */
+}
+.options-container{
+    font-weight: 500;
+    color:yellow;
+}
+.opt{
+    color: yellow;
+    font-weight: 500;
+}
+.titleHeading,.questionHeading{
+    color: yellow;
+}
+#questionView,#questionEdit{
+    color: gold;
+    font-size: 2em;
+    font-weight: bold;
+}
+#title {
+    padding: 10px;     /* Add padding for extra spacing */
+    display: inline-block; /* Optional: keeps label inline */
+    opacity: 0; /* Start invisible */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slide-in-left 0.5s ease forwards;
+    font-size: 1.5em;
+}
+#view{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 8px gold;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    max-width: 800px;
+    min-width: 50%;
+    margin-left: 0px;
+    margin-right: 20px ;
+}
+#edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid gold;
+    box-shadow: 0px 3px 8px gold; 
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    max-width: 800px;
+    min-width: 70%;
+    margin: 0 auto;
+    margin-right: 10px;
+}
+
+#edit label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 400px;
+    color: yellow;
+    font-weight: 500;
+    font-family: 'poppins';
+    font-size: 1.2em;
+}
+#edit input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 1em;
+    border: 2px solid gold;
+    border-radius: 5px;
+    font-family: 'poppins';
+    font-weight: 510;
+}
+/* #Etitle,#Equestion,#Eoption1,#Eoption2,#Eoption3,#Eoption4{
+    
+} */
+#feedbackBox{
+    font-size: 1.3em;
+    color: gold;
+    font-weight: 510;
+}
+textarea {
+    max-height: 120px;
+    min-height: 120px;
+    min-width: 700px; 
+    max-width: 700px;
+    width: 100%;
+    padding: 8px; 
+    box-sizing: border-box; 
+    border: 1px solid aqua;
+    border-radius: 4px; 
+}
+#submit,#confirm{
+    font-size: 1.5em;
+    font-family: 'poppins';
+    border-radius: 30px;
+    font-weight: 510;
+    color: white;
+    background-color: black;
+    width: 100px;
+    align-items: center;
+    border: 1px solid;
+    transform-origin: center;
+    transition: transform 0.5s ease, color 0.5s ease, background-color 0.5s ease; /* Specify properties */
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+#submit:hover,#confirm:hover{
+    color: black;
+    background-color: white;
+    transform: scale(1.2);
+}
+
+#confirm{
+    width: 120px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+@keyframes slide-up {
+    0% {
+        transform: translate(0, 20%); /* Start below its original position */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translate(0, 0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0); /* Start at 0 size */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+@keyframes wave {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translate(-50%, -60%) scale(0.5); /* Scale down */
+    }
+    50% {
+        opacity: 1; /* Fully visible */
+        transform: translate(-50%, -50%) scale(1.05); /* Scale up a bit */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Set to final position */
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%); /* Start off-screen left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End in its original position */
+        opacity: 1; /* Fully visible */
+    }
+}

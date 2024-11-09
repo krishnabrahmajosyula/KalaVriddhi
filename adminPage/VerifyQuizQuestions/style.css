@@ -128,7 +128,7 @@ body{
 }
 #option1,#option2,#option3,#option4{
     width: 300px;  /* Set desired width */
-    height: 40px;  /* Set desired height */
+    height: auto;  /* Set desired height */
     padding: 8px;  /* Optional: add padding for better spacing */
     font-size: 1.3em;  /* Adjust font size as needed */
     box-sizing: border-box; /* Ensures padding is included in the total width and height */

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             option4:document.getElementById("option4").value
         };
         try{
-            const response=await fetch("http://localhost:3000/questions/contribute",{
+            const response=await fetch("http://localhost:3000/questions/contribute/contribute",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(questionData),

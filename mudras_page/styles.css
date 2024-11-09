@@ -290,7 +290,12 @@ header{
     top: 40px;
     padding: 0;
     transition: 0.3s;
+<<<<<<< HEAD
     box-shadow: 0px 4px 8px white; /* Light shadow effect */
+=======
+    /* box-shadow: 0px 4px 8px white; */
+    z-index : 1000; /* Light shadow effect */
+>>>>>>> 104c05d384fd7ac6f6e306777eab0f62305860cf
   }
   
   #logo {

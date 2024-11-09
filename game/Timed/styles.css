@@ -18,6 +18,14 @@ body{
     
     color: aliceblue;
 }
+
+#timer {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+}
  
 .container{
     display: flex;
@@ -84,32 +92,41 @@ body{
     border-radius: 10%;
     font-size: 4vh;
 }
-#home{
+#home {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 20px;
+    justify-content: flex-start;
   }
-  #homebtn{
   
-    width: 150px;
-    height: 40px;
+  #homebtn {
+    width: 80px;
+    height: 80px;
     background: transparent;
-    border: 2px solid white;
     outline: none;
-    border-radius: 6px;
+    border: 3px solid white;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1.1em;
-    color: white;
-    font-weight: 600;
-    margin-right: 0;
-    transition: .5s;
-    position:fixed;
-    top:40px;
-    right:20px;
+    position: fixed;
+    top: 40px;
+    left: 20px; /* Move button to the leftmost position */
+    padding: 0;
+    margin-left: 20px; /* Add margin for spacing */
+    transition: 0.3s;
   }
-  #homebtn:hover{
+  
+  #homebtn:hover {
     background-color: white;
     color: black;
     transform: scale(1.1);
-  
+    border-color: white;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
   }
+  
+
+   
+  #logo {
+    width: 100%; /* Make logo fit inside button */
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  

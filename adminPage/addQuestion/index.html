@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header id="home">
+        <button id="homebtn" onclick="window.location.href='../index.html'">
+        <img src="./home_logo.png" alt="Home" id="logo" />
+        </button>
+    </header>
+    
+    <div id="VerifyQuestionBox">
+        <p id="heading"><b>Heritage Hunt Quiz-Add Questions</b></p>
+        <div id="box">
+        <div id="view">
+            <p id="questionView">&rArr; View the question</p>
+            <p id="title">
+                <span class="titleHeading">Name of Art: </span>
+                <strong class="titleName"></strong>
+            </p>
+            <p id="question">
+                <span class="questionHeading">Question: </span>
+                <strong class="questionName"></strong>
+            </p>
+            <div class="optionsContainer">
+                <p id="option1">
+                    <span class="opt">Option 1:</span> 
+                    <strong class="option-text"></strong>
+                </p>
+                <p id="option2">
+                    <span class="opt">Option 2:</span> 
+                    <strong class="option-text"></strong>
+                </p>
+                <p id="option3">
+                    <span class="opt">Option 3:</span> 
+                    <strong class="option-text"></strong>
+                </p>
+                <p id="option4">
+                    <span class="opt">Option 4:</span> 
+                    <strong class="option-text"></strong>
+                </p>    
+            </div>
+        </div>
+        <div id="edit">
+            <p id="questionEdit">&rArr; Edit the question</p>
+            <form action="/contribute" method="post" class="rq-form" id="rqForm">
+                <label id="Etitle">Name of art: &nbsp;
+                    <input id="titlebox" type="text" name="title" placeholder="Kalamkari" required>
+                </label>
+                <br>
+                <br>
+                <label id="Equestion">Question : &nbsp;
+                    <input id="questionbox" type="text" name="question" placeholder="Enter relavent question" required>
+                </label>
+                <br>
+                <label id="Eoption1Label">Option 1 : &nbsp;
+                    <input id="Eoption1" type="text" name="question" placeholder="Enter Option 1" required>
+                </label>
+                <label id="Eoption2Label">Option 2 : &nbsp;
+                    <input id="Eoption2" type="text" name="question" placeholder="Enter Option 2" required>
+                </label>
+                <label id="Eoption3Label">Option 3 : &nbsp;
+                    <input id="Eoption3" type="text" name="question" placeholder="Enter Option 3" required>
+                </label>
+                <label id="Eoption4Label">Option 4 : &nbsp;
+                    <input id="Eoption4" type="text" name="question" placeholder="Enter Option 4" required>
+                </label>
+                <label id="AnswerLabel">Answer : &nbsp;
+                    <input id="Answer" type="text" name="question" placeholder="Enter correct option" required>
+                </label>
+                <br>
+                <br>
+                <button id="confirm" type="submit">Confirm</button>
+            </form> 
+        </div>
+        </div>   
+        
+        
+        <button id="submit">
+            Add
+        </button>       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

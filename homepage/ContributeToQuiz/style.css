@@ -6,8 +6,9 @@ body{
     min-height: 100vh;
     color: white;
     text-align: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     margin: 0;
+    padding: 0;
 }
 body::-webkit-scrollbar{
     display:none;
@@ -51,7 +52,7 @@ body::-webkit-scrollbar{
     top: 40px;
     padding: 0;
     transition: 0.3s;
-    box-shadow: 0px 4px 8px white;
+    /* box-shadow: 0px 4px 8px white; */
     z-index : 1000; /* Light shadow effect */
   }
   
@@ -89,6 +90,7 @@ body::-webkit-scrollbar{
     transform-origin: center;
     color: hsl(175, 96%, 56%);
     font-family: 'poppins';
+    margin-top: 60px;
 }
 #question {
     padding: 10px;     /* Add padding for extra spacing */
