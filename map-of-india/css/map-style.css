@@ -132,7 +132,7 @@ body {
   top: 40px;
   padding: 0;
   transition: 0.3s;
-  box-shadow: 0px 4px 8px white; /* Light shadow effect */
+  /* box-shadow: 0px 4px 8px white; Light shadow effect */
 }
 
 #logo {
