@@ -12,19 +12,22 @@
     <h2>Add a Model To the DataBase</h2>
     <div class="container">
         <form id="uploadForm" enctype="multipart/form-data">
-            <label for="modelName">
-                <p>Enter the name of the model</p>
-                <input type="text" class="inputAreas" id="modelName" placeholder="Enter model name" required/>
-            </label>
-            <label for="description">
-                <p>Enter some description about the Mudra</p>
-                <textarea class="inputAreas" id="description" placeholder="Give some description about the model"></textarea>
-            </label>
+            <div class="input-titles"><p>Enter the name of the model</p></div>
+            <input style="border: 2px solid goldenrod;
+                          background-color: rgba(0, 0, 0, 0.5);" type="text" class="inputAreas" id="modelName" placeholder="Enter model name" required/>
+            <!-- <label for="description"></label> -->
+            <div class="input-titles"><p>Enter some description about the Mudra</p></div>
+            <textarea style="border: 2px solid goldenrod;
+                             background-color: rgba(0, 0, 0, 0.5);color: white;" class="inputAreas" id="description" placeholder="Give some description about the model"></textarea>
             <input class="inputAreas" type="file" id="modelFile" accept=".glb" required/>
-            <button id="submit-btn" class="inputAreas" type="submit">Upload Model</button>
+            <button style="background-color: rgba(0, 0, 0, 0.5);border: 2px solid goldenrod;" id="submit-btn" class="inputAreas" type="submit">Upload Model</button>
         </form>
         <!-- <canvas id="modelPreview"></canvas> -->
+        <h2>List of models available in Data Base</h2>
+        <div id="listofModels">
+            
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

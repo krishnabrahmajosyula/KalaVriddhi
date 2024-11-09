@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded",function (){
     document.getElementById("uploadForm").addEventListener("submit",async function (event){
         console.log("Form submitted");
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded",function (){
             const result=await res.json();
             console.log(result);
             alert(result.message);
+            document.getElementById("uploadForm").reset();
         }catch(err){
             console.error("Error in uploading model:",err);
             alert("Error uploading model.");
@@ -34,17 +37,17 @@ document.addEventListener("DOMContentLoaded",function (){
     });
 });
 
-const canvas=document.getElementById("modelPreview");
-const engine=new BABYLON.Engine(canvas,true);
+// const canvas=document.getElementById("modelPreview");
+// const engine=new BABYLON.Engine(canvas,true);
 
-const runScene=function(){
-    const scene=new BABYLON.Scene(engine);
+// const runScene=function(){
+//     const scene=new BABYLON.Scene(engine);
 
-    const camera=new BABYLON.ArcRotateCamera("Camera",Math.PI/2,Math.PI/4,35,BABYLON.Vector3.Zero(),scene);
-    camera.attachControl(canvas,true);
-    const light=new BABYLON.HemisphericLight("Light",new BABYLON.Vector3(1,1,0),scene);
-    return scene;
-};
+//     const camera=new BABYLON.ArcRotateCamera("Camera",Math.PI/2,Math.PI/4,35,BABYLON.Vector3.Zero(),scene);
+//     camera.attachControl(canvas,true);
+//     const light=new BABYLON.HemisphericLight("Light",new BABYLON.Vector3(1,1,0),scene);
+//     return scene;
+// };
 
 // const modelScreen=runScene();
 // engine.runRenderLoop(()=>{
@@ -72,3 +75,60 @@ const runScene=function(){
 //         });
 //     }
 // });
+
+
+const getModelAPI="http://localhost:3000/getmudras/getmudra";
+let curr_page=1;
+let maxPage_size=12;
+
+async function retreiveMudras() {
+    try{
+        const response=await fetch(getModelAPI);
+        const listOfMudras=await response.json();
+
+        if(Array.isArray(listOfMudras) && listOfMudras.length>0){
+            renderListOfMudras(listOfMudras);
+        }else{
+            document.getElementById("listofModels").innerHTML="<p>No Mudras are available</p>";
+
+        }
+    }catch(error){
+        console.error("Error in fetching Mudras:",error);
+        document.getElementById("listofModels").innerHTML="<p>Unable to load Mudras from DataBase</p>";
+
+    }
+}
+
+function renderListOfMudras(mudras){
+    const cont=document.getElementById("listofModels");
+    cont.innerHTML="";
+    mudras.forEach(mudra => {
+        const mudraCard=document.createElement("div");
+        mudraCard.classList.add("mudra-element");
+        mudraCard.innerHTML=`<h3>${mudra.name}
+                            <button class="delete-btn" onclick="deleteMudra('${mudra._id}')">Delete</button>`;
+
+        cont.appendChild(mudraCard);
+    });
+}
+
+async function deleteMudra(id){
+    try{
+        const response=await fetch(`http://localhost:3000/getmudras/deletemudra/${id}`,{
+            method: "DELETE",
+        });
+        if(response.ok){
+            alert("Mudra deleted successfully");
+            retreiveMudras();
+        }else{
+            const errorData=await response.json();
+            alert(`Error in deleting mudra:${errorData.message}`);
+        }
+    }catch(err){
+        console.error("Error in deleting mudras:",err);
+        alert("Failed to delete model.");
+    }
+}
+
+window.onload=retreiveMudras;
+window.deleteMudra=deleteMudra;

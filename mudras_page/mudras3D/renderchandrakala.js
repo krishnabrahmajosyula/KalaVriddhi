@@ -18,7 +18,7 @@ const modelScene=async function(){
     const camera=new BABYLON.ArcRotateCamera("Camera",Math.PI/2,Math.PI/4,35,BABYLON.Vector3.Zero(),newScene);
     camera.attachControl(canvasScreen,true);
     const light=new BABYLON.HemisphericLight("light",new BABYLON.Vector3(1,1,0),newScene);
-    const modelName="Arala";
+    const modelName="Chandrakala";
     const modelDataObtained=await getModelfromDB(modelName);
     if(modelDataObtained && modelDataObtained.fileData && modelDataObtained.fileType){
         const blob=new Blob([new Uint8Array(modelDataObtained.fileData.data)],{type:modelDataObtained.fileType});
@@ -47,7 +47,7 @@ window.addEventListener("resize", function(){
 
 let done=document.querySelector(".done-button");
 done.addEventListener("click",()=>{
-    const Id="arala";
+    const Id="chandrakala";
     localStorage.setItem(Id,"done");
     alert(`${Id} is marked as done`);
 });
