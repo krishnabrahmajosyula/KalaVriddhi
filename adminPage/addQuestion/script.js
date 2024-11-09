@@ -35,6 +35,41 @@
         document.querySelector('#option4 .option-text').innerText = updatedOption4;
     });
 
-    document.querySelector('#submit').addEventListener('click',function(){
-        window.location.href='../index.html';
+    document.querySelector('#submit').addEventListener('click',async function(){
+        //get the values
+        const updatedTitle=document.querySelector('#titlebox').value;
+        const updatedQuestion=document.querySelector('#questionbox').value;
+        const updatedOption1=document.querySelector('#Eoption1').value;
+        const updatedOption2=document.querySelector('#Eoption2').value;
+        const updatedOption3=document.querySelector('#Eoption3').value;
+        const updatedOption4=document.querySelector('#Eoption4').value;
+        const answer=document.querySelector('#Answer').value;
+        if(!answer.trim()){
+            alert("Please fill the answer field");
+            return;
+        }
+        //send the data to the server using fetch API
+        const response=await fetch("http://localhost:3000/questions/quiz/add",{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                question: updatedQuestion,
+                option1: updatedOption1,
+                option2: updatedOption2,
+                option3: updatedOption3,
+                option4: updatedOption4,
+                answer: answer
+            })
+        });
+        const data=await response.json();
+
+        if(response.ok){
+            alert("Succefully added the question");
+            window.location.href='../questionsDisplay/index.html';
+        }
+        else{
+            alert("Not successful");
+        }
     });
