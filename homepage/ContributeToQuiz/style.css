@@ -52,7 +52,7 @@ body::-webkit-scrollbar{
     top: 40px;
     padding: 0;
     transition: 0.3s;
-    box-shadow: 0px 4px 8px white;
+    /* box-shadow: 0px 4px 8px white; */
     z-index : 1000; /* Light shadow effect */
   }
   
