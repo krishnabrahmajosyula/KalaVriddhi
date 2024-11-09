@@ -36,15 +36,41 @@ let answered=0;
 let correctAnswers=0;
 const totalQuestions=5;
 
-const correctAnswersList = ['opt1', 'opt2', 'opt2', 'opt2', 'opt1'];//correct answers
+let correctAnswersList = [];//correct answers
 let selectedOptions=[null,null,null,null,null];//selected options
 
 answeredStatus.style.fontFamily="poppins";
 answeredStatus.style.fontWeight="600"
 window.onload=()=>{
+    fetchRandomQuestions();
     startQuiz();
 }
 
+async function fetchRandomQuestions() {
+    console.log(q1.querySelector('#opt1').textContent);
+    try {
+        const response = await fetch("http://localhost:3000/quiz/random");
+        const questions = await response.json();
+        console.log(questions);
+        if (response.ok) {
+            // Populate questions in your HTML based on the questions fetched
+            questions.forEach((question, index) => {
+                const questionElem = document.getElementById(`q${index + 1}`);
+                questionElem.querySelector("#question").textContent = question.question;
+                questionElem.querySelector("#opt1").textContent = question.option1;
+                questionElem.querySelector("#opt2").textContent = question.option2;
+                questionElem.querySelector("#opt3").textContent = question.option3;
+                questionElem.querySelector("#opt4").textContent = question.option4;
+
+                correctAnswersList.push(`opt${question.answer}`);
+            });
+        } else {
+            console.error("Error fetching questions:", questions.message);
+        }
+    } catch (error) {
+        console.error("Error fetching questions", error);
+    }
+}
 function updateAnsweredStatus(){
     answeredStatus.textContent = `Answered: ${answered}/${totalQuestions}`;
 }
@@ -272,9 +298,16 @@ function displayResults(){
     const offset=circumference-(circumference*(scorePercentage/100));
     circle.style.strokeDashoffset= offset;
 
-    restartbtn.addEventListener('click',()=>{
-        resultsBox.style.display="none";
-        startQuiz();
-    });
+    // Clear the previous click event listener before adding a new one
+    restartbtn.removeEventListener('click', restartQuiz);
+    
+    // Add the restart event listener
+    restartbtn.addEventListener('click', restartQuiz);
     //we can add leaderboard option once it is available
+}
+function restartQuiz() {
+    resultsBox.style.display="none";
+    correctAnswersList = [];
+    fetchRandomQuestions();
+    startQuiz();
 }

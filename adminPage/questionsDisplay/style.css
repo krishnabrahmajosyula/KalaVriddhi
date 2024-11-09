@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600;700&display=swap');
+body{
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    background-repeat: repeat;
+    padding-bottom: 20px;
+    margin: 20px;
+}
+
+#heading{
+    font-size: 2.5em;
+    font-weight: 510;
+    font-family: 'poppins';
+    background: linear-gradient(90deg, orange, white,lightblue, green);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent;
+    animation: gradientAnimation 3s ease-in-out infinite,slide-up 0.5s ease forwards;
+    min-width:  100%;             /* Occupy the full width of container */
+    text-align: center;       /* Center the text within heading */
+    margin: 0;
+    padding: 10px 0;
+
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#home{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;;
+}
+#homebtn {
+    width: 80px; /* Adjust based on logo size */
+    height: 80px; /* Adjust based on logo size */
+    background: transparent;
+    outline: none;
+    border: 3px solid white; /* White border */
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    padding: 0;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px white;
+    z-index : 1000; /* Light shadow effect */
+  }
+  #logo {
+    width: 100%; /* Make logo fit inside button */
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  
+  #homebtn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1); /* Slightly enlarges button on hover */
+    border-color: white; /* Keeps the border white on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+  }
+
+#addQuestion{
+    width: 150px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin-right: 0;
+    transition: .5s;
+    position:fixed;
+    top:40px;
+    right:20px;
+}
+#addQuestion:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+.questions-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'poppins';
+}
+
+.question-item {
+    border: 2px solid gold;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+.question-item:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.question-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #FFD700;
+}

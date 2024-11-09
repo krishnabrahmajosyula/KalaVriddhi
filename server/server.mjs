@@ -8,6 +8,10 @@ import authentication from "./routes/signupRoutes.mjs";
 import contributeQuestions from "./routes/questionContributionRoutes.mjs";
 import addModelRouter from "./routes/modeladdingroute.mjs";
 import loginRoutes from "./routes/loginRoutes.mjs";
+import quizQuestionsRoutes from "./routes/quizQuestionsRoutes.mjs";
+import questionDisplayRoute from "./routes/questionDisplayRoute.mjs";
+import verifyRoutes from "./routes/verifyRoute.mjs";
+import quizRouter from "./routes/quizRoutes.mjs";
 
 const application=express();
 
@@ -20,10 +24,13 @@ application.use(cors());
 
 //these are the routes that are handled in the corresponding files
 application.use("/auth",authentication);
-application.use("/questions",contributeQuestions);
+application.use("/questions/contribute",contributeQuestions);
 application.use("/addModel",addModelRouter);
-
+application.use("/questions/quiz", quizQuestionsRoutes);
 application.use("/auth", loginRoutes);
+application.use("/questions/display", questionDisplayRoute);
+application.use("/questions/verify", verifyRoutes);
+application.use("/quiz", quizRouter);
 
 //this statement is used for connecting mongoDB with the corresponding port
 mongoose.connect("mongodb://localhost:27017/KalaVriddhi",{
