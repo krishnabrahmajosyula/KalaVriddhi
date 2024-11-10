@@ -3,155 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website with Advanced Popup</title>
+  <title>Kalavriddhi - Welcome Popup</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=WMqKZFlExfWDm8GU8Hj4IET3RwWaiWJxzRtITtO97vBruEQJZoHjn6xopvtatOemAOmnvL-kMCCRj0QwyvpQafJz4iQ0H32O4JQ90DFUwRNWqFNtW1_OsEc7jKJqWcAnBnkvTkToQYPzpSp2kgNH3pLjA-jrU4k8r2gCDrMlhY_Viwn-jgsAfX-vX67hpdCc5nMyz9kPGb-qK1u6qttgYV8FQc5SipWqFUIDayaPityiX_vYiZti4nf22plgWgfsAiWx1OE9CZjTBCCIFUeDlBgwh-7qojbUlzxRTRx2jwDUWqAown-fIFVbQa6n4cj_h2W4d43ZAldC5PEcDuFOqISDGcUeZV9HlDZN3GNdT6MJ3k-eHQcfaNcQqQofyVvSkgbsXNG_-6yRpSKGWIDX8Ulgsbeyzq1RmDFZv6NrKtBMvJOHvVXEWuokejgBDxbevgyEtxLWJ7ElKz2vZGzEgklFEUQv88C1NhdqPCW2474PtJPjox9BsjZkmXWbT0dMbaORH4EP8N41mazD9WwRD-Ukd2AqU7h1_y1SakzBRAjJAESo2I_yufLegxLParX6e4PnmrJnWhp737dVcWKtcmNacFs934rii69Mjd9fR2papEf633oIm8rYpuUgUMTxfehomO7L0jclQSHXhYkThnuGRqWSNSrs66zV4BGz3Tr11Kq9uofWuLHuGYbXHJQkz9DqHaMhikc9omM10nQdaScWaOfnMtRu_xB4UwFYZBYi5SI1y4ZQidwxtnkf20o9xzKTwAbuFW0kbuMSDCkHlb9ksiAel-6J3VtPo9Rn1DQ8lCUiQk4pfierAZQ0siBZtg_0kSwsIwLWlz_TojEfhmx6m7P6W5Uy6bzWo4dcZCVX3BeaUsFz32v_s-QfjW-vHDUTP1R-XFds2uG_jFjeNTQKuzjs6X4euveIJVYWfIme-I4Etm_1v-kFic1S6D7o9AgW7an_N5x3EprYapwWurIW7HpkEixd5N988dpXo4RLsSt6vd_I9lX7Yqh5eWqhokwETFiTh7knv6E3mzbkou6GAsXDDoy7wf2DZsq4DUFNmu9acyIxjMxcDOQ1n0SXId7cVzrvAOzn3fV1QnqTw3v5FwV_U3hbIMwu76uK0vIKV4x5BB_H0xlpjybfRzjxIyiqNZ-8B9UZJtsAn35sBn_JV4bJY9KruGjTqHcC7MDLAVZrqC6B-loZe4ecWhak8Y3VRiqwDGnil8_j1ILkcjJI3pDUUJGeTWwTBB9EcVMlhLUAwXbF_S3bTRG1uFPNgCSRsQqGaGJ0d9piksJQMD766iMrvZ8jRpBOnPUvsmrgUg69_l4IgGW2g25jz038wZljfi-QGZnzwLsybKDsSsF5YfDqnv5YK3ADrlRK7XsNLJWod4VSlro9TaY3LXLFdHSdZmjQaF8sl29rqy_r1b5SIlnx8ymATjrq5AvcbUwZ2D_-HWUQZbAuXBSD-aeI6bpMgQ3OaRqTpGzcnP9AYyGbOdI7GOTZ7J5X1yhEM6f-uBNhp4jEODX3TDH9o-5kEPZe9a0dHFSC6swmnp0CMGJYH1PFWnfp4lT9ROj3VS4nYbyEbuywUiM-YdO5KKrZYYg1RxHMC7JEnk4twQx39preKw5h0Xss8dQIuks4iZ7tEeioCKCIAPYt5lyU_q-gg5-2FEUj8aOz-RZtn4TPHQ" nonce="3725c4911246f6b19e3e7a5acf75b272" charset="UTF-8"></script><style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #121212;
-      color: #eaeaea;
-    }
-    .content {
-      padding: 40px;
-      text-align: center;
-      z-index: 10;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #ffb800; 
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.25rem;
-      color: #ddd;
-      line-height: 1.8;
-    }
-
-    .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s, opacity 0.3s ease;
-      z-index: 20;
-    }
-
-    .popup-content {
-      background: #1c1c1c;
-      border-radius: 20px;
-      width: 85%;
-      max-width: 650px;
-      height: auto;
-      padding: 40px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-      text-align: center;
-      transform: translateY(0);
-      transition: transform 0.3s ease, opacity 0.4s ease;
-      overflow-y: auto;
-    }
-
-    .popup-header {
-      background-color: #212121;
-      color: #ffb800;
-      font-size: 2.5rem;
-      text-transform: uppercase;
-      padding: 20px;
-      border-radius: 10px;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .popup-body {
-      margin-top: 30px;
-      font-size: 1.25rem;
-      color: #ccc;
-      line-height: 1.7;
-    }
-
-    .popup-body .intro-text {
-      font-size: 1.75rem;
-      font-weight: 500;
-      margin-bottom: 25px;
-      color: #ffb800;
-    }
-
-    .popup-body ul {
-      text-align: left;
-      margin-left: 20px;
-      font-size: 1.15rem;
-      margin-bottom: 25px;
-    }
-
-    .popup-body li {
-      margin-bottom: 15px;
-      color: #fff;
-    }
-
-    .popup-body p {
-      font-size: 1.225rem;
-      color: #ccc;
-    }
-
-    .popup.show {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .close-btn {
-      background-color: #ffb800;
-      color: #212121;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      margin-top: 25px;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .close-btn:hover {
-      background-color: #ff9d00;
-      transform: scale(1.05);
-    }
-
-    .close-btn:focus {
-      outline: none;
-    }
-
-    .blurred {
-      filter: blur(5px);
-    }
-
-    @media (max-width: 768px) {
-      .popup-content {
-        width: 90%;
-        height: auto;
-      }
-
-      .popup-header {
-        font-size: 2rem;
-      }
-
-      .popup-body .intro-text {
-        font-size: 1.5rem;
-      }
-
-      .popup-body p {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -164,41 +18,14 @@
   <!-- Popup HTML -->
   <div class="popup" id="instructionPopup">
     <div class="popup-content">
-     
-      <div class="popup-header">
-        Welcome to Kalavriddhi!
-      </div>
-      
+      <div class="popup-header">Welcome to Kalavriddhi!</div>
       <div class="popup-body">
-        <p class="intro-text">We’re excited to have you here! KalaVriddhi is a space where art and culture come to life. Here’s how you can get started:</p>
-        <ul>
-          <li><strong>Explore the Map of India:</strong> Discover various art forms and heritage sites across different states.</li>
-          <li><strong>Learn Bharatanatyam:</strong> Dive into the basics of Bharatanatyam through engaging tutorials.</li>
-          <li><strong>Learn with Games:</strong> Make learning fun with our interactive games designed to teach Indian culture and art.</li>
-          <li><strong>Heritage Hunt Quiz:</strong> Test your knowledge about India's rich cultural heritage with our quiz!</li>
-        </ul>
-        <p>If you have ideas or questions, feel free to use the "Request a Feature" and "Contribute Questions" options.</p>
-        <button class="close-btn" onclick="closePopup()">Got it!</button>
+        <p>Explore Indian art and culture through various activities and learn something new today!</p>
+        <button class="close-btn" id="closePopupBtn">Got it!</button>
       </div>
     </div>
   </div>
 
-  <script>
-    // JavaScript to handle popup display and background blur
-    function closePopup() {
-      document.getElementById("instructionPopup").classList.remove("show");
-      document.getElementById("mainContent").classList.remove("blurred");
-    }
-
-    // Check if popup has already been shown in this session
-    window.onload = function() {
-      if (!sessionStorage.getItem("popupShown")) {
-        document.getElementById("instructionPopup").classList.add("show");
-        document.getElementById("mainContent").classList.add("blurred");
-        sessionStorage.setItem("popupShown", "true");
-      }
-    };
-  </script>
-
+  <script src="scripts.js"></script>
 </body>
 </html>
