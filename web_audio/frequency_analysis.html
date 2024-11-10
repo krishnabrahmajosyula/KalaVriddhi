@@ -17,9 +17,9 @@
             <p id="fileNameDisplay">No file chosen</p>
         </div>        
             <button id="startButton">Start Analyzing</button>
-        <div class="button-wrapper">
+       
             <button id="resetButton">Reset</button>
-        </div>
+        
         <div id="results" class="results">
             <p id="frequencyDisplay">Frequency: 0 Hz</p>
             <p id="alertDisplay" style="color: red;"></p>
@@ -27,10 +27,27 @@
     </div>
 
     <div id="waveform"></div>
-
+    <div id="models">
+        <p id="curr-model-heading">Current Step</p>
+        <canvas class="curr-model" id="model-3d"></canvas>
+        <p id="seq">Generated Steps Sequence</p>
+        <div id="model_sequence">
+            
+            <canvas class="s1" id="s1"></canvas>
+            <canvas class="m1" id="m1"></canvas>
+           
+            
+            <canvas class="m2" id="m2"></canvas>
+            <canvas class="m3" id="m3"></canvas>
+            
+            <canvas class="m4" id="m4"></canvas>
+            <canvas class="e1" id="e1"></canvas>
+            
+            
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 
 </body>
 </html>
-
-
