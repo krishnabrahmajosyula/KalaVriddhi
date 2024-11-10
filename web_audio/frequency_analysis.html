@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Frequency Analyzer</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frequency Analyzer</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to a CSS file for custom styling -->
+    <title>Dance Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Audio Frequency Analyzer</h1>
-        <input type="file" id="audioFile" accept="audio/*" class="file-input">
-        <button id="startButton" class="btn">Start Analyzing</button>
+        <h1 id="header">Dance Simulator</h1>
+        <div class="choose-file-container">
+            <input type="file" id="audioFile" accept="audio/*" class="file-input">
+            <label for="audioFile" class="custom-file-button">Choose File</label>
+            <p id="fileNameDisplay">No file chosen</p>
+        </div>        
+            <button id="startButton">Start Analyzing</button>
+       
+            <button id="resetButton">Reset</button>
+        
         <div id="results" class="results">
             <p id="frequencyDisplay">Frequency: 0 Hz</p>
             <p id="alertDisplay" style="color: red;"></p>
         </div>
     </div>
 
-    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+    <div id="waveform"></div>
+    <div id="models">
+        <p id="curr-model-heading">Current Step</p>
+        <canvas class="curr-model" id="model-3d"></canvas>
+        <p id="seq">Generated Steps Sequence</p>
+        <div id="model_sequence">
+            
+            <canvas class="s1" id="s1"></canvas>
+            <canvas class="m1" id="m1"></canvas>
+           
+            
+            <canvas class="m2" id="m2"></canvas>
+            <canvas class="m3" id="m3"></canvas>
+            
+            <canvas class="m4" id="m4"></canvas>
+            <canvas class="e1" id="e1"></canvas>
+            
+            
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
 </body>
 </html>

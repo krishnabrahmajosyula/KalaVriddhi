@@ -69,6 +69,9 @@
             alert("Succefully added the question");
             window.location.href='../questionsDisplay/index.html';
         }
+        else if (response.status === 400) {
+            alert("This question already exists.");
+        }
         else{
             alert("Not successful");
         }
