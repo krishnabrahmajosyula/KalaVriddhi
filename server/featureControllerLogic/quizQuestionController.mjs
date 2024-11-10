@@ -4,8 +4,8 @@ import { getNextQuestionId } from "../utils/questionIdUtils.mjs";
 
 export const addQuizQuestion = async (req, res) => {
     try {
-        // Get the next questionId from the counter
-        const questionId = await getNextQuestionId();
+        
+        
 
         const { question, option1, option2, option3, option4 ,answer} = req.body;
 
@@ -15,6 +15,8 @@ export const addQuizQuestion = async (req, res) => {
             return res.status(400).json({ message: "This question already exists." });
         }
 
+        // Get the next questionId from the counter
+        const questionId = await getNextQuestionId();
         // Create a new quiz question document with an incremental questionId
         const newQuizQuestion = new QuizQuestion({
             questionId,
