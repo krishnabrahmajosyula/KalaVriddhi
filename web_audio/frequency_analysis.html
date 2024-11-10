@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dance Simulator</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Link to the correct CSS file -->
+    <link rel="stylesheet" href="style.css"> 
     <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
 <body>
     <div class="container">
         <h1 id="header">Dance Simulator</h1>
-        <!-- File input and play/pause button -->
-        <input type="file" id="audioFile" accept="audio/*" class="file-input">
-        <button id="startButton">Start Analyzing</button>
-        <button id="resetButton">Reset</button>
-
-
-        <!-- Frequency and alert display -->
+        <div class="choose-file-container">
+            <input type="file" id="audioFile" accept="audio/*" class="file-input">
+            <label for="audioFile" class="custom-file-button">Choose File</label>
+            <p id="fileNameDisplay">No file chosen</p>
+        </div>        
+            <button id="startButton">Start Analyzing</button>
+        <div class="button-wrapper">
+            <button id="resetButton">Reset</button>
+        </div>
         <div id="results" class="results">
             <p id="frequencyDisplay">Frequency: 0 Hz</p>
             <p id="alertDisplay" style="color: red;"></p>
         </div>
     </div>
 
-    <!-- Waveform display -->
     <div id="waveform"></div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
 

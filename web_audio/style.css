@@ -18,23 +18,103 @@ body {
 
 #header {
     font-family: 'Poppins', sans-serif; 
-    font-size: 50px; 
-    color: white; 
+    font-size: 70px; 
+    color: gold; 
     margin: 0;
 }
 
-.file-input, .btn {
-    margin: 15px 0;
-    padding: 10px 15px;
-    font-size: 16px;
+.choose-file-container {
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
+.file-input {
+    display: none; 
+}
+
+#fileNameDisplay {
+    margin-top: 10px;
+    font-size: 1.2em;
+
+    color: gold; 
+}
+
+.custom-file-button {
+
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    /* margin-left: 40px; */
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-file-button:hover {
+    background-color: white;
+    color: black; /* Darker green */
+    transform: scale(1.1);
+}
+
+
+
+#startButton{
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    /* margin-left: 40px; */
+    transition: .5s;
+}
+
+#startButton:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+.button-wrapper {
+    position: fixed;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index: 10000; 
+}
+
+#resetButton {
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    margin: 0; /* Remove any margin */
+    transition: transform .5s, background-color .5s, color .5s;
+}
+
+#resetButton:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1); /* Scale effect on hover */
 }
 
 #waveform{
@@ -43,9 +123,7 @@ body {
 }
 
 
-.btn:hover {
-    background-color: #0056b3;
-}
+
 
 .results {
     margin-top: 20px;

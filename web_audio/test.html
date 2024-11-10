@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test File Input</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="test_style.css">
+</head>
+<body>
+    <div class="choose-file-container">
+        <input type="file" id="audioFile" accept="audio/*" class="file-input">
+        <label for="audioFile" class="custom-file-button">Choose File</label>
+        <p id="fileNameDisplay">No file chosen</p>
+    </div>
+</body>
+<script>
+    function displayFileName() {
+        const input = document.getElementById('audioFile');
+        const display = document.getElementById('fileNameDisplay');
+        if (input.files.length > 0) {
+            display.textContent = input.files[0].name;
+        } else {
+            display.textContent = 'No file chosen';
+        }
+    }
+</script>
+</html>
