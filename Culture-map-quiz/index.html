@@ -15,6 +15,20 @@
     <header id="header">
         <p id="heading">KalaVriddhi Heritage Hunt Quiz</p>
     </header>
+    <div id="nameModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter Your Name</h2>
+            <input type="text" id="username" placeholder="Your Name" required>
+            <button id="submitNameBtn">Start Quiz</button>
+        </div>
+    </div>
+    <div id="leaderboardbox" class="leaderboard" style="display:none;">
+        <h2>Leaderboard</h2>
+        <div id="leaderboardList">
+            
+        </div>
+        <button id="restartbtn1">Restart</button>
+    </div>    
     <div class="circular-score-container">
         <p id="resultsheading">Results !</p>
         <div id="circleDisplay">
@@ -47,7 +61,7 @@
             <ul id="rules">
                 <li class="rules1">Read each question carefully.</li>
                 <li class="rules1">Choose the best answer from the options provided.</li>
-                <li class="rules1">You have <b>2</b> minutes of time to complete the quiz.</li>
+                <li class="rules1">You have <b>1</b> minutes of time to complete the quiz.</li>
                 <li class="rules1">There are <b>no</b> negative marks each question carries <b>1</b> point.</li>
                 <li class="rules1">Submit your answers once you finish.</li>
                 <li class="rules1"><b>Don't</b> tap reload during the quiz.</li>
@@ -57,7 +71,7 @@
     </div> 
     <div id="questionContainer">
         <div id="info">
-            <p id="timeDisplay">Time Left: 02:00</p>
+            <p id="timeDisplay">Time Left: 01:00</p>
             <p id="answeredStatus">Answered: 1/5</p>
         </div> 
         <div id="q1">

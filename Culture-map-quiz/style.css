@@ -402,3 +402,157 @@ svg {
         opacity: 1; /* Fully visible */
     }
 }
+
+/*pop up*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color:transparent;
+    padding: 20px;
+    border: 2px solid gold; 
+    color: aqua;
+    width: 300px;
+    text-align: center;
+    font-family: 'poppins';
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+}
+
+#username {
+    width: 90%;
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'poppins';
+    font-weight: 510;
+    border: 1px solid aqua;
+    background-color: black;
+    color: yellow;
+    border-radius: 55px;
+}
+#username:hover {
+    border-color: gold;
+}
+#username::placeholder{
+    color: white;
+}
+#username:focus{
+    border-color: gold;
+}
+#submitNameBtn{
+    width: 150px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    transition: .5s;
+    font-family: 'poppins';
+}
+#submitNameBtn:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+/* Leaderboard Container */
+#leaderboardbox {
+    display: none; /* Initially hidden */
+    background-color: transparent;
+    border: 2px solid gold;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: aqua;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Leaderboard Header */
+#leaderboardbox h2 {
+    font-size: 24px;
+    color: aqua;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Leaderboard List */
+#leaderboardList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Leaderboard Items */
+.leaderboard-item {
+    font-size: 16px;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    border: 1px solid aqua;
+    color: gold;
+    font-weight: 550;
+    transition: background-color 0.3s ease;
+}
+
+/* Highlight Player */
+.leaderboard-item.player {
+    font-weight: bold;
+    color: #007bff;
+    background-color: #e7f3ff;
+    border: 1px solid #b3d9ff;
+}
+
+/* Bot Item Styling */
+.leaderboard-item.bot {
+    color: gold;
+}
+
+/* Hover Effect for Items */
+.leaderboard-item:hover {
+    background-color: #f0f8ff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #leaderboardbox {
+        width: 90%;
+    }
+}
+#restartbtn1{
+    font-size: 1.5em;
+    float: left;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: 1px solid gold;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition: background-color 1s ease;
+    margin-top: 10px;
+}
+
+#restartbtn1:hover{
+    background-color: white;
+    color: black;
+}

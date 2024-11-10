@@ -27,9 +27,11 @@ const leaderboard=document.getElementById('leaderboard');
 const tickingsound=new Audio('clocktick.mp3');
 const last5=new Audio('last5.mp3');
 const timeup=new Audio('timeup.mp3');
-
+const nameModal=document.getElementById('nameModal');
+const submitNameBtn=document.getElementById('submitNameBtn');
+let userName='';
 let timer=null;
-let timeLeft=120;
+let timeLeft=60;
 const timeDisplay=document.getElementById('timeDisplay');
 
 let answered=0;
@@ -42,10 +44,8 @@ let selectedOptions=[null,null,null,null,null];//selected options
 answeredStatus.style.fontFamily="poppins";
 answeredStatus.style.fontWeight="600"
 window.onload=()=>{
-    fetchRandomQuestions();
-    startQuiz();
+    nameModal.style.display='flex';
 }
-
 async function fetchRandomQuestions() {
     console.log(q1.querySelector('#opt1').textContent);
     try {
@@ -80,7 +80,7 @@ function startTimer(){
     timer = setInterval(() => {
         timeLeft--; // Decrease the time left by 1 second
         updateTimerDisplay();
-        if(timeLeft==60){
+        if(timeLeft==30){
             timeDisplay.style.color="yellow";
         }
         if(timeLeft==20){
@@ -109,11 +109,23 @@ function updateTimerDisplay() {
     timeDisplay.innerText = `Time Left: ${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
+submitNameBtn.addEventListener('click', () => {
+    const nameInput = document.getElementById('username').value.trim();
+    if (nameInput) {
+        userName = nameInput;
+        nameModal.style.display = 'none';
+        correctAnswers=5; 
+        fetchRandomQuestions(); 
+        startQuiz();
+    } else {
+        alert("Please enter your name to start the quiz.");
+    }
+});
 function startQuiz(){
     answered=0;
     correctAnswers=0;
     selectedOptions=[null,null,null,null,null];
-    timeLeft=120;
+    timeLeft=60;
     timeDisplay.style.color="green";
     // clearInterval(timer);
     updateTimerDisplay();
@@ -268,10 +280,16 @@ function displayQ5(){
     });
     submitbtn.addEventListener('click',()=>{
         q5.style.display="none";
+        clearInterval(timer);
+        tickingsound.pause();
+        last5.pause();
+        timeup.pause();
         displayResults();
     });
 }
-
+const botNames = ["Aryan", "Anvay", "Vamsi", "Raghavendra", "Srikrishna", "Akshat", "Saikrishna", "Tejas", "Srikrishna Madhusudanan"];
+const leaderboardbtn=document.getElementById('leaderboard');
+const leaderboardBox = document.getElementById('leaderboardbox');
 function displayResults(){
     setTimeout(() => {
         timeup.pause();
@@ -304,9 +322,60 @@ function displayResults(){
     // Add the restart event listener
     restartbtn.addEventListener('click', restartQuiz);
     //we can add leaderboard option once it is available
+
+    //add event listener for the leaderboard
+    leaderboardbtn.addEventListener('click',displayLeaderboard);
+}
+
+function displayLeaderboard(){
+    console.log("Displaying the leaderboard");
+    let playerScore=correctAnswers/totalQuestions*100;
+    let playerRank=getRank(playerScore);
+    let leaderboard=generateLeaderboard(playerScore,playerRank);
+
+    const leaderboardList=document.getElementById('leaderboardList');
+    leaderboardList.innerHTML='';
+
+    leaderboard.forEach((entry)=>{
+        const leaderboardItem=document.createElement('div');
+        leaderboardItem.classList.add('leaderboard-item');
+        leaderboardItem.textContent=`${entry.rank}. ${entry.name} - ${entry.score}%`;
+        if (entry.type === 'player') {
+            leaderboardItem.classList.add('player'); 
+        } else {
+            leaderboardItem.classList.add('bot');
+        }
+        leaderboardList.appendChild(leaderboardItem);
+    });
+    resultsBox.style.display = "none";
+    leaderboardBox.style.display = "flex";
+    restartbtn1.addEventListener('click', restartQuiz);
+}
+function getRank(score) {
+    if (score === 100) return 1;
+    if (score >= 80) return 2;
+    if (score >= 60) return 4;
+    if (score >= 40) return 6;
+    if (score >= 20) return 8;
+    return 10;
+}
+const restartbtn1=document.getElementById('restartbtn1');
+function generateLeaderboard(playerScore,playerRank){
+    const bots=[];
+    const marks=[0,20,40,60,80,100];
+    for(let i=0;i<9;i++){
+        let botScore=marks[Math.floor(Math.random()*marks.length)];
+        bots.push({name: botNames[i],score: botScore,type:'bot'});
+    }
+    let playerName=document.getElementById('username').value;
+    let player = { name: `${playerName}(You)`, score: playerScore, rank: playerRank, type: 'player' };
+    let leaderboard = [...bots, player].sort((a, b) => b.score - a.score);
+    leaderboard.forEach((entry, index) => entry.rank = index + 1);
+    return leaderboard;
 }
 function restartQuiz() {
     resultsBox.style.display="none";
+    leaderboardBox.style.display = "none";
     correctAnswersList = [];
     fetchRandomQuestions();
     startQuiz();
