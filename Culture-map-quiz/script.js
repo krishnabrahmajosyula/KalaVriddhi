@@ -31,7 +31,7 @@ const nameModal=document.getElementById('nameModal');
 const submitNameBtn=document.getElementById('submitNameBtn');
 let userName='';
 let timer=null;
-let timeLeft=60;
+let timeLeft=120;
 const timeDisplay=document.getElementById('timeDisplay');
 
 let answered=0;
@@ -125,7 +125,7 @@ function startQuiz(){
     answered=0;
     correctAnswers=0;
     selectedOptions=[null,null,null,null,null];
-    timeLeft=60;
+    timeLeft=120;
     timeDisplay.style.color="green";
     // clearInterval(timer);
     updateTimerDisplay();
