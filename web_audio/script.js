@@ -137,9 +137,10 @@ async function startAnalysis(file) {
             sourceNode.buffer = audioBuffer;
             sourceNode.connect(analyser);
             analyser.connect(audioContext.destination);
-
             waveSurfer.play();
             sourceNode.start();
+
+
 
             frequencyInterval = setInterval(() => analyzeFrequency(), 500);
             sourceNode.onended=async ()=>{
@@ -148,6 +149,7 @@ async function startAnalysis(file) {
                 await renderSequentially(mainScene);
                 renderOnSmallCanvas();
             };
+
         } catch (error) {
             console.error("Error during file analysis:", error);
             alert("An error occurred during file analysis.");
@@ -183,7 +185,7 @@ function analyzeFrequency() {
 }
 function getarray(){
     let start_steps = ["s1.glb","s2.glb"];
-    let middle_steps = ["m1.glb","m2.glb","m3.glb","m4.glb","m6.glb","m7.glb","m8.glb"];
+    let middle_steps = ["m1.glb","m2.glb","m3.glb","m4.glb","m5.glb","m6.glb","m7.glb","m8.glb"];
     let end_steps = ["e1.glb","e2.glb"];
     function getRandomIndex(arr){
         return Math.floor(Math.random() * arr.length);
