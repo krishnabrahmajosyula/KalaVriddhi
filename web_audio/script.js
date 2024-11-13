@@ -11,7 +11,6 @@ let audioBuffer;
 let sourceNode;
 let frequencyInterval;
 let dance_sequence = [];
-
 // Event listener to display chosen file name
 fileInput.addEventListener('change', displayFileName);
 
@@ -32,6 +31,70 @@ startButton.addEventListener('click', () => {
     startAnalysis(fileInput.files[0]);
 });
 
+//code for rendering 3d models
+const bigcanvas=document.getElementById("model-3d");
+const renderEngine=new BABYLON.Engine(bigcanvas,true);  
+const smallcanvas=[document.getElementById("s1"),document.getElementById("m1"),document.getElementById("m2"),document.getElementById("m3"),document.getElementById("m4"),document.getElementById("e1")];
+let mainScene;
+const makeMainScene=()=>{
+    mainScene=new BABYLON.Scene(renderEngine);
+    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,10,BABYLON.Vector3.Zero(),mainScene);
+    cameraEle.attachControl(bigcanvas,true);
+    const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),mainScene);
+    return mainScene;
+}
+
+const renderSequentially=async (scene)=>{
+    if (!scene){
+        console.error("Scene is not defined.");
+        return;
+    }
+    if(!scene || !scene.meshes){
+        console.error("Scene or meshes are not defined.");
+        return;
+    }
+    for(let i=0;i<dance_sequence.length;i++){
+        scene.meshes.forEach(mesh=>{
+            mesh.dispose();
+        });
+        await new Promise(resolve=>{
+            BABYLON.SceneLoader.Append("./danceModels/",dance_sequence[i],scene,()=>{
+                console.log(`Model:${dance_sequence[i]} loaded`);
+                resolve();
+            });
+        });
+        await new Promise(resolve=>setTimeout(resolve,5700));
+    }
+};
+
+const renderOnSmallCanvas=()=>{
+    smallcanvas.forEach((canvas,index)=>{
+        const engineSmall=new BABYLON.Engine(canvas,true);
+        const sceneSmall=new BABYLON.Scene(engineSmall);
+        const cameraSmall = new BABYLON.ArcRotateCamera("smallcamera",Math.PI / 2,Math.PI / 4,3,BABYLON.Vector3.Zero(),sceneSmall);
+        const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),sceneSmall);
+        cameraSmall.attachControl(canvas, true);
+        BABYLON.SceneLoader.Append("/danceModels/",dance_sequence[index],sceneSmall,()=>{
+            console.log(`Model:${dance_sequence[index]}loaded`);
+        });
+        engineSmall.runRenderLoop(()=>{
+            sceneSmall.render();
+        });
+    });
+};
+// renderSequentially(mainScene).then(()=>{
+//     renderOnSmallCanvas();
+// });
+mainScene=makeMainScene();
+renderEngine.runRenderLoop(()=>{
+   if(mainScene){
+    mainScene.render();
+   }
+});
+
+window.addEventListener("resize",()=>{
+    renderEngine.resize();
+});
 async function startAnalysis(file) {
     startButton.disabled = true;
     startButton.innerText = "Analyzing...";
@@ -79,6 +142,12 @@ async function startAnalysis(file) {
             sourceNode.start();
 
             frequencyInterval = setInterval(() => analyzeFrequency(), 500);
+            sourceNode.onended=async ()=>{
+                clearInterval(frequencyInterval);
+                resetStartButton();
+                await renderSequentially(mainScene);
+                renderOnSmallCanvas();
+            };
         } catch (error) {
             console.error("Error during file analysis:", error);
             alert("An error occurred during file analysis.");
@@ -113,9 +182,9 @@ function analyzeFrequency() {
     }
 }
 function getarray(){
-    let start_steps = ["s1","s2"];
-    let middle_steps = ["m1","m2","m3","m4","m6","m8"];
-    let end_steps = ["e1","e2"];
+    let start_steps = ["s1.glb","s2.glb"];
+    let middle_steps = ["m1.glb","m2.glb","m3.glb","m4.glb","m6.glb","m7.glb","m8.glb"];
+    let end_steps = ["e1.glb","e2.glb"];
     function getRandomIndex(arr){
         return Math.floor(Math.random() * arr.length);
     }
@@ -145,4 +214,20 @@ function getDominantFrequency(frequencyData) {
 // Event listener for the reset button
 resetButton.addEventListener('click', () => {
     location.reload();
+});
+
+
+const allCanvasElements = [bigcanvas, ...smallcanvas];
+function disableScroll(event) {
+    event.preventDefault();
+}
+allCanvasElements.forEach(canvas=>{
+    canvas.addEventListener("wheel",()=>{
+        window.addEventListener("wheel", disableScroll,{passive:false});
+        window.addEventListener("touchmove",disableScroll,{passive:false});
+    });
+    canvas.addEventListener("mouseleave",()=>{
+        window.removeEventListener("wheel",disableScroll);
+        window.removeEventListener("touchmove",disableScroll);
+    });
 });
