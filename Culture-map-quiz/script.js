@@ -31,7 +31,7 @@ const nameModal=document.getElementById('nameModal');
 const submitNameBtn=document.getElementById('submitNameBtn');
 let userName='';
 let timer=null;
-let timeLeft=60;
+let timeLeft=120;
 const timeDisplay=document.getElementById('timeDisplay');
 
 let answered=0;
@@ -125,7 +125,7 @@ function startQuiz(){
     answered=0;
     correctAnswers=0;
     selectedOptions=[null,null,null,null,null];
-    timeLeft=60;
+    timeLeft=120;
     timeDisplay.style.color="green";
     // clearInterval(timer);
     updateTimerDisplay();
@@ -287,7 +287,7 @@ function displayQ5(){
         displayResults();
     });
 }
-const botNames = ["Aryan", "Anvay", "Vamsi", "Raghavendra", "Srikrishna", "Akshat", "Saikrishna", "Tejas", "Srikrishna Madhusudanan"];
+const botNames = ["Aryan", "Anvay", "Vamsi", "Raghavendra", "Srikrishna", "Akshat", "Saikrishna", "Tejas", "Srikrishna Madhusudanan","Chitraksh","Santosh","Mahesh","Rishabh","Satish","Tourist","Rupesh","Pratham","Naman","Prathik","Raghava2506"];
 const leaderboardbtn=document.getElementById('leaderboard');
 const leaderboardBox = document.getElementById('leaderboardbox');
 function displayResults(){
@@ -361,16 +361,22 @@ function getRank(score) {
 }
 const restartbtn1=document.getElementById('restartbtn1');
 function generateLeaderboard(playerScore,playerRank){
-    const bots=[];
     const marks=[0,20,40,60,80,100];
-    for(let i=0;i<9;i++){
-        let botScore=marks[Math.floor(Math.random()*marks.length)];
-        bots.push({name: botNames[i],score: botScore,type:'bot'});
-    }
-    let playerName=document.getElementById('username').value;
+    const shuffledBotNames = botNames.sort(() => Math.random() - 0.5).slice(0, 9);
+
+
+    const bots = shuffledBotNames.map((name) => {
+        let botScore = marks[Math.floor(Math.random() * marks.length)];
+        return { name: name, score: botScore, type: 'bot' };
+    });
+
+    let playerName = document.getElementById('username').value;
     let player = { name: `${playerName}(You)`, score: playerScore, rank: playerRank, type: 'player' };
+
+    
     let leaderboard = [...bots, player].sort((a, b) => b.score - a.score);
     leaderboard.forEach((entry, index) => entry.rank = index + 1);
+
     return leaderboard;
 }
 function restartQuiz() {
