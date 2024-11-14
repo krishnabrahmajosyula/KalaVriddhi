@@ -137,9 +137,10 @@ async function startAnalysis(file) {
             sourceNode.buffer = audioBuffer;
             sourceNode.connect(analyser);
             analyser.connect(audioContext.destination);
-
             waveSurfer.play();
             sourceNode.start();
+
+
 
             frequencyInterval = setInterval(() => analyzeFrequency(), 500);
             sourceNode.onended=async ()=>{
@@ -148,6 +149,7 @@ async function startAnalysis(file) {
                 await renderSequentially(mainScene);
                 renderOnSmallCanvas();
             };
+
         } catch (error) {
             console.error("Error during file analysis:", error);
             alert("An error occurred during file analysis.");
@@ -181,6 +183,14 @@ function analyzeFrequency() {
         resetStartButton();
     }
 }
+function getSequence() {
+    let sequence = ["s1","s2","s3"];
+    //s1 = step 1 LL RR step 2 LL RR step 1 LL RR
+    //s2 = step 1 LR LR step 2  LR LR step 1 LR LR
+    //s3 = step 1 LL R step 2 LL R step 3 LL R
+    return Math.floor(Math.random() * arr.length);
+}
+
 function getarray(){
     let start_steps = ["s1.glb","s2.glb"];
     let middle_steps = ["m1.glb","m2.glb","m3.glb",/*"m4.glb"*/,"m6.glb","m7.glb","m8.glb"];
@@ -199,6 +209,7 @@ function getarray(){
     console.log(dance_sequence);
 
 }
+
 function getDominantFrequency(frequencyData) {
     let maxIndex = 0;
     for (let i = 1; i < frequencyData.length; i++) {
