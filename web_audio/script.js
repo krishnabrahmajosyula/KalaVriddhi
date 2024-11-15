@@ -38,7 +38,7 @@ const smallcanvas=[document.getElementById("s1"),document.getElementById("m1"),d
 let mainScene;
 const makeMainScene=()=>{
     mainScene=new BABYLON.Scene(renderEngine);
-    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,10,BABYLON.Vector3.Zero(),mainScene);
+    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,3,BABYLON.Vector3.Zero(),mainScene);
     cameraEle.attachControl(bigcanvas,true);
     const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),mainScene);
     return mainScene;
@@ -193,7 +193,7 @@ function getSequence() {
 
 function getarray(){
     let start_steps = ["s1.glb","s2.glb"];
-    let middle_steps = ["m1.glb","m2.glb","m3.glb","m4.glb","m5.glb","m6.glb","m7.glb","m8.glb"];
+    let middle_steps = ["m1.glb","m2.glb","m3.glb",/*"m4.glb"*/,"m6.glb","m7.glb","m8.glb"];
     let end_steps = ["e1.glb","e2.glb"];
     function getRandomIndex(arr){
         return Math.floor(Math.random() * arr.length);
