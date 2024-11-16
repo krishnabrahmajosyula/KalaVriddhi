@@ -1,55 +1,61 @@
-body{
-    background-color: black;
-    font-family: 'Poppins',sans-serif;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+body {
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+  margin: 0;
 }
 
-.title{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    font-weight: 700;
-    font-size:15vh;
-    margin: 2vh;
-    padding: 2vh;
-    height: 50vh;
-    
-    color: aliceblue;
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-weight: 700;
+  font-size: 10vh;
+  margin: 2vh;
+  padding: 2vh;
+  color: aliceblue;
 }
 
+.buttons button {
+  background-color: #ecbd00;
+  color: #eee;
+  width: 70%;
+  padding: 2.5vh;
+  margin: 2vh;
+  border-radius: 10px;
+  font-size: 3.5vh;
+  border: none;
+  transition: 0.3s;
+}
 
-.buttons button{
-    background-color: #ecbd00;
-    color: #eee;
-    width: 25vw;
-    padding: 3vh;
-    margin: 2vh;
-    border-radius: 10px;
-    font-size: 4.5vh;
-    border: none;
+.buttons button:hover {
+  background-color: #d4a900;
+  transform: scale(1.05);
 }
 
 #home {
   display: flex;
   justify-content: flex-start;
+  width: 100%;
 }
 
 #homebtn {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: transparent;
   outline: none;
-  border: 3px solid white;
+  border: 2px solid white;
   border-radius: 50%;
   cursor: pointer;
   position: fixed;
-  top: 40px;
-  left: 20px; /* Move button to the leftmost position */
+  top: 20px;
+  left: 10px;
   padding: 0;
-  margin-left: 20px; /* Add margin for spacing */
+  margin-left: 10px;
   transition: 0.3s;
 }
 
@@ -58,12 +64,57 @@ body{
   color: black;
   transform: scale(1.1);
   border-color: white;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #logo {
-  width: 100%; /* Make logo fit inside button */
+  width: 100%;
   height: 100%;
   border-radius: 50%;
   box-sizing: border-box;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .title {
+      font-size: 8vh;
+      padding: 1.5vh;
+      margin: 1.5vh;
+  }
+
+  .buttons button {
+      width: 80%;
+      font-size: 3vh;
+      padding: 2vh;
+  }
+
+  #homebtn {
+      width: 50px;
+      height: 50px;
+      top: 15px;
+      left: 5px;
+      border: 2px solid white;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 6vh;
+      margin: 1vh;
+      padding: 1vh;
+  }
+
+  .buttons button {
+      width: 90%;
+      font-size: 2.5vh;
+      padding: 1.5vh;
+  }
+
+  #homebtn {
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      left: 5px;
+      border: 1.5px solid white;
+  }
 }
