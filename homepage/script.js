@@ -1,15 +1,14 @@
-const loginbtn=document.getElementById('loginbtn');
-const requestFeature=document.getElementById('requestFeature');
-const contributeQuestions=document.getElementById('contribute');
+window.onload = function(){
+    const popup = document.getElementById('instructionPopup');
+    if(sessionStorage.getItem('popupShown') !== 'true'){
+        popup.classList.add('show');
+        sessionStorage.setItem('popupShown', 'true');
+    } else {
+        popup.classList.remove('show');
+    }
+};
 
-loginbtn.addEventListener('click',()=>{
-    window.location.href="../loginPage/index.html";
-})
-
-requestFeature.addEventListener('click',()=>{
-    window.location.href="./RequestFeature/rf.html";
-})
-
-contributeQuestions.addEventListener('click',()=>{
-    window.location.href="./ContributeToQuiz/index.html";
-})
+function closePopup(){
+    const popup = document.getElementById('instructionPopup');
+    popup.classList.remove('show');
+}

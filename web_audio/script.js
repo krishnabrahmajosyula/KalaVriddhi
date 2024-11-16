@@ -1,18 +1,34 @@
-const thresholdFrequency = 1000; // Frequency threshold in Hz
-const interval = 500; // Interval in ms
-
+// Reference to input element and file display
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const fileInput = document.getElementById('audioFile');
+const startButton = document.getElementById('startButton');
+const display = document.getElementById('fileNameDisplay');
+const resetButton = document.getElementById('resetButton');
 const analyser = audioContext.createAnalyser();
-analyser.fftSize = 2048; // Size of the FFT for better frequency resolution
-
+analyser.fftSize = 2048;
 let waveSurfer;
 let audioBuffer;
 let sourceNode;
 let frequencyInterval;
-let audioPlayed = false;
+let dance_sequence = [];
+let start_steps = ["s1.glb","s2.glb"];
+let middle_steps = ["m1.glb","m2.glb","m3.glb","m6.glb","m7.glb","m8.glb"];
+let middle_steps_mirrored = ["mm1.glb","mm2.glb","mm3.glb","mm6.glb","mm7.glb","mm8.glb"];
+let end_steps = ["e1.glb","e2.glb"];
 
-document.getElementById('startButton').addEventListener('click', () => {
-    const fileInput = document.getElementById('audioFile');
+// Event listener to display chosen file name
+fileInput.addEventListener('change', displayFileName);
+
+function displayFileName() {
+    if (fileInput.files.length > 0) {
+        display.textContent = fileInput.files[0].name;
+    } else {
+        display.textContent = 'No file chosen';
+    }
+}
+
+// Event listener for the start button
+startButton.addEventListener('click', () => {
     if (fileInput.files.length === 0) {
         alert("Please select an audio file first.");
         return;
@@ -20,59 +36,138 @@ document.getElementById('startButton').addEventListener('click', () => {
     startAnalysis(fileInput.files[0]);
 });
 
-function startAnalysis(file) {
-    // Disable the start button and change its text
-    const startButton = document.getElementById('startButton');
+//code for rendering 3d models
+const bigcanvas=document.getElementById("model-3d");
+const renderEngine=new BABYLON.Engine(bigcanvas,true);  
+const smallcanvas=[document.getElementById("s1"),document.getElementById("m1"),document.getElementById("m2"),document.getElementById("m3"),document.getElementById("m4"),document.getElementById("e1")];
+let mainScene;
+const makeMainScene=()=>{
+    mainScene=new BABYLON.Scene(renderEngine);
+    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,3,BABYLON.Vector3.Zero(),mainScene);
+    cameraEle.attachControl(bigcanvas,true);
+    const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),mainScene);
+    return mainScene;
+}
+
+const renderSequentially=async (scene)=>{
+    if (!scene){
+        console.error("Scene is not defined.");
+        return;
+    }
+    if(!scene || !scene.meshes){
+        console.error("Scene or meshes are not defined.");
+        return;
+    }
+    for(let i=0;i<dance_sequence.length;i++){
+        scene.meshes.forEach(mesh=>{
+            mesh.dispose();
+        });
+        await new Promise(resolve=>{
+            BABYLON.SceneLoader.Append("./danceModels/",dance_sequence[i],scene,()=>{
+                console.log(`Model:${dance_sequence[i]} loaded`);
+                resolve();
+            });
+        });
+        await new Promise(resolve=>setTimeout(resolve,5700));
+    }
+};
+
+const renderOnSmallCanvas=()=>{
+    smallcanvas.forEach((canvas,index)=>{
+        const engineSmall=new BABYLON.Engine(canvas,true);
+        const sceneSmall=new BABYLON.Scene(engineSmall);
+        const cameraSmall = new BABYLON.ArcRotateCamera("smallcamera",Math.PI / 2,Math.PI / 4,3,BABYLON.Vector3.Zero(),sceneSmall);
+        const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),sceneSmall);
+        cameraSmall.attachControl(canvas, true);
+        BABYLON.SceneLoader.Append("/danceModels/",dance_sequence[index],sceneSmall,()=>{
+            console.log(`Model:${dance_sequence[index]}loaded`);
+        });
+        engineSmall.runRenderLoop(()=>{
+            sceneSmall.render();
+        });
+    })
+};
+// renderSequentially(mainScene).then(()=>{
+//     renderOnSmallCanvas();
+// });
+mainScene=makeMainScene();
+renderEngine.runRenderLoop(()=>{
+   if(mainScene){
+    mainScene.render();
+   }
+});
+
+window.addEventListener("resize",()=>{
+    renderEngine.resize();
+});
+async function startAnalysis(file) {
     startButton.disabled = true;
     startButton.innerText = "Analyzing...";
 
     const reader = new FileReader();
     reader.onload = async (event) => {
-        const arrayBuffer = event.target.result;
-
-        // Decode audio data and create WaveSurfer instance
-        if (!audioBuffer) {
+        try {
+            const arrayBuffer = event.target.result;
             audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
-            // Initialize WaveSurfer and create the waveform
-            waveSurfer = WaveSurfer.create({
-                container: '#waveform', // The div where the waveform will be displayed
-                waveColor: 'white', // Waveform color
-                progressColor: 'grey', // Color for the progress bar
-                cursorColor: 'navy', // Color of the cursor
-                height: 100, // Height of the waveform
-                audioContext: audioContext, // Use the same AudioContext for both
-                backend: 'WebAudio', 
-                mute: true, // Mute the audio in WaveSurfer (no audio will be played from WaveSurfer)
-                interact: false, // Disable waveform interaction
-                normalize: true // Normalize the waveform to improve visibility
-            });
+            if (audioBuffer.duration > 32) {
+                alert('The audio file must be less than 32 seconds long.');
+                resetStartButton();
+                return;
+            }
+            else{
+                getSequence();
+            }
 
-            waveSurfer.loadBlob(file); // Load the audio file into WaveSurfer
+            if (!waveSurfer) {
+                waveSurfer = WaveSurfer.create({
+                    container: '#waveform',
+                    waveColor: 'white',
+                    progressColor: 'grey',
+                    cursorColor: 'navy',
+                    height: 100,
+                    audioContext: audioContext,
+                    backend: 'WebAudio',
+                    mute: true,
+                    interact: false,
+                    normalize: true
+                });
+            }
+            waveSurfer.loadBlob(file);
+
+            if (sourceNode) {
+                sourceNode.disconnect();
+            }
+            sourceNode = audioContext.createBufferSource();
+            sourceNode.buffer = audioBuffer;
+            sourceNode.connect(analyser);
+            analyser.connect(audioContext.destination);
+            waveSurfer.play();
+            sourceNode.start();
+
+
+
+            frequencyInterval = setInterval(() => analyzeFrequency(), 500);
+            sourceNode.onended=async ()=>{
+                clearInterval(frequencyInterval);
+                resetStartButton();
+                await renderSequentially(mainScene);
+                renderOnSmallCanvas();
+            };
+
+        } catch (error) {
+            console.error("Error during file analysis:", error);
+            alert("An error occurred during file analysis.");
+            resetStartButton();
         }
-
-        // Create a new audio source and connect it to the analyser node
-        if (sourceNode) {
-            sourceNode.disconnect();
-        }
-        sourceNode = audioContext.createBufferSource();
-        sourceNode.buffer = audioBuffer;
-        sourceNode.connect(analyser);
-        analyser.connect(audioContext.destination);
-
-        // Start playback (muted) using WaveSurfer
-        waveSurfer.play();
-        
-        // Play the audio from the source node (to trigger frequency analysis)
-        sourceNode.start();
-
-        // Start frequency analysis and monitor until done
-        frequencyInterval = setInterval(() => analyzeFrequency(), interval);
-
-        // Mark that audio has been played
-        audioPlayed = true;
     };
     reader.readAsArrayBuffer(file);
+    
+}
+
+function resetStartButton() {
+    startButton.disabled = false;
+    startButton.innerText = "Start Analyzing";
 }
 
 function analyzeFrequency() {
@@ -81,24 +176,103 @@ function analyzeFrequency() {
 
     const dominantFrequency = getDominantFrequency(frequencyData);
     document.getElementById('frequencyDisplay').innerText = `Frequency: ${dominantFrequency} Hz`;
-    document.getElementById('resetButton').addEventListener('click', () => {
-        location.reload(); // Refreshes the page when clicked
-    });
-    
-    // Trigger action if the dominant frequency crosses the threshold
-    if (dominantFrequency > thresholdFrequency) {
+
+    if (dominantFrequency > 1000) {
         document.getElementById('alertDisplay').innerText = "Frequency threshold crossed!";
     } else {
         document.getElementById('alertDisplay').innerText = "";
     }
 
-    // Check if the analysis is complete (based on file length or another condition)
     if (audioContext.currentTime >= audioBuffer.duration) {
-        clearInterval(frequencyInterval); // Stop frequency analysis interval
-        document.getElementById('startButton').disabled = false; // Enable the start button
-        document.getElementById('startButton').innerText = "Start Analyzing"; // Reset button text
+        clearInterval(frequencyInterval);
+        resetStartButton();
     }
 }
+function getSequence() {
+    let sequence = ["s1","s2","s3"];
+    let i;
+    i = Math.floor(Math.random() * sequence.length);
+    console.log("Sequence generated: ", sequence[i]);
+    if (sequence[i] == "s1"){
+        getS1();
+    }
+    else if (sequence[i] == "s2"){
+        getS2();
+    }
+    if (sequence[i] == "s3"){
+        getS3();
+    }
+}
+
+function getRandomIndex(arr){
+    return Math.floor(Math.random() * arr.length);
+}
+
+function getS1(){
+    let unique_indices = [];
+    let index;
+    while(unique_indices.length < 4){
+        index = getRandomIndex(middle_steps);
+        if(!unique_indices.includes(index)){
+            unique_indices.push(index);
+        }
+    }
+    console.log(unique_indices);
+    for(let i = 0; i<4;i++){
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
+    }
+    console.log(dance_sequence);
+}
+
+function getS2(){
+    let unique_indices = [];
+    let index;
+    while(unique_indices.length < 4){
+        index = getRandomIndex(middle_steps);
+        if(!unique_indices.includes(index)){
+            unique_indices.push(index);
+        }
+    }
+    console.log(unique_indices);
+    for(let i = 0; i<4;i++){
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
+    }
+    console.log(dance_sequence);
+}
+
+function getS3(){
+    let unique_indices = [];
+    let index;
+    while(unique_indices.length < 4){
+        index = getRandomIndex(middle_steps);
+        if(!unique_indices.includes(index)){
+            unique_indices.push(index);
+        }
+    }
+    console.log(unique_indices);
+    for(let i = 0; i<4;i++){
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    }
+    console.log(dance_sequence);
+}
+// function getarray(){
+
+//     dance_sequence.push(start_steps[getRandomIndex(start_steps)]);
+//     console.log(dance_sequence);
+//     for( let i = 0; i < 4; i++){
+//         dance_sequence.push(middle_steps[getRandomIndex(middle_steps)]);
+//     }
+//     dance_sequence.push(end_steps[getRandomIndex(end_steps)]);
+
+//     console.log(dance_sequence);
+
+// }
 
 function getDominantFrequency(frequencyData) {
     let maxIndex = 0;
@@ -111,3 +285,24 @@ function getDominantFrequency(frequencyData) {
     const frequency = (maxIndex * nyquist) / frequencyData.length;
     return Math.round(frequency);
 }
+
+// Event listener for the reset button
+resetButton.addEventListener('click', () => {
+    location.reload();
+});
+
+
+const allCanvasElements = [bigcanvas, ...smallcanvas];
+function disableScroll(event) {
+    event.preventDefault();
+}
+allCanvasElements.forEach(canvas=>{
+    canvas.addEventListener("wheel",()=>{
+        window.addEventListener("wheel", disableScroll,{passive:false});
+        window.addEventListener("touchmove",disableScroll,{passive:false});
+    });
+    canvas.addEventListener("mouseleave",()=>{
+        window.removeEventListener("wheel",disableScroll);
+        window.removeEventListener("touchmove",disableScroll);
+    });
+});

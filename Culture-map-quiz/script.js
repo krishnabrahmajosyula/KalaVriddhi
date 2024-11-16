@@ -27,7 +27,9 @@ const leaderboard=document.getElementById('leaderboard');
 const tickingsound=new Audio('clocktick.mp3');
 const last5=new Audio('last5.mp3');
 const timeup=new Audio('timeup.mp3');
-
+const nameModal=document.getElementById('nameModal');
+const submitNameBtn=document.getElementById('submitNameBtn');
+let userName='';
 let timer=null;
 let timeLeft=120;
 const timeDisplay=document.getElementById('timeDisplay');
@@ -42,16 +44,12 @@ let selectedOptions=[null,null,null,null,null];//selected options
 answeredStatus.style.fontFamily="poppins";
 answeredStatus.style.fontWeight="600"
 window.onload=()=>{
-    fetchRandomQuestions();
-    startQuiz();
+    nameModal.style.display='flex';
 }
-
 async function fetchRandomQuestions() {
-    console.log(q1.querySelector('#opt1').textContent);
     try {
         const response = await fetch("http://localhost:3000/quiz/random");
         const questions = await response.json();
-        console.log(questions);
         if (response.ok) {
             // Populate questions in your HTML based on the questions fetched
             questions.forEach((question, index) => {
@@ -80,7 +78,7 @@ function startTimer(){
     timer = setInterval(() => {
         timeLeft--; // Decrease the time left by 1 second
         updateTimerDisplay();
-        if(timeLeft==60){
+        if(timeLeft==30){
             timeDisplay.style.color="yellow";
         }
         if(timeLeft==20){
@@ -109,6 +107,18 @@ function updateTimerDisplay() {
     timeDisplay.innerText = `Time Left: ${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
+submitNameBtn.addEventListener('click', () => {
+    const nameInput = document.getElementById('username').value.trim();
+    if (nameInput) {
+        userName = nameInput;
+        nameModal.style.display = 'none';
+        correctAnswers=5; 
+        fetchRandomQuestions(); 
+        startQuiz();
+    } else {
+        alert("Please enter your name to start the quiz.");
+    }
+});
 function startQuiz(){
     answered=0;
     correctAnswers=0;
@@ -137,7 +147,6 @@ function displayQ1(){
         if (input.value === selectedOptions[0]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[0] !== input.value) {
                 if (!selectedOptions[0]) {
@@ -167,7 +176,6 @@ function displayQ2(){
         if (input.value === selectedOptions[1]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[1] !== input.value) {
                 if (!selectedOptions[1]) {
@@ -193,7 +201,6 @@ function displayQ3(){
         if (input.value === selectedOptions[2]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[2] !== input.value) {
                 if (!selectedOptions[2]) {
@@ -222,7 +229,6 @@ function displayQ4(){
         if (input.value === selectedOptions[3]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[3] !== input.value) {
                 if (!selectedOptions[3]) {
@@ -250,7 +256,6 @@ function displayQ5(){
         if (input.value === selectedOptions[4]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[4] !== input.value) {
                 if (!selectedOptions[4]) {
@@ -268,10 +273,16 @@ function displayQ5(){
     });
     submitbtn.addEventListener('click',()=>{
         q5.style.display="none";
+        clearInterval(timer);
+        tickingsound.pause();
+        last5.pause();
+        timeup.pause();
         displayResults();
     });
 }
-
+const botNames = ["Aryan", "Anvay", "Vamsi", "Raghavendra", "Srikrishna", "Akshat", "Saikrishna", "Tejas", "Srikrishna Madhusudanan","Chitraksh","Santosh","Mahesh","Rishabh","Satish","Tourist","Rupesh","Pratham","Naman","Prathik","Raghava2506"];
+const leaderboardbtn=document.getElementById('leaderboard');
+const leaderboardBox = document.getElementById('leaderboardbox');
 function displayResults(){
     setTimeout(() => {
         timeup.pause();
@@ -279,16 +290,12 @@ function displayResults(){
     questionsBox.style.display="none";
     // Reset correctAnswers count before checking
     correctAnswers = 0;
-    console.log(selectedOptions);
-    console.log(correctAnswersList);
     // Iterate over selected options and compare with correct answers
     selectedOptions.forEach((selected, index) => {
         if (selected === correctAnswersList[index]) {
             correctAnswers++;
         }
-        console.log(correctAnswers);
     });
-    console.log(correctAnswers);
     resultsBox.style.display="flex";
     scoreDisplay.textContent=(correctAnswers/totalQuestions * 100) + '%';
     scoreMessage.textContent = `You scored ${correctAnswers}/${totalQuestions}`;
@@ -304,9 +311,65 @@ function displayResults(){
     // Add the restart event listener
     restartbtn.addEventListener('click', restartQuiz);
     //we can add leaderboard option once it is available
+
+    //add event listener for the leaderboard
+    leaderboardbtn.addEventListener('click',displayLeaderboard);
+}
+
+function displayLeaderboard(){
+    let playerScore=correctAnswers/totalQuestions*100;
+    let playerRank=getRank(playerScore);
+    let leaderboard=generateLeaderboard(playerScore,playerRank);
+
+    const leaderboardList=document.getElementById('leaderboardList');
+    leaderboardList.innerHTML='';
+
+    leaderboard.forEach((entry)=>{
+        const leaderboardItem=document.createElement('div');
+        leaderboardItem.classList.add('leaderboard-item');
+        leaderboardItem.textContent=`${entry.rank}. ${entry.name} - ${entry.score}%`;
+        if (entry.type === 'player') {
+            leaderboardItem.classList.add('player'); 
+        } else {
+            leaderboardItem.classList.add('bot');
+        }
+        leaderboardList.appendChild(leaderboardItem);
+    });
+    resultsBox.style.display = "none";
+    leaderboardBox.style.display = "flex";
+    restartbtn1.addEventListener('click', restartQuiz);
+}
+function getRank(score) {
+    if (score === 100) return 1;
+    if (score >= 80) return 2;
+    if (score >= 60) return 4;
+    if (score >= 40) return 6;
+    if (score >= 20) return 8;
+    return 10;
+}
+const restartbtn1=document.getElementById('restartbtn1');
+function generateLeaderboard(playerScore,playerRank){
+    const marks=[0,20,40,60,80,100];
+    const shuffledBotNames = botNames.sort(() => Math.random() - 0.5).slice(0, 9);
+
+
+    const bots = shuffledBotNames.map((name) => {
+        let botScore = marks[Math.floor(Math.random() * marks.length)];
+        return { name: name, score: botScore, type: 'bot' };
+    });
+
+    let playerName = document.getElementById('username').value;
+    let player = { name: `${playerName}(You)`, score: playerScore, rank: playerRank, type: 'player' };
+
+    
+    let leaderboard = [...bots, player].sort((a, b) => b.score - a.score);
+    leaderboard.forEach((entry, index) => entry.rank = index + 1);
+
+    return leaderboard;
 }
 function restartQuiz() {
     resultsBox.style.display="none";
+    leaderboardBox.style.display = "none";
     correctAnswersList = [];
     fetchRandomQuestions();
     startQuiz();

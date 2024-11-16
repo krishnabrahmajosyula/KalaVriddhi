@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded",function (){
         const modelName=document.getElementById("modelName").value;
         const modelDescription=document.getElementById("description").value;
         const modelFile=document.getElementById("modelFile").files[0];
+        const category=document.getElementById("select-cat").value;
     
         if(!modelFile){
             alert("Select a file for uploading.");
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded",function (){
         formData.append("name",modelName);
         formData.append("description",modelDescription);
         formData.append("modelfile",modelFile);
+        formData.append("category",category);
     
         try{
             const res=await fetch("http://localhost:3000/addModel/uploadmodel",{
@@ -23,7 +25,8 @@ document.addEventListener("DOMContentLoaded",function (){
                 body:formData,
             });
             if(!res.ok){
-                alert("Unable to upload model");
+                alert("Unable to upload model. A similar model exists with this name.");
+                document.getElementById("uploadForm").reset();
                 throw new Error("Unable to upload model.");
             }
             const result=await res.json();
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded",function (){
             document.getElementById("uploadForm").reset();
         }catch(err){
             console.error("Error in uploading model:",err);
-            alert("Error uploading model.");
+            // alert("Error uploading model.");
         }
     });
 });
@@ -82,8 +85,14 @@ let curr_page=1;
 let maxPage_size=12;
 
 async function retreiveMudras() {
+    const loader=document.getElementById("loader");
+    const cont=document.getElementById("listofModels");
+    loader.style.display="block";
+    cont.innerHTML="";
     try{
+        console.time("API Call");
         const response=await fetch(getModelAPI);
+        console.time("API Call");
         const listOfMudras=await response.json();
 
         if(Array.isArray(listOfMudras) && listOfMudras.length>0){
@@ -95,21 +104,24 @@ async function retreiveMudras() {
     }catch(error){
         console.error("Error in fetching Mudras:",error);
         document.getElementById("listofModels").innerHTML="<p>Unable to load Mudras from DataBase</p>";
-
+    }finally{
+        loader.style.display="none";
     }
 }
 
 function renderListOfMudras(mudras){
     const cont=document.getElementById("listofModels");
     cont.innerHTML="";
+    const fragment=document.createDocumentFragment();
     mudras.forEach(mudra => {
         const mudraCard=document.createElement("div");
         mudraCard.classList.add("mudra-element");
         mudraCard.innerHTML=`<h3>${mudra.name}
                             <button class="delete-btn" onclick="deleteMudra('${mudra._id}')">Delete</button>`;
 
-        cont.appendChild(mudraCard);
+        fragment.appendChild(mudraCard);
     });
+    cont.appendChild(fragment);
 }
 
 async function deleteMudra(id){
@@ -130,5 +142,49 @@ async function deleteMudra(id){
     }
 }
 
-window.onload=retreiveMudras;
+
+const getDanceModelsAPI="http://localhost:3000/getdancemodels/showdancemodels";
+
+async function retreiveDanceModels(){
+    const loader=document.getElementById("loader");
+    const container=document.getElementById("listofModels");
+    loader.style.display="block";
+    container.innerHTML="";
+
+    try{
+        console.time("dance models API called.");
+        const response=await fetch(getDanceModelsAPI);
+        console.timeEnd("dance models API call");
+        const danceModelsList=await response.json();
+        if(Array.isArray(danceModelsList) && danceModelsList.length>0){
+            renderDanceModels(danceModelsList);
+        }else{
+            container.innerHTML="<p>No dance models available.</p>";
+        }
+    }catch(err){
+        console.error("Error in fetchin dance models:",err);
+        container.innerHTML="<p>Unable to load dance models from the database.</p>";
+    }finally{
+        loader.style.display="none";
+    }
+
+    function renderDanceModels(models){
+        const container=document.getElementById("listofModels");
+        container.innerHTML="";
+        const fragment=document.createDocumentFragment();
+
+        models.forEach(model=>{
+            const modelCard=document.createElement("div");
+            modelCard.classList.add("mudra-element");
+            modelCard.innerHTML=`<h3>${model.name}
+                            <button class="delete-btn" onclick="deleteMudra('${model._id}')">Delete</button>`;
+                            fragment.appendChild(modelCard);
+        });
+        container.appendChild(fragment);
+    }
+}
+window.onload=function(){
+    retreiveMudras();
+    // retreiveDanceModels();
+}
 window.deleteMudra=deleteMudra;
