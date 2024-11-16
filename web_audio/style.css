@@ -10,6 +10,7 @@ body {
     padding: 0;
 }
 
+ 
 .container {
     max-width: 600px;
     margin: 50px auto;
@@ -95,6 +96,7 @@ body {
     z-index: 10000; 
 }
 
+
 #resetButton {
     width: 200px;
     height: 40px;
@@ -160,7 +162,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
-#s1,#m1,#m2,#m3,#m4,#e1{
+#s1,#m1,#m2,#m3,#m4,#m5,#m6,#m7,#m8,#m9,#m10,#m11,#m12,#m13,#m14,#e1{
     /* border: 1px solid gold; */
     width: 220px;
     height: 300px;
