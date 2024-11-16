@@ -11,6 +11,11 @@ let audioBuffer;
 let sourceNode;
 let frequencyInterval;
 let dance_sequence = [];
+let start_steps = ["s1.glb","s2.glb"];
+let middle_steps = ["m1.glb","m2.glb","m3.glb","m6.glb","m7.glb","m8.glb"];
+let middle_steps_mirrored = ["mm1.glb","mm2.glb","mm3.glb","mm6.glb","mm7.glb","mm8.glb"];
+let end_steps = ["e1.glb","e2.glb"];
+
 // Event listener to display chosen file name
 fileInput.addEventListener('change', displayFileName);
 
@@ -80,7 +85,7 @@ const renderOnSmallCanvas=()=>{
         engineSmall.runRenderLoop(()=>{
             sceneSmall.render();
         });
-    });
+    })
 };
 // renderSequentially(mainScene).then(()=>{
 //     renderOnSmallCanvas();
@@ -111,7 +116,7 @@ async function startAnalysis(file) {
                 return;
             }
             else{
-                getarray();
+                getSequence();
             }
 
             if (!waveSurfer) {
@@ -185,30 +190,89 @@ function analyzeFrequency() {
 }
 function getSequence() {
     let sequence = ["s1","s2","s3"];
-    //s1 = step 1 LL RR step 2 LL RR step 1 LL RR
-    //s2 = step 1 LR LR step 2  LR LR step 1 LR LR
-    //s3 = step 1 LL R step 2 LL R step 3 LL R
+    let i;
+    i = Math.floor(Math.random() * sequence.length);
+    console.log("Sequence generated: ", sequence[i]);
+    if (sequence[i] == "s1"){
+        getS1();
+    }
+    else if (sequence[i] == "s2"){
+        getS2();
+    }
+    if (sequence[i] == "s3"){
+        getS3();
+    }
+}
+
+function getRandomIndex(arr){
     return Math.floor(Math.random() * arr.length);
 }
 
-function getarray(){
-    let start_steps = ["s1.glb","s2.glb"];
-    let middle_steps = ["m1.glb","m2.glb","m3.glb",/*"m4.glb"*/,"m6.glb","m7.glb","m8.glb"];
-    let end_steps = ["e1.glb","e2.glb"];
-    function getRandomIndex(arr){
-        return Math.floor(Math.random() * arr.length);
+function getS1(){
+    let unique_indices = [];
+    let index;
+    while(unique_indices.length < 4){
+        index = getRandomIndex(middle_steps);
+        if(!unique_indices.includes(index)){
+            unique_indices.push(index);
+        }
     }
-    
-    dance_sequence.push(start_steps[getRandomIndex(start_steps)]);
-    console.log(dance_sequence);
-    for( let i = 0; i < 4; i++){
-        dance_sequence.push(middle_steps[getRandomIndex(middle_steps)]);
+    console.log(unique_indices);
+    for(let i = 0; i<4;i++){
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
     }
-    dance_sequence.push(end_steps[getRandomIndex(end_steps)]);
-
     console.log(dance_sequence);
-
 }
+
+function getS2(){
+    let unique_indices = [];
+    let index;
+    while(unique_indices.length < 4){
+        index = getRandomIndex(middle_steps);
+        if(!unique_indices.includes(index)){
+            unique_indices.push(index);
+        }
+    }
+    console.log(unique_indices);
+    for(let i = 0; i<4;i++){
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
+    }
+    console.log(dance_sequence);
+}
+
+function getS3(){
+    let unique_indices = [];
+    let index;
+    while(unique_indices.length < 4){
+        index = getRandomIndex(middle_steps);
+        if(!unique_indices.includes(index)){
+            unique_indices.push(index);
+        }
+    }
+    console.log(unique_indices);
+    for(let i = 0; i<4;i++){
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
+    dance_sequence.push(middle_steps[unique_indices[i]]);
+    }
+    console.log(dance_sequence);
+}
+// function getarray(){
+
+//     dance_sequence.push(start_steps[getRandomIndex(start_steps)]);
+//     console.log(dance_sequence);
+//     for( let i = 0; i < 4; i++){
+//         dance_sequence.push(middle_steps[getRandomIndex(middle_steps)]);
+//     }
+//     dance_sequence.push(end_steps[getRandomIndex(end_steps)]);
+
+//     console.log(dance_sequence);
+
+// }
 
 function getDominantFrequency(frequencyData) {
     let maxIndex = 0;

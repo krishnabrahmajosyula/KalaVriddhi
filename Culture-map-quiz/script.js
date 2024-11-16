@@ -47,11 +47,9 @@ window.onload=()=>{
     nameModal.style.display='flex';
 }
 async function fetchRandomQuestions() {
-    console.log(q1.querySelector('#opt1').textContent);
     try {
         const response = await fetch("http://localhost:3000/quiz/random");
         const questions = await response.json();
-        console.log(questions);
         if (response.ok) {
             // Populate questions in your HTML based on the questions fetched
             questions.forEach((question, index) => {
@@ -149,7 +147,6 @@ function displayQ1(){
         if (input.value === selectedOptions[0]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[0] !== input.value) {
                 if (!selectedOptions[0]) {
@@ -179,7 +176,6 @@ function displayQ2(){
         if (input.value === selectedOptions[1]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[1] !== input.value) {
                 if (!selectedOptions[1]) {
@@ -205,7 +201,6 @@ function displayQ3(){
         if (input.value === selectedOptions[2]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[2] !== input.value) {
                 if (!selectedOptions[2]) {
@@ -234,7 +229,6 @@ function displayQ4(){
         if (input.value === selectedOptions[3]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[3] !== input.value) {
                 if (!selectedOptions[3]) {
@@ -262,7 +256,6 @@ function displayQ5(){
         if (input.value === selectedOptions[4]) {
             input.checked = true; // Set the checked status based on stored value
         }
-        console.log(selectedOptions);
         input.addEventListener('change', () => {
             if (selectedOptions[4] !== input.value) {
                 if (!selectedOptions[4]) {
@@ -297,16 +290,12 @@ function displayResults(){
     questionsBox.style.display="none";
     // Reset correctAnswers count before checking
     correctAnswers = 0;
-    console.log(selectedOptions);
-    console.log(correctAnswersList);
     // Iterate over selected options and compare with correct answers
     selectedOptions.forEach((selected, index) => {
         if (selected === correctAnswersList[index]) {
             correctAnswers++;
         }
-        console.log(correctAnswers);
     });
-    console.log(correctAnswers);
     resultsBox.style.display="flex";
     scoreDisplay.textContent=(correctAnswers/totalQuestions * 100) + '%';
     scoreMessage.textContent = `You scored ${correctAnswers}/${totalQuestions}`;
@@ -328,7 +317,6 @@ function displayResults(){
 }
 
 function displayLeaderboard(){
-    console.log("Displaying the leaderboard");
     let playerScore=correctAnswers/totalQuestions*100;
     let playerRank=getRank(playerScore);
     let leaderboard=generateLeaderboard(playerScore,playerRank);
