@@ -87,9 +87,7 @@ const renderOnSmallCanvas=()=>{
         });
     })
 };
-// renderSequentially(mainScene).then(()=>{
-//     renderOnSmallCanvas();
-// });
+
 mainScene=makeMainScene();
 renderEngine.runRenderLoop(()=>{
    if(mainScene){
@@ -218,11 +216,13 @@ function getS1(){
         }
     }
     console.log(unique_indices);
+    dance_sequence.push(start_steps[getRandomIndex(start_steps)]);
     for(let i = 0; i<4;i++){
     dance_sequence.push(middle_steps[unique_indices[i]]);
     dance_sequence.push(middle_steps[unique_indices[i]]);
     dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
     }
+    dance_sequence.push(end_steps[getRandomIndex(end_steps)]);
     console.log(dance_sequence);
 }
 
@@ -236,10 +236,13 @@ function getS2(){
         }
     }
     console.log(unique_indices);
+    dance_sequence.push(start_steps[getRandomIndex(start_steps)]);
     for(let i = 0; i<4;i++){
     dance_sequence.push(middle_steps[unique_indices[i]]);
     dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
+    dance_sequence.push(middle_steps[unique_indices[i]]);
     }
+    dance_sequence.push(end_steps[getRandomIndex(end_steps)]);
     console.log(dance_sequence);
 }
 
@@ -253,12 +256,13 @@ function getS3(){
         }
     }
     console.log(unique_indices);
+    dance_sequence.push(start_steps[getRandomIndex(start_steps)]);
     for(let i = 0; i<4;i++){
     dance_sequence.push(middle_steps[unique_indices[i]]);
-    dance_sequence.push(middle_steps[unique_indices[i]]);
     dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
-    dance_sequence.push(middle_steps[unique_indices[i]]);
+    dance_sequence.push(middle_steps_mirrored[unique_indices[i]]);
     }
+    dance_sequence.push(end_steps[getRandomIndex(end_steps)]);
     console.log(dance_sequence);
 }
 // function getarray(){

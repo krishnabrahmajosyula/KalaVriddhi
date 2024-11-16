@@ -12,6 +12,7 @@ body {
     overflow-y: auto;
 }
 
+ 
 .container {
     max-width: 90%;
     margin: 50px auto;
@@ -95,6 +96,7 @@ body {
     transform: translateX(-50%);
     z-index: 10000; 
 }
+
 
 #resetButton {
     width: 200px;
