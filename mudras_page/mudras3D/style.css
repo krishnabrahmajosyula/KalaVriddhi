@@ -75,7 +75,40 @@ h1{
     height: 40px;
     border-radius: 0.9rem;
 }
-
+#home {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  #homebtn {
+    width: 80px; 
+    height: 80px; 
+    background: transparent;
+    outline: none;
+    border: 3px solid white;
+    border-radius: 50%; 
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    padding: 0;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px white;
+    z-index : 1000; 
+  }
+  #logo{
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+  #homebtn:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1); 
+    border-color: white; 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  }
 @media(max-width:768px){
     .container{
         flex-direction:column;

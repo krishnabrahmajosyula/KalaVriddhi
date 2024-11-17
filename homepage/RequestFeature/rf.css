@@ -77,6 +77,7 @@ body::-webkit-scrollbar{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-weight: 700;
     align-items: center;
     border: 2px solid gold;
     box-shadow: 0px 3px 8px gold;
@@ -90,7 +91,7 @@ body::-webkit-scrollbar{
     border-radius: 15px;
     animation: wave 0.5s ease forwards;
     transform-origin: center;
-    color: hsl(175, 96%, 56%);
+    color: gold;
     font-family: 'poppins';
 }
 
@@ -110,9 +111,12 @@ body::-webkit-scrollbar{
     width: 90%;
     padding: 8px;
 }
+#descriptionbox{
+    resize: none; 
+}
 #title,#description,#cat,#ratingSelect{
-    opacity: 0; /* Start invisible */
-    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0;
+    transform: translateX(-100%); 
     animation: slide-in-left 0.5s ease forwards;
     margin-bottom: 20px;
     font-family: 'poppins';
