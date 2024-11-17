@@ -39,7 +39,7 @@ startButton.addEventListener('click', () => {
 //code for rendering 3d models
 const bigcanvas=document.getElementById("model-3d");
 const renderEngine=new BABYLON.Engine(bigcanvas,true);  
-const smallcanvas=[document.getElementById("s1"),document.getElementById("m1"),document.getElementById("m2"),document.getElementById("m3"),document.getElementById("m4"),document.getElementById("e1")];
+const smallcanvas=[document.getElementById("s1"),document.getElementById("m1"),document.getElementById("m2"),document.getElementById("m3"),document.getElementById("m4"),document.getElementById("m5"),document.getElementById("m6"),document.getElementById("m7"),document.getElementById("m8"),document.getElementById("m9"),document.getElementById("m10"),document.getElementById("m11"),document.getElementById("m12"),document.getElementById("e1")];
 let mainScene;
 const makeMainScene=()=>{
     mainScene=new BABYLON.Scene(renderEngine);
