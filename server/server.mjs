@@ -23,7 +23,7 @@ application.use(bodyParser.json());
 application.use(express.json());
 application.use(express.urlencoded({extended:true}));
 application.use(express.static("public"));
-application.use(cors());
+application.use(cors({origin:'http://127.0.0.1:5501',methods:['GET','POST','DELETE'],allowedHeaders:['Content-Type'],}));
 
 //these are the routes that are handled in the corresponding files
 application.use("/auth",authentication);
