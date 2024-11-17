@@ -12,8 +12,8 @@ let sourceNode;
 let frequencyInterval;
 let dance_sequence = [];
 let start_steps = ["s1.glb","s2.glb"];
-let middle_steps = ["m1.glb","m2.glb","m3.glb","m6.glb","m7.glb","m8.glb"];
-let middle_steps_mirrored = ["mm1.glb","mm2.glb","mm3.glb","mm6.glb","mm7.glb","mm8.glb"];
+let middle_steps = ["m1.glb","m2.glb","m3.glb","m6.glb","m7.glb","m8.glb","m9.glb","m10.glb","m11.glb","m12.glb"];
+let middle_steps_mirrored = ["mm1.glb","mm2.glb","mm3.glb","mm6.glb","mm7.glb","mm8.glb","mm9.glb","mm10.glb","mm11.glb","mm12.glb"];
 let end_steps = ["e1.glb","e2.glb"];
 
 // Event listener to display chosen file name
