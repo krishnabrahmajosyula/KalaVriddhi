@@ -14,6 +14,7 @@ import questionDisplayRoute from "./routes/questionDisplayRoute.mjs";
 import verifyRoutes from "./routes/verifyRoute.mjs";
 import quizRouter from "./routes/quizRoutes.mjs";
 import dancelistRetrieveRouter from "./routes/showdancemodels.mjs";
+import featureRequestRoute from "./routes/featureRequestRouter.mjs";
 
 const application=express();
 
@@ -35,6 +36,7 @@ application.use("/questions/display", questionDisplayRoute);
 application.use("/questions/verify", verifyRoutes);
 application.use("/quiz", quizRouter);
 application.use("/getdancemodels",dancelistRetrieveRouter);
+application.use("/feature-requests",featureRequestRoute);
 
 //this statement is used for connecting mongoDB with the corresponding port
 mongoose.connect("mongodb+srv://KalaVriddhi:kalavriddhi_ug6@kalavriddhi.fg8vb.mongodb.net/",{

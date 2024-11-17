@@ -36,7 +36,7 @@ rqform.addEventListener('submit', async (event) => {
     }
 
     try {
-        const response = await fetch('http://localhost:5001/submit-feature', {
+        const response = await fetch('http://localhost:3000/feature-requests', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

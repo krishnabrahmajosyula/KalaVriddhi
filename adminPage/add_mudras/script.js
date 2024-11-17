@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",function (){
         formData.append("category",category);
     
         try{
-            const res=await fetch("http://localhost:3000/addModel/uploadmodel",{
+            const res=await fetch("https://kalavriddhi-backend-1umy.onrender.com/addModel/uploadmodel",{
                 method:"POST",
                 body:formData,
             });
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded",function (){
 // });
 
 
-const getModelAPI="http://localhost:3000/getmudras/getmudra";
+const getModelAPI="https://kalavriddhi-backend-1umy.onrender.com/getmudras/getmudra";
 let curr_page=1;
 let maxPage_size=12;
 
@@ -126,7 +126,7 @@ function renderListOfMudras(mudras){
 
 async function deleteMudra(id){
     try{
-        const response=await fetch(`http://localhost:3000/getmudras/deletemudra/${id}`,{
+        const response=await fetch(`https://kalavriddhi-backend-1umy.onrender.com/getmudras/deletemudra/${id}`,{
             method: "DELETE",
         });
         if(response.ok){
@@ -143,7 +143,7 @@ async function deleteMudra(id){
 }
 
 
-const getDanceModelsAPI="http://localhost:3000/getdancemodels/showdancemodels";
+const getDanceModelsAPI="https://kalavriddhi-backend-1umy.onrender.com/getdancemodels/showdancemodels";
 
 async function retreiveDanceModels(){
     const loader=document.getElementById("loader");

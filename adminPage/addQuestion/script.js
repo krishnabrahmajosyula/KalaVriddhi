@@ -49,7 +49,7 @@
             return;
         }
         //send the data to the server using fetch API
-        const response=await fetch("http://localhost:3000/questions/quiz/add",{
+        const response=await fetch("https://kalavriddhi-backend-1umy.onrender.com/questions/quiz/add",{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

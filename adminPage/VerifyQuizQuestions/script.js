@@ -65,7 +65,7 @@ document.querySelector('#option4 .option-text').innerText = option4;
         };
         console.log("Sending question data:", questionData);
         try{
-            const response=await fetch('http://localhost:3000/questions/verify/verify',{
+            const response=await fetch('https://kalavriddhi-backend-1umy.onrender.com/questions/verify/verify',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
