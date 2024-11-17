@@ -12,8 +12,8 @@ let sourceNode;
 let frequencyInterval;
 let dance_sequence = [];
 let start_steps = ["s1.glb","s2.glb"];
-let middle_steps = ["m1.glb","m2.glb","m3.glb","m6.glb","m7.glb","m8.glb"];
-let middle_steps_mirrored = ["mm1.glb","mm2.glb","mm3.glb","mm6.glb","mm7.glb","mm8.glb"];
+let middle_steps = ["m1.glb","m2.glb","m3.glb","m6.glb","m7.glb","m8.glb","m9.glb","m10.glb","m11.glb","m12.glb"];
+let middle_steps_mirrored = ["mm1.glb","mm2.glb","mm3.glb","mm6.glb","mm7.glb","mm8.glb","mm9.glb","mm10.glb","mm11.glb","mm12.glb"];
 let end_steps = ["e1.glb","e2.glb"];
 
 // Event listener to display chosen file name
@@ -43,7 +43,7 @@ const smallcanvas=[document.getElementById("s1"),document.getElementById("m1"),d
 let mainScene;
 const makeMainScene=()=>{
     mainScene=new BABYLON.Scene(renderEngine);
-    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,3,BABYLON.Vector3.Zero(),mainScene);
+    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,3.5,BABYLON.Vector3.Zero(),mainScene);
     cameraEle.attachControl(bigcanvas,true);
     const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),mainScene);
     return mainScene;
@@ -68,7 +68,7 @@ const renderSequentially=async (scene)=>{
                 resolve();
             });
         });
-        await new Promise(resolve=>setTimeout(resolve,5700));
+        await new Promise(resolve=>setTimeout(resolve,2500));
     }
 };
 
@@ -79,7 +79,7 @@ const renderOnSmallCanvas=()=>{
         const cameraSmall = new BABYLON.ArcRotateCamera("smallcamera",Math.PI / 2,Math.PI / 4,3,BABYLON.Vector3.Zero(),sceneSmall);
         const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),sceneSmall);
         cameraSmall.attachControl(canvas, true);
-        BABYLON.SceneLoader.Append("/danceModels/",dance_sequence[index],sceneSmall,()=>{
+        BABYLON.SceneLoader.Append("./danceModels/",dance_sequence[index],sceneSmall,()=>{
             console.log(`Model:${dance_sequence[index]}loaded`);
         });
         engineSmall.runRenderLoop(()=>{
@@ -142,6 +142,8 @@ async function startAnalysis(file) {
             analyser.connect(audioContext.destination);
             waveSurfer.play();
             sourceNode.start();
+            await renderSequentially(mainScene);
+            renderOnSmallCanvas();
 
 
 
@@ -149,8 +151,7 @@ async function startAnalysis(file) {
             sourceNode.onended=async ()=>{
                 clearInterval(frequencyInterval);
                 resetStartButton();
-                await renderSequentially(mainScene);
-                renderOnSmallCanvas();
+                
             };
 
         } catch (error) {
