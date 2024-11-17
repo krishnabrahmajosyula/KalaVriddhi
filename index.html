@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="./homepage/style.css">
+    <link rel="stylesheet" href="popup_style.css">
+
+</head>
+<body>
+    <header>
+        <h2 class = "kalavriddhi">KalaVriddhi</h2>
+            <nav class="navigation">
+                <a href="index.html" id="type1">Home</a>
+                <a href="about.html" id="type1">About Us</a>
+                <a href="signin/signin.html" id="type1">SignUp</a>
+                <a href="loginPage/index.html">Login</a>
+            </nav>
+    </header>
+    <div class="request-feature-container">
+      <a href="./RequestFeature/rf.html"><button class="request-feature" id="requestFeature">Request a Feature</button></a>
+      <a href="./ContributeToQuiz/index.html"><button class="request-feature" id="contribute">Contribute Questions</button></a>
+    </div>
+    <div class="title-container">
+      <h2 class="maintitle">KalaVriddhi</h2>
+      <h3 class="maindesc">Where people meet art and art meets people</h3>
+    </div>  
+
+      
+    <div class="floating-buttons">
+      <a href="map-of-india/index.html"><button class="btn map-of-india">Map Of India</button></a>
+      <a href="bharatnatyam-page/index.html"><button class="btn learn-bharatnatyam">Learn Bharatnatyam</button></a>
+      <a href="game/index.html"><button class="btn games">Learn with Games</button></a>
+      <a href="Culture-map-quiz/index.html"><button class="btn games">Heritage Hunt Quiz</button></a>
+   </div>
+
+    <div class="popup" id="instructionPopup">
+     
+      
+
+      <div class="popup-content">
+          <div class="popup-header">
+              Welcome to Kalavriddhi!
+          </div>
+          <div class="popup-body">
+              <p class="intro-text">We’re excited to have you here! KalaVriddhi is a space where art and culture come to life. Here’s how you can get started:</p>
+              <ul class="intro-body">
+                  <li><strong>Explore the Map of India:</strong> Play around with the map of our special interactive cultural map of India to get to know about the various cultural art and dance forms of various states.</li>
+                  <li><strong>Learn Bharatanatyam:</strong> Dive deep into the basics of Bharatanatyam through engaging tutorials, quizzes and a very special dance simulator! All of this enhanced with the power of 3-d models!</li>
+                  <li><strong>Learn with Games:</strong> Make learning fun with our interactive games designed to teach Indian culture and art. Give your best shot and secure a place in ur leaderboard!</li>
+                  <li><strong>Heritage Hunt Quiz:</strong> Test your knowledge about India's rich cultural heritage with our small quiz of five random questions! QUestions shuffle each time!</li>
+              </ul>
+              <p class = "end-text">If you have ideas or questions, feel free to use the "Request a Feature" and "Contribute Questions" options. They help us help you out!</p>
+              <button class="close-btn" onclick="closePopup()">Got it!</button>
+          </div>
+      </div>
+    </div>
+
+    
+
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src = "script.js"></script>
+</body>
+</html>
