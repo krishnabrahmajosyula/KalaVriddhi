@@ -90,6 +90,7 @@ body::-webkit-scrollbar{
 }
 #username, #password {
     font-size: 1em;
+    font-weight: 700;
     color: gold; /* Set entered text color to gold */
     background: none;
     border: none; /* Remove default border */
@@ -106,19 +107,22 @@ body::-webkit-scrollbar{
 }
 #username::placeholder,
 #password::placeholder {
-    color: gold; /* Set the placeholder text color */
+    color: rgba(238, 225, 154, 0.743); /* Set the placeholder text color */
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 501;
     font-family: 'Poppins', sans-serif;
     opacity: 1;
 }
 #username:focus, #password:focus {
     border-bottom-color: lightblue; /* Optional: Change color when focused */
     color: aqua;
+    font-weight: 700;
+    
 }
 #remember,#adminCheckLabel{
-    font-size: 20px;
+    font-size: 15px;
     color: lightblue;
+    font-weight: 501;
     animation: slide-up 0.5s ease forwards;
 }
 .input-container {
