@@ -142,6 +142,8 @@ async function startAnalysis(file) {
             analyser.connect(audioContext.destination);
             waveSurfer.play();
             sourceNode.start();
+            await renderSequentially(mainScene);
+            renderOnSmallCanvas();
 
 
 
@@ -149,8 +151,7 @@ async function startAnalysis(file) {
             sourceNode.onended=async ()=>{
                 clearInterval(frequencyInterval);
                 resetStartButton();
-                await renderSequentially(mainScene);
-                renderOnSmallCanvas();
+                
             };
 
         } catch (error) {
