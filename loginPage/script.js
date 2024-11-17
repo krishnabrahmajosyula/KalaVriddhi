@@ -29,7 +29,7 @@ async function Validate(){
     const password=document.getElementById('password').value;
 
     try{
-        const response=await fetch("http://localhost:3000/auth/login",{
+        const response=await fetch("https://kalavriddhi-backend-1umy.onrender.com/auth/login",{
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
@@ -60,7 +60,7 @@ async function Validate1(){
     const password=document.getElementById('password').value;
     const isAdmin=true;
     try{
-        const response=await fetch("http://localhost:3000/auth/login",{
+        const response=await fetch("https://kalavriddhi-backend-1umy.onrender.com/auth/login",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
