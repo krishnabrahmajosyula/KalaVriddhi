@@ -104,6 +104,40 @@ footer{
     margin-bottom: 20px;
 }
 
+#homebtn:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1); 
+    border-color: white; 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); 
+  }
+
+  #home {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  #homebtn {
+    width: 80px; 
+    height: 80px; 
+    background: transparent;
+    outline: none;
+    border: 3px solid white;
+    border-radius: 50%; 
+    cursor: pointer;
+    position: fixed;
+    top: 40px;
+    padding: 0;
+    transition: 0.3s;
+  }
+
+  #logo {
+    width: 100%; /* Make logo fit inside button */
+    height: 100%;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
 @media (max-width: 768px){
     .signinform-box{
         padding: 15px;
@@ -113,6 +147,7 @@ footer{
     .signin-form{
         padding: 10px;
     }
+
     .user-input{
         font-size: 14px;
         padding: 8px; 

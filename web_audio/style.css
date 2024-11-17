@@ -8,18 +8,20 @@ body {
     color: white; 
     margin: 10px;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
  
 .container {
-    max-width: 600px;
+    max-width: 90%;
     margin: 50px auto;
     text-align: center;
 }
 
 #header {
     font-family: 'Poppins', sans-serif; 
-    font-size: 70px; 
+    font-size: 8vw; 
     color: gold; 
     margin: 0;
 }
@@ -38,7 +40,6 @@ body {
 #fileNameDisplay {
     margin-top: 10px;
     font-size: 1.2em;
-
     color: gold; 
 }
 
@@ -149,7 +150,7 @@ body {
 }
 
 .curr-model{
-   /* border: 2px solid gold; */
+   
    width: 600px;
    height: 600px;
    border-radius: 20px;
@@ -161,13 +162,22 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
-#s1,#m1,#m2,#m3,#m4,#m5,#m6,#m7,#m8,#m9,#m10,#m11,#m12,#m13,#m14,#e1{
-    /* border: 1px solid gold; */
+#s1,#m1,#m2,#m3,#m4,#e1,#m5,#m6,#m7,#m8,#m9,#m10,#m11,#m12{
     width: 220px;
     height: 300px;
-    margin: 10px;
+    margin: 10px 10px 0px 10px;
     border-radius: 10px;
     backdrop-filter: blur(2px);
     box-shadow: -1px 2.5px 5px gold;
 }
+.start-canvas,.end-canvas{
+    font-size: larger;
+    display: flex;       
+    height: 100vh;           
+    text-align: center; 
+    align-items: center;   
+}
+
+
