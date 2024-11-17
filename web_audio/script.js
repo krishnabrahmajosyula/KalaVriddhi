@@ -43,7 +43,7 @@ const smallcanvas=[document.getElementById("s1"),document.getElementById("m1"),d
 let mainScene;
 const makeMainScene=()=>{
     mainScene=new BABYLON.Scene(renderEngine);
-    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,3,BABYLON.Vector3.Zero(),mainScene);
+    const cameraEle=new BABYLON.ArcRotateCamera("bigCamera",Math.PI/2,Math.PI/4,3.5,BABYLON.Vector3.Zero(),mainScene);
     cameraEle.attachControl(bigcanvas,true);
     const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),mainScene);
     return mainScene;
@@ -68,7 +68,7 @@ const renderSequentially=async (scene)=>{
                 resolve();
             });
         });
-        await new Promise(resolve=>setTimeout(resolve,5700));
+        await new Promise(resolve=>setTimeout(resolve,2500));
     }
 };
 
@@ -79,7 +79,7 @@ const renderOnSmallCanvas=()=>{
         const cameraSmall = new BABYLON.ArcRotateCamera("smallcamera",Math.PI / 2,Math.PI / 4,3,BABYLON.Vector3.Zero(),sceneSmall);
         const light=new BABYLON.HemisphericLight("mainlight",new BABYLON.Vector3(1,1,0),sceneSmall);
         cameraSmall.attachControl(canvas, true);
-        BABYLON.SceneLoader.Append("/danceModels/",dance_sequence[index],sceneSmall,()=>{
+        BABYLON.SceneLoader.Append("./danceModels/",dance_sequence[index],sceneSmall,()=>{
             console.log(`Model:${dance_sequence[index]}loaded`);
         });
         engineSmall.runRenderLoop(()=>{
